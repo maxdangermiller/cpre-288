@@ -1,2 +1,3 @@
-2026/08/26-12:16:48.250 2ff0 Creating DB U:\CprE288\.jxbrowser.userdata\Default\Local Storage\leveldb since it was missing.
-2026/08/26-12:16:48.277 2ff0 Reusing MANIFEST U:\CprE288\.jxbrowser.userdata\Default\Local Storage\leveldb/MANIFEST-000001
+2026/08/26-12:32:04.338 2284 Reusing MANIFEST U:\CprE288\.jxbrowser.userdata\Default\Local Storage\leveldb/MANIFEST-000001
+2026/08/26-12:32:04.349 2284 Recovering log #3
+2026/08/26-12:32:04.352 2284 Reusing old log U:\CprE288\.jxbrowser.userdata\Default\Local Storage\leveldb/000003.log 

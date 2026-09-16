@@ -1,2 +1,3 @@
-2026/08/26-12:16:48.717 2ff0 Creating DB U:\CprE288\.jxbrowser.userdata\Default\Session Storage since it was missing.
-2026/08/26-12:16:48.748 2ff0 Reusing MANIFEST U:\CprE288\.jxbrowser.userdata\Default\Session Storage/MANIFEST-000001
+2026/08/26-12:32:04.845 2284 Reusing MANIFEST U:\CprE288\.jxbrowser.userdata\Default\Session Storage/MANIFEST-000001
+2026/08/26-12:32:04.866 2284 Recovering log #3
+2026/08/26-12:32:04.869 2284 Reusing old log U:\CprE288\.jxbrowser.userdata\Default\Session Storage/000003.log 

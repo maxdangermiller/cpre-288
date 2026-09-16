@@ -1,2 +1,3 @@
-2026/08/26-12:16:48.238 1148 Creating DB U:\CprE288\.jxbrowser.userdata\Default\shared_proto_db\metadata since it was missing.
-2026/08/26-12:16:48.265 1148 Reusing MANIFEST U:\CprE288\.jxbrowser.userdata\Default\shared_proto_db\metadata/MANIFEST-000001
+2026/08/26-12:32:04.332 30e8 Reusing MANIFEST U:\CprE288\.jxbrowser.userdata\Default\shared_proto_db\metadata/MANIFEST-000001
+2026/08/26-12:32:04.345 30e8 Recovering log #3
+2026/08/26-12:32:04.348 30e8 Reusing old log U:\CprE288\.jxbrowser.userdata\Default\shared_proto_db\metadata/000003.log 
