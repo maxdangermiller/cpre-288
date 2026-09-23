@@ -16,13 +16,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import os  # import function for finding absolute path to this python script
+import sys
 
 # A little python magic to make it more convenient for you to adjust where you want the data file to live
 # Link for more info: https://towardsthecloud.com/get-relative-path-python 
 absolute_path = os.path.dirname(__file__) # Absoult path to this python script
 relative_path = "./"   # Path to sensor data file relative to this python script (./ means data file is in the same directory as this python script
 full_path = os.path.join(absolute_path, relative_path) # Full path to sensor data file
-filename = 'test.txt' # Name of sensor data file
+filename = sys.argv[1] # Name of sensor data file
 
 # angle_degrees: a vector (i.e., array of numbers) for which each element is an angle at which the sensor makes a distance measurement.
 # Units: degrees
@@ -46,7 +47,7 @@ file_object.close() # Important to close file one you are done with it!!
 for line in file_data: 
 	data = line.split()    # Split line into columns (by default delineates columns by whitespace)
 	angle_degrees.append(float(data[0]))  # Column 0 holds the angle at which distance was measured
-	distance.append(float(data[1]))       # Column 1 holds the distance that was measured at a given angle       
+	distance.append(float(data[1]) / 100)       # Column 1 holds the distance that was measured at a given angle       
 
 # Convert python sequence (list of strings) into a numpy array
 angle_degrees = np.array(angle_degrees) # Avoid "TypeError: can't multiply sequence by non-int of type float"
@@ -72,5 +73,5 @@ ax.set_xticks(np.arange(0,np.pi+.1,np.pi/4)) 				# Set plot "angle" tick marks t
 ax.grid(True)                     							# Show grid lines
 
 # Create title for plot (font size = 14pt, y & pad controls title vertical location)
-ax.set_title("Mock-up Polar Plot of CyBot Sensor Scan from 0 to 180 Degrees", size=14, y=1.0, pad=-24) 
+ax.set_title(f"CyBot Sensor Scan - {filename}", size=14, y=1.0, pad=-24) 
 plt.show()  # Display plot

@@ -15,7 +15,7 @@ absolute_path = os.path.dirname(__file__) # Absoult path to this python script
 relative_path = "./"   # Path to sensor data file relative to this python script (./ means data file is in the same directory as this python script
 full_path = os.path.join(absolute_path, relative_path) # Full path to sensor data file
 
-logfile_filename = 'cybot-sensor-scan.txt' # Default Input-filename of sensor data logfile
+logfile_filename = 'test_2.txt' # Default Input-filename of sensor data logfile
 c_array_output_filename = 'sensor-data.h'  # Default Output-filename of .h file, which will contain an array that is initilized with the sensor data logfile values
 
 

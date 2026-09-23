@@ -2920,3 +2920,2104 @@ gmake[1]: 'lab_3.out' is up to date.
 gmake[1]: 'lab_3.out' is up to date.
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../Timer.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Timer.d_raw"  "../Timer.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'Timer.obj' failed
+"..\Timer.h", line 11: fatal error #1965: cannot open source file "inc/tm4c123gh6pm.h"
+1 catastrophic error detected in the compilation of "../Timer.c".
+Compilation terminated.
+gmake: *** [Timer.obj] Error 1
+Building file: "../lcd.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="lcd.d_raw"  "../lcd.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'lcd.obj' failed
+"..\lcd.h", line 17: fatal error #1965: cannot open source file "inc/tm4c123gh6pm.h"
+1 catastrophic error detected in the compilation of "../lcd.c".
+Compilation terminated.
+gmake: *** [lcd.obj] Error 1
+Building file: "../part2.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part2.d_raw"  "../part2.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part2.obj' failed
+"..\cyBot_uart.h", line 21: fatal error #1965: cannot open source file "inc/tm4c123gh6pm.h"
+1 catastrophic error detected in the compilation of "../part2.c".
+Compilation terminated.
+gmake: *** [part2.obj] Error 1
+Building file: "../part3.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part3.d_raw"  "../part3.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part3.obj' failed
+"..\cyBot_uart.h", line 21: fatal error #1965: cannot open source file "inc/tm4c123gh6pm.h"
+1 catastrophic error detected in the compilation of "../part3.c".
+Compilation terminated.
+gmake: *** [part3.obj] Error 1
+Building file: "../part1b.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part1b.d_raw"  "../part1b.c"
+Finished building: "../part1b.c"
+ 
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part1b.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part1b.d_raw"  "../part1b.c"
+Finished building: "../part1b.c"
+ 
+Building file: "../Timer.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Timer.d_raw"  "../Timer.c"
+Finished building: "../Timer.c"
+ 
+Building file: "../lcd.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="lcd.d_raw"  "../lcd.c"
+Finished building: "../lcd.c"
+ 
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+Building file: "../part2.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part2.d_raw"  "../part2.c"
+"../part2.c", line 35: warning #112-D: statement is unreachable
+"../part2.c", line 53: warning #179-D: variable "j" was declared but never referenced
+"../part2.c", line 74: warning #1-D: last line of file ends without a newline
+Finished building: "../part2.c"
+ 
+Building file: "../part3.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part3.d_raw"  "../part3.c"
+"../part3.c", line 21: warning #112-D: statement is unreachable
+Finished building: "../part3.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+error #10056: symbol "main" redefined: first defined in "./part1b.obj"; redefined in "./part2.obj"
+error #10056: symbol "main" redefined: first defined in "./part1b.obj"; redefined in "./part3.obj"
+ 
+error #10010: errors encountered during linking; "lab_4.out" not built
+>> Compilation failure
+makefile:143: recipe for target 'lab_4.out' failed
+gmake[1]: *** [lab_4.out] Error 1
+gmake: *** [all] Error 2
+makefile:139: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"..\part1b.h", line 7: warning #1-D: last line of file ends without a newline
+"..\part2.h", line 7: warning #1-D: last line of file ends without a newline
+"..\part3.h", line 7: warning #1-D: last line of file ends without a newline
+"../main.c", line 7: warning #1-D: last line of file ends without a newline
+Finished building: "../main.c"
+ 
+Building file: "../part1b.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part1b.d_raw"  "../part1b.c"
+"..\part1b.h", line 7: warning #1-D: last line of file ends without a newline
+Finished building: "../part1b.c"
+ 
+Building file: "../part2.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part2.d_raw"  "../part2.c"
+"..\part2.h", line 7: warning #1-D: last line of file ends without a newline
+"../part2.c", line 37: warning #112-D: statement is unreachable
+"../part2.c", line 55: warning #179-D: variable "j" was declared but never referenced
+Finished building: "../part2.c"
+ 
+Building file: "../part3.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part3.d_raw"  "../part3.c"
+"..\part3.h", line 7: warning #1-D: last line of file ends without a newline
+"../part3.c", line 23: warning #112-D: statement is unreachable
+Finished building: "../part3.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+ 
+ undefined first referenced
+  symbol       in file     
+ --------- ----------------
+ 
+ part2     ./main.obj      
+>> Compilation failure
+makefile:144: recipe for target 'lab_4.out' failed
+ 
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "lab_4.out" not built
+gmake[1]: *** [lab_4.out] Error 1
+gmake: *** [all] Error 2
+makefile:140: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"..\part1b.h", line 7: warning #1-D: last line of file ends without a newline
+"../main.c", line 6: error #167: too few arguments in function call
+"../main.c", line 7: warning #1-D: last line of file ends without a newline
+1 error detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+Building file: "../part3.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part3.d_raw"  "../part3.c"
+"../part3.c", line 23: warning #112-D: statement is unreachable
+Finished building: "../part3.c"
+ 
+Building file: "../part2.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part2.d_raw"  "../part2.c"
+"../part2.c", line 37: warning #112-D: statement is unreachable
+"../part2.c", line 55: warning #179-D: variable "j" was declared but never referenced
+Finished building: "../part2.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"..\part1b.h", line 7: warning #1-D: last line of file ends without a newline
+Finished building: "../main.c"
+ 
+Building file: "../part3.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part3.d_raw"  "../part3.c"
+"../part3.c", line 23: warning #112-D: statement is unreachable
+Finished building: "../part3.c"
+ 
+Building file: "../part2.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part2.d_raw"  "../part2.c"
+"../part2.c", line 37: warning #112-D: statement is unreachable
+"../part2.c", line 55: warning #179-D: variable "j" was declared but never referenced
+Finished building: "../part2.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+ 
+ undefined first referenced
+  symbol       in file     
+ 
+>> Compilation failure
+ --------- ----------------
+makefile:144: recipe for target 'lab_4.out' failed
+ part2     ./main.obj      
+ 
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "lab_4.out" not built
+gmake[1]: *** [lab_4.out] Error 1
+gmake: *** [all] Error 2
+makefile:140: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"..\part1b.h", line 7: warning #1-D: last line of file ends without a newline
+Finished building: "../main.c"
+ 
+Building file: "../part3.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part3.d_raw"  "../part3.c"
+"../part3.c", line 24: warning #112-D: statement is unreachable
+Finished building: "../part3.c"
+ 
+Building file: "../part2.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part2.d_raw"  "../part2.c"
+"../part2.c", line 38: warning #112-D: statement is unreachable
+"../part2.c", line 56: warning #179-D: variable "j" was declared but never referenced
+Finished building: "../part2.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+ 
+ undefined first referenced
+  symbol       in file     
+ --------- ----------------
+ part2     ./main.obj      
+ 
+ 
+>> Compilation failure
+makefile:144: recipe for target 'lab_4.out' failed
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "lab_4.out" not built
+gmake[1]: *** [lab_4.out] Error 1
+gmake: *** [all] Error 2
+makefile:140: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"..\part1b.h", line 7: warning #1-D: last line of file ends without a newline
+Finished building: "../main.c"
+ 
+Building file: "../part2.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part2.d_raw"  "../part2.c"
+"../part2.c", line 53: warning #179-D: variable "j" was declared but never referenced
+Finished building: "../part2.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+ 
+ undefined first referenced
+  symbol       in file     
+ --------- ----------------
+ 
+ part2     ./main.obj      
+>> Compilation failure
+makefile:144: recipe for target 'lab_4.out' failed
+ 
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "lab_4.out" not built
+gmake[1]: *** [lab_4.out] Error 1
+gmake: *** [all] Error 2
+makefile:140: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part1b.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part1b.d_raw"  "../part1b.c"
+Finished building: "../part1b.c"
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+ 
+ undefined first referenced
+  symbol       in file     
+ --------- ----------------
+ part2     ./main.obj      
+ 
+ 
+>> Compilation failure
+makefile:144: recipe for target 'lab_4.out' failed
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "lab_4.out" not built
+gmake[1]: *** [lab_4.out] Error 1
+gmake: *** [all] Error 2
+makefile:140: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "../part2.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part2.d_raw"  "../part2.c"
+"../part2.c", line 53: warning #179-D: variable "j" was declared but never referenced
+Finished building: "../part2.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part2.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part2.d_raw"  "../part2.c"
+"../part2.c", line 55: warning #179-D: variable "j" was declared but never referenced
+Finished building: "../part2.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "../part1b.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part1b.d_raw"  "../part1b.c"
+Finished building: "../part1b.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part1b.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part1b.d_raw"  "../part1b.c"
+Finished building: "../part1b.c"
+ 
+Building file: "../part2.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part2.d_raw"  "../part2.c"
+"../part2.c", line 55: warning #179-D: variable "j" was declared but never referenced
+Finished building: "../part2.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+gmake[1]: 'lab_4.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part2.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part2.d_raw"  "../part2.c"
+"../part2.c", line 55: warning #179-D: variable "j" was declared but never referenced
+Finished building: "../part2.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part2.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part2.d_raw"  "../part2.c"
+"../part2.c", line 55: warning #179-D: variable "j" was declared but never referenced
+Finished building: "../part2.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 8: warning #225-D: function "part_3" declared implicitly
+Finished building: "../main.c"
+ 
+Building file: "../part2.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part2.d_raw"  "../part2.c"
+"../part2.c", line 55: warning #179-D: variable "j" was declared but never referenced
+Finished building: "../part2.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part3.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part3.d_raw"  "../part3.c"
+Finished building: "../part3.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part4.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part4.d_raw"  "../part4.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part4.obj' failed
+"../part4.c", line 21: error #66: expected a ";"
+"../part4.c", line 40: warning #12-D: parsing restarts here after previous syntax error
+"../part4.c", line 41: warning #994-D: missing return statement at end of non-void function "part_4"
+"../part4.c", line 14: warning #179-D: variable "c" was declared but never referenced
+"../part4.c", line 58: warning #179-D: variable "j" was declared but never referenced
+1 error detected in the compilation of "../part4.c".
+gmake: *** [part4.obj] Error 1
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "../part3.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part3.d_raw"  "../part3.c"
+Finished building: "../part3.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part4.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part4.d_raw"  "../part4.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part4.obj' failed
+"../part4.c", line 21: error #20: identifier "c" is undefined
+"../part4.c", line 57: warning #179-D: variable "j" was declared but never referenced
+1 error detected in the compilation of "../part4.c".
+gmake: *** [part4.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part4.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part4.d_raw"  "../part4.c"
+"../part4.c", line 58: warning #179-D: variable "j" was declared but never referenced
+Finished building: "../part4.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+error #10056: symbol "cyBot_sendString" redefined: first defined in "./part2.obj"; redefined in "./part4.obj"
+error #10056: symbol "do_scan" redefined: first defined in "./part2.obj"; redefined in "./part4.obj"
+error #10056: symbol "send_scan" redefined: first defined in "./part2.obj"; redefined in "./part4.obj"
+error #10010: errors encountered during linking; "lab_4.out" not built
+ 
+gmake[1]: *** [lab_4.out] Error 1
+>> Compilation failure
+makefile:145: recipe for target 'lab_4.out' failed
+gmake: *** [all] Error 2
+makefile:141: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+error #10056: symbol "cyBot_sendString" redefined: first defined in "./part2.obj"; redefined in "./part4.obj"
+error #10056: symbol "do_scan" redefined: first defined in "./part2.obj"; redefined in "./part4.obj"
+error #10056: symbol "send_scan" redefined: first defined in "./part2.obj"; redefined in "./part4.obj"
+error #10010: errors encountered during linking; "lab_4.out" not built
+ 
+gmake[1]: *** [lab_4.out] Error 1
+>> Compilation failure
+makefile:145: recipe for target 'lab_4.out' failed
+gmake: *** [all] Error 2
+makefile:141: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "../part4.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part4.d_raw"  "../part4.c"
+"../part4.c", line 63: warning #179-D: variable "j" was declared but never referenced
+Finished building: "../part4.c"
+ 
+Building file: "../part2.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part2.d_raw"  "../part2.c"
+"../part2.c", line 60: warning #179-D: variable "j" was declared but never referenced
+Finished building: "../part2.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+error #10056: symbol "cyBot_sendString" redefined: first defined in "./part2.obj"; redefined in "./part4.obj"
+error #10056: symbol "do_scan" redefined: first defined in "./part2.obj"; redefined in "./part4.obj"
+error #10056: symbol "send_scan" redefined: first defined in "./part2.obj"; redefined in "./part4.obj"
+error #10010: errors encountered during linking; "lab_4.out" not built
+ 
+gmake[1]: *** [lab_4.out] Error 1
+>> Compilation failure
+makefile:145: recipe for target 'lab_4.out' failed
+gmake: *** [all] Error 2
+makefile:141: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part4.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part4.d_raw"  "../part4.c"
+Finished building: "../part4.c"
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "../part2.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part2.d_raw"  "../part2.c"
+"../part2.c", line 55: warning #179-D: variable "j" was declared but never referenced
+Finished building: "../part2.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part3.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part3.d_raw"  "../part3.c"
+Finished building: "../part3.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 9: warning #225-D: function "part_3" declared implicitly
+Finished building: "../main.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "../part3.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part3.d_raw"  "../part3.c"
+Finished building: "../part3.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part3.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part3.d_raw"  "../part3.c"
+"../part3.c", line 24: warning #112-D: statement is unreachable
+Finished building: "../part3.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "../part3.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part3.d_raw"  "../part3.c"
+Finished building: "../part3.c"
+ 
+Building file: "../part4.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part4.d_raw"  "../part4.c"
+Finished building: "../part4.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part5.obj' failed
+"..\handle_data.h", line 22: warning #1-D: last line of file ends without a newline
+"..\part5.h", line 20: warning #1-D: last line of file ends without a newline
+"../part5.c", line 95: error #148: declaration is incompatible with "void do_scan(float *)" (declared at line 16 of "..\part5.h")
+"../part5.c", line 112: error #148: declaration is incompatible with "void send_scan(float *)" (declared at line 17 of "..\part5.h")
+"../part5.c", line 114: warning #179-D: variable "j" was declared but never referenced
+"../part5.c", line 139: warning #1-D: last line of file ends without a newline
+2 errors detected in the compilation of "../part5.c".
+gmake: *** [part5.obj] Error 1
+Building file: "../part1b.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part1b.d_raw"  "../part1b.c"
+Finished building: "../part1b.c"
+ 
+Building file: "../handle_data.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="handle_data.d_raw"  "../handle_data.c"
+"..\handle_data.h", line 22: warning #1-D: last line of file ends without a newline
+"../handle_data.c", line 14: warning #552-D: variable "deg" was set but never used
+"../handle_data.c", line 15: warning #552-D: variable "pre" was set but never used
+"../handle_data.c", line 15: warning #552-D: variable "nxt" was set but never used
+"../handle_data.c", line 16: warning #179-D: variable "pre_dt" was declared but never referenced
+"../handle_data.c", line 16: warning #179-D: variable "nxt_dt" was declared but never referenced
+"../handle_data.c", line 82: warning #179-D: variable "deg_str" was declared but never referenced
+"../handle_data.c", line 82: warning #179-D: variable "line_str" was declared but never referenced
+Finished building: "../handle_data.c"
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"..\handle_data.h", line 22: warning #1-D: last line of file ends without a newline
+"..\part5.h", line 20: warning #1-D: last line of file ends without a newline
+Finished building: "../main.c"
+ 
+Building file: "../part4.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part4.d_raw"  "../part4.c"
+Finished building: "../part4.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part5.obj' failed
+"..\handle_data.h", line 22: warning #1-D: last line of file ends without a newline
+"../part5.c", line 83: warning #225-D: function "cyBot_sendString" declared implicitly
+"../part5.c", line 93: error #148: declaration is incompatible with "void do_scan_2(float *)" (declared at line 16 of "..\part5.h")
+"../part5.c", line 110: error #148: declaration is incompatible with "void send_scan_2(float *)" (declared at line 17 of "..\part5.h")
+"../part5.c", line 117: warning #225-D: function "cyBot_sendString" declared implicitly
+"../part5.c", line 112: warning #179-D: variable "j" was declared but never referenced
+2 errors detected in the compilation of "../part5.c".
+gmake: *** [part5.obj] Error 1
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"..\handle_data.h", line 22: warning #1-D: last line of file ends without a newline
+Finished building: "../main.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "../handle_data.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="handle_data.d_raw"  "../handle_data.c"
+"../handle_data.c", line 14: warning #552-D: variable "deg" was set but never used
+"../handle_data.c", line 15: warning #552-D: variable "pre" was set but never used
+"../handle_data.c", line 15: warning #552-D: variable "nxt" was set but never used
+"../handle_data.c", line 16: warning #179-D: variable "pre_dt" was declared but never referenced
+"../handle_data.c", line 16: warning #179-D: variable "nxt_dt" was declared but never referenced
+"../handle_data.c", line 82: warning #179-D: variable "deg_str" was declared but never referenced
+"../handle_data.c", line 82: warning #179-D: variable "line_str" was declared but never referenced
+Finished building: "../handle_data.c"
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+"../part5.c", line 83: warning #225-D: function "cyBot_sendString" declared implicitly
+"../part5.c", line 117: warning #225-D: function "cyBot_sendString" declared implicitly
+"../part5.c", line 112: warning #179-D: variable "j" was declared but never referenced
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+error #10056: symbol "sensor_data_array" redefined: first defined in "./handle_data.obj"; redefined in "./main.obj"
+error #10056: symbol "sensor_data_array" redefined: first defined in "./handle_data.obj"; redefined in "./part1b.obj"
+error #10056: symbol "sensor_data_array" redefined: first defined in "./handle_data.obj"; redefined in "./part5.obj"
+error #10010: errors encountered during linking; "lab_4.out" not built
+gmake[1]: *** [lab_4.out] Error 1
+ 
+gmake: *** [all] Error 2
+>> Compilation failure
+makefile:147: recipe for target 'lab_4.out' failed
+makefile:143: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+"../part5.c", line 123: warning #225-D: function "cyBot_sendString" declared implicitly
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+error #10056: symbol "sensor_data_array" redefined: first defined in "./handle_data.obj"; redefined in "./main.obj"
+error #10056: symbol "sensor_data_array" redefined: first defined in "./handle_data.obj"; redefined in "./part1b.obj"
+error #10056: symbol "sensor_data_array" redefined: first defined in "./handle_data.obj"; redefined in "./part5.obj"
+error #10010: errors encountered during linking; "lab_4.out" not built
+ 
+gmake[1]: *** [lab_4.out] Error 1
+>> Compilation failure
+makefile:147: recipe for target 'lab_4.out' failed
+gmake: *** [all] Error 2
+makefile:143: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+"../part5.c", line 26: warning #225-D: function "aprox_sizes_2" declared implicitly
+"../part5.c", line 122: warning #225-D: function "cyBot_sendString" declared implicitly
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+error #10056: symbol "sensor_data_array" redefined: first defined in "./handle_data.obj"; redefined in "./main.obj"
+error #10056: symbol "sensor_data_array" redefined: first defined in "./handle_data.obj"; redefined in "./part1b.obj"
+error #10056: symbol "sensor_data_array" redefined: first defined in "./handle_data.obj"; redefined in "./part5.obj"
+error #10056: symbol "aprox_sizes" redefined: first defined in "./handle_data.obj"; redefined in "./part5.obj"
+ 
+ undefined     first referenced
+  symbol           in file     
+ ---------     ----------------
+ 
+ aprox_sizes_2 ./part5.obj     
+>> Compilation failure
+makefile:147: recipe for target 'lab_4.out' failed
+ 
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "lab_4.out" not built
+gmake[1]: *** [lab_4.out] Error 1
+gmake: *** [all] Error 2
+makefile:143: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../handle_data.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="handle_data.d_raw"  "../handle_data.c"
+"../handle_data.c", line 13: warning #552-D: variable "deg" was set but never used
+"../handle_data.c", line 14: warning #552-D: variable "pre" was set but never used
+"../handle_data.c", line 14: warning #552-D: variable "nxt" was set but never used
+"../handle_data.c", line 15: warning #179-D: variable "pre_dt" was declared but never referenced
+"../handle_data.c", line 15: warning #179-D: variable "nxt_dt" was declared but never referenced
+"../handle_data.c", line 81: warning #179-D: variable "deg_str" was declared but never referenced
+"../handle_data.c", line 81: warning #179-D: variable "line_str" was declared but never referenced
+Finished building: "../handle_data.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+error #10056: symbol "sensor_data_array" redefined: first defined in "./main.obj"; redefined in "./part1b.obj"
+error #10056: symbol "sensor_data_array" redefined: first defined in "./main.obj"; redefined in "./part5.obj"
+error #10056: symbol "aprox_sizes" redefined: first defined in "./handle_data.obj"; redefined in "./part5.obj"
+ 
+ undefined     first referenced
+  symbol           in file     
+ 
+ ---------     ----------------
+>> Compilation failure
+makefile:147: recipe for target 'lab_4.out' failed
+ aprox_sizes_2 ./part5.obj     
+ 
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "lab_4.out" not built
+gmake[1]: *** [lab_4.out] Error 1
+gmake: *** [all] Error 2
+makefile:143: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "../handle_data.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="handle_data.d_raw"  "../handle_data.c"
+"../handle_data.c", line 9: warning #552-D: variable "deg" was set but never used
+"../handle_data.c", line 10: warning #552-D: variable "pre" was set but never used
+"../handle_data.c", line 10: warning #552-D: variable "nxt" was set but never used
+"../handle_data.c", line 11: warning #179-D: variable "pre_dt" was declared but never referenced
+"../handle_data.c", line 11: warning #179-D: variable "nxt_dt" was declared but never referenced
+"../handle_data.c", line 77: warning #179-D: variable "deg_str" was declared but never referenced
+"../handle_data.c", line 77: warning #179-D: variable "line_str" was declared but never referenced
+Finished building: "../handle_data.c"
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+"../part5.c", line 115: warning #225-D: function "cyBot_sendString" declared implicitly
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part5.obj' failed
+"../part5.c", line 18: error #20: identifier "c" is undefined
+"../part5.c", line 134: warning #225-D: function "cyBot_sendString" declared implicitly
+1 error detected in the compilation of "../part5.c".
+gmake: *** [part5.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+"../part5.c", line 138: warning #225-D: function "cyBot_sendString" declared implicitly
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+gmake[1]: 'lab_4.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+gmake[1]: 'lab_4.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+"../part5.c", line 15: warning #179-D: variable "c" was declared but never referenced
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+error #10056: symbol "sensor_data_array" redefined: first defined in "./part1b.obj"; redefined in "./part5.obj"
+error #10010: errors encountered during linking; "lab_4.out" not built
+ 
+>> Compilation failure
+gmake[1]: *** [lab_4.out] Error 1
+makefile:147: recipe for target 'lab_4.out' failed
+gmake: *** [all] Error 2
+makefile:143: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part5.obj' failed
+"../part5.c", line 23: error #20: identifier "sensor_data_array" is undefined
+"../part5.c", line 15: warning #179-D: variable "c" was declared but never referenced
+1 error detected in the compilation of "../part5.c".
+gmake: *** [part5.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+"../part5.c", line 15: warning #179-D: variable "c" was declared but never referenced
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+error #10056: symbol "sensor_data_array" redefined: first defined in "./main.obj"; redefined in "./part1b.obj"
+error #10056: symbol "sensor_data_array" redefined: first defined in "./main.obj"; redefined in "./part5.obj"
+ 
+error #10010: errors encountered during linking; "lab_4.out" not built
+>> Compilation failure
+makefile:147: recipe for target 'lab_4.out' failed
+gmake[1]: *** [lab_4.out] Error 1
+gmake: *** [all] Error 2
+makefile:143: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part1b.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part1b.d_raw"  "../part1b.c"
+Finished building: "../part1b.c"
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+"../part5.c", line 15: warning #179-D: variable "c" was declared but never referenced
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+error #10056: symbol "sensor_data_array" redefined: first defined in "./main.obj"; redefined in "./part1b.obj"
+error #10056: symbol "sensor_data_array" redefined: first defined in "./main.obj"; redefined in "./part5.obj"
+ 
+error #10010: errors encountered during linking; "lab_4.out" not built
+>> Compilation failure
+makefile:147: recipe for target 'lab_4.out' failed
+gmake[1]: *** [lab_4.out] Error 1
+gmake: *** [all] Error 2
+makefile:143: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part1b.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part1b.d_raw"  "../part1b.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part1b.obj' failed
+"../part1b.c", line 15: error #20: identifier "sensor_data_array" is undefined
+1 error detected in the compilation of "../part1b.c".
+gmake: *** [part1b.obj] Error 1
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part5.obj' failed
+"../part5.c", line 23: error #20: identifier "sensor_data_array" is undefined
+"../part5.c", line 15: warning #179-D: variable "c" was declared but never referenced
+1 error detected in the compilation of "../part5.c".
+gmake: *** [part5.obj] Error 1
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part1b.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part1b.d_raw"  "../part1b.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part1b.obj' failed
+"../part1b.c", line 15: error #20: identifier "sensor_data_array" is undefined
+1 error detected in the compilation of "../part1b.c".
+gmake: *** [part1b.obj] Error 1
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part5.obj' failed
+"../part5.c", line 23: error #20: identifier "sensor_data_array" is undefined
+"../part5.c", line 15: warning #179-D: variable "c" was declared but never referenced
+1 error detected in the compilation of "../part5.c".
+gmake: *** [part5.obj] Error 1
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part1b.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part1b.d_raw"  "../part1b.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part1b.obj' failed
+"../part1b.c", line 15: error #20: identifier "sensor_data_array" is undefined
+1 error detected in the compilation of "../part1b.c".
+gmake: *** [part1b.obj] Error 1
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part5.obj' failed
+"..\part5.h", line 14: warning #233-D: declaration is not visible outside of function
+"..\part5.h", line 15: warning #233-D: declaration is not visible outside of function
+"..\part5.h", line 16: warning #233-D: declaration is not visible outside of function
+"../part5.c", line 15: error #71: incomplete type is not allowed
+"../part5.c", line 19: error #71: incomplete type is not allowed
+"../part5.c", line 24: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 27: warning #225-D: function "clean_data" declared implicitly
+"../part5.c", line 29: warning #169-D: argument of type "struct SensorData *" is incompatible with parameter of type "struct SensorData *"
+"../part5.c", line 14: warning #179-D: variable "c" was declared but never referenced
+"../part5.c", line 64: warning #233-D: declaration is not visible outside of function
+"../part5.c", line 64: error #148: declaration is incompatible with "void aprox_sizes_2(struct SensorData *, int)" (declared at line 14 of "..\part5.h")
+"../part5.c", line 69: error #71: incomplete type is not allowed
+"../part5.c", line 77: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 77: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 80: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 80: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 81: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 81: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 83: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 83: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 91: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 91: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 92: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 92: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 93: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 93: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 100: error #71: incomplete type is not allowed
+"../part5.c", line 105: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 108: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 124: warning #233-D: declaration is not visible outside of function
+"../part5.c", line 124: error #148: declaration is incompatible with "void do_scan_2(struct SensorData *)" (declared at line 15 of "..\part5.h")
+"../part5.c", line 132: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 133: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 141: warning #233-D: declaration is not visible outside of function
+"../part5.c", line 141: error #148: declaration is incompatible with "void send_scan_2(struct SensorData *)" (declared at line 16 of "..\part5.h")
+"../part5.c", line 152: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 152: error #906: expression must be a pointer to a complete object type
+28 errors detected in the compilation of "../part5.c".
+gmake: *** [part5.obj] Error 1
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"..\part5.h", line 14: warning #233-D: declaration is not visible outside of function
+"..\part5.h", line 15: warning #233-D: declaration is not visible outside of function
+"..\part5.h", line 16: warning #233-D: declaration is not visible outside of function
+Finished building: "../main.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part1b.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part1b.d_raw"  "../part1b.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part1b.obj' failed
+"../part1b.c", line 15: error #20: identifier "sensor_data_array" is undefined
+1 error detected in the compilation of "../part1b.c".
+gmake: *** [part1b.obj] Error 1
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part5.obj' failed
+"..\part5.h", line 13: warning #233-D: declaration is not visible outside of function
+"..\part5.h", line 14: warning #233-D: declaration is not visible outside of function
+"..\part5.h", line 15: warning #233-D: declaration is not visible outside of function
+"../part5.c", line 16: error #71: incomplete type is not allowed
+"../part5.c", line 20: error #71: incomplete type is not allowed
+"../part5.c", line 25: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 28: warning #225-D: function "clean_data" declared implicitly
+"../part5.c", line 30: warning #169-D: argument of type "struct SensorData *" is incompatible with parameter of type "struct SensorData *"
+"../part5.c", line 15: warning #179-D: variable "c" was declared but never referenced
+"../part5.c", line 65: warning #233-D: declaration is not visible outside of function
+"../part5.c", line 65: error #148: declaration is incompatible with "void aprox_sizes_2(struct SensorData *, int)" (declared at line 13 of "..\part5.h")
+"../part5.c", line 70: error #71: incomplete type is not allowed
+"../part5.c", line 78: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 78: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 81: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 81: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 82: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 82: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 84: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 84: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 92: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 92: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 93: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 93: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 94: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 94: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 101: error #71: incomplete type is not allowed
+"../part5.c", line 106: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 109: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 125: warning #233-D: declaration is not visible outside of function
+"../part5.c", line 125: error #148: declaration is incompatible with "void do_scan_2(struct SensorData *)" (declared at line 14 of "..\part5.h")
+"../part5.c", line 133: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 134: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 142: warning #233-D: declaration is not visible outside of function
+"../part5.c", line 142: error #148: declaration is incompatible with "void send_scan_2(struct SensorData *)" (declared at line 15 of "..\part5.h")
+"../part5.c", line 153: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 153: error #906: expression must be a pointer to a complete object type
+28 errors detected in the compilation of "../part5.c".
+gmake: *** [part5.obj] Error 1
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"..\part5.h", line 13: warning #233-D: declaration is not visible outside of function
+"..\part5.h", line 14: warning #233-D: declaration is not visible outside of function
+"..\part5.h", line 15: warning #233-D: declaration is not visible outside of function
+Finished building: "../main.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part1b.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part1b.d_raw"  "../part1b.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part1b.obj' failed
+"../part1b.c", line 15: error #20: identifier "sensor_data_array" is undefined
+1 error detected in the compilation of "../part1b.c".
+gmake: *** [part1b.obj] Error 1
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part5.obj' failed
+"..\part5.h", line 13: warning #233-D: declaration is not visible outside of function
+"..\part5.h", line 14: warning #233-D: declaration is not visible outside of function
+"..\part5.h", line 15: warning #233-D: declaration is not visible outside of function
+"../part5.c", line 22: error #71: incomplete type is not allowed
+"../part5.c", line 26: error #71: incomplete type is not allowed
+"../part5.c", line 31: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 34: warning #225-D: function "clean_data" declared implicitly
+"../part5.c", line 36: warning #169-D: argument of type "struct SensorData *" is incompatible with parameter of type "struct SensorData *"
+"../part5.c", line 21: warning #179-D: variable "c" was declared but never referenced
+"../part5.c", line 71: warning #233-D: declaration is not visible outside of function
+"../part5.c", line 71: error #148: declaration is incompatible with "void aprox_sizes_2(struct SensorData *, int)" (declared at line 13 of "..\part5.h")
+"../part5.c", line 76: error #71: incomplete type is not allowed
+"../part5.c", line 84: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 84: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 87: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 87: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 88: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 88: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 90: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 90: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 98: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 98: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 99: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 99: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 100: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 100: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 107: error #71: incomplete type is not allowed
+"../part5.c", line 112: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 115: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 131: warning #233-D: declaration is not visible outside of function
+"../part5.c", line 131: error #148: declaration is incompatible with "void do_scan_2(struct SensorData *)" (declared at line 14 of "..\part5.h")
+"../part5.c", line 139: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 140: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 148: warning #233-D: declaration is not visible outside of function
+"../part5.c", line 148: error #148: declaration is incompatible with "void send_scan_2(struct SensorData *)" (declared at line 15 of "..\part5.h")
+"../part5.c", line 159: error #906: expression must be a pointer to a complete object type
+"../part5.c", line 159: error #906: expression must be a pointer to a complete object type
+28 errors detected in the compilation of "../part5.c".
+gmake: *** [part5.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part1b.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part1b.d_raw"  "../part1b.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part1b.obj' failed
+"../part1b.c", line 15: error #20: identifier "sensor_data_array" is undefined
+1 error detected in the compilation of "../part1b.c".
+gmake: *** [part1b.obj] Error 1
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part5.obj' failed
+"..\part5.h", line 13: warning #233-D: declaration is not visible outside of function
+"..\part5.h", line 14: warning #233-D: declaration is not visible outside of function
+"..\part5.h", line 15: warning #233-D: declaration is not visible outside of function
+"../part5.c", line 37: warning #169-D: argument of type "struct SensorData *" is incompatible with parameter of type "struct SensorData *"
+"../part5.c", line 22: warning #179-D: variable "c" was declared but never referenced
+"../part5.c", line 72: error #148: declaration is incompatible with "void aprox_sizes_2(struct SensorData *, int)" (declared at line 13 of "..\part5.h")
+"../part5.c", line 132: error #148: declaration is incompatible with "void do_scan_2(struct SensorData *)" (declared at line 14 of "..\part5.h")
+"../part5.c", line 149: error #148: declaration is incompatible with "void send_scan_2(struct SensorData *)" (declared at line 15 of "..\part5.h")
+3 errors detected in the compilation of "../part5.c".
+gmake: *** [part5.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part1b.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part1b.d_raw"  "../part1b.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part1b.obj' failed
+"../part1b.c", line 15: error #20: identifier "sensor_data_array" is undefined
+1 error detected in the compilation of "../part1b.c".
+gmake: *** [part1b.obj] Error 1
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+"../part5.c", line 22: warning #179-D: variable "c" was declared but never referenced
+Finished building: "../part5.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part1b.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part1b.d_raw"  "../part1b.c"
+Finished building: "../part1b.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+error #10056: symbol "sensor_data_array" redefined: first defined in "./main.obj"; redefined in "./part1b.obj"
+error #10056: symbol "sensor_data_array" redefined: first defined in "./main.obj"; redefined in "./part5.obj"
+ 
+error #10010: errors encountered during linking; "lab_4.out" not built
+>> Compilation failure
+makefile:147: recipe for target 'lab_4.out' failed
+gmake[1]: *** [lab_4.out] Error 1
+gmake: *** [all] Error 2
+makefile:143: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part1b.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part1b.d_raw"  "../part1b.c"
+Finished building: "../part1b.c"
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+"../part5.c", line 22: warning #179-D: variable "c" was declared but never referenced
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+gmake[1]: 'lab_4.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+gmake[1]: 'lab_4.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part5.obj' failed
+"../part5.c", line 37: warning #225-D: function "load_scan" declared implicitly
+"../part5.c", line 55: error #29: expected an expression
+"../part5.c", line 56: error #66: expected a ";"
+"../part5.c", line 134: warning #161-D: declaration is incompatible with previous "load_scan" (declared at line 37)
+"../part5.c", line 142: error #20: identifier "sensor_data_ptr" is undefined
+3 errors detected in the compilation of "../part5.c".
+gmake: *** [part5.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part5.obj' failed
+"../part5.c", line 55: error #29: expected an expression
+"../part5.c", line 56: error #66: expected a ";"
+"../part5.c", line 142: error #20: identifier "sensor_data_ptr" is undefined
+3 errors detected in the compilation of "../part5.c".
+gmake: *** [part5.obj] Error 1
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part5.obj' failed
+"../part5.c", line 142: error #20: identifier "sensor_data_ptr" is undefined
+1 error detected in the compilation of "../part5.c".
+gmake: *** [part5.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+"../part5.c", line 25: warning #179-D: variable "i" was declared but never referenced
+"../part5.c", line 28: warning #179-D: variable "mid" was declared but never referenced
+"../part5.c", line 28: warning #179-D: variable "width" was declared but never referenced
+"../part5.c", line 29: warning #179-D: variable "section" was declared but never referenced
+"../part5.c", line 30: warning #179-D: variable "str" was declared but never referenced
+"../part5.c", line 129: warning #225-D: function "get_smallest" declared implicitly
+"../part5.c", line 140: warning #183-D: argument is incompatible with corresponding format string conversion
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+ 
+ undefined    first referenced
+ 
+>> Compilation failure
+  symbol          in file     
+makefile:147: recipe for target 'lab_4.out' failed
+ ---------    ----------------
+ get_smallest ./part5.obj     
+ 
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "lab_4.out" not built
+gmake[1]: *** [lab_4.out] Error 1
+gmake: *** [all] Error 2
+makefile:143: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+"../part5.c", line 135: warning #183-D: argument is incompatible with corresponding format string conversion
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+"../part5.c", line 135: warning #183-D: argument is incompatible with corresponding format string conversion
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'part5.obj' failed
+"../part5.c", line 57: error #20: identifier "section_count" is undefined
+"../part5.c", line 58: error #20: identifier "section" is undefined
+"../part5.c", line 26: warning #552-D: variable "smallest_index" was set but never used
+2 errors detected in the compilation of "../part5.c".
+gmake: *** [part5.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+gmake[1]: 'lab_4.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_4 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../part5.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_4" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="part5.d_raw"  "../part5.c"
+Finished building: "../part5.c"
+ 
+Building target: "lab_4.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_4.map" --heap_size=1028 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_4_linkInfo.xml" --rom_model -o "lab_4.out" "./Timer.obj" "./handle_data.obj" "./lcd.obj" "./main.obj" "./part1b.obj" "./part2.obj" "./part3.obj" "./part4.obj" "./part5.obj" "./tm4c123gh6pm_startup_ccs.obj" "../libcybotScan.lib" "../libcybotUART.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib"  
+<Linking>
+Finished building target: "lab_4.out"
+ 
+
+**** Build Finished ****

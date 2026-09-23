@@ -1,8 +1,10 @@
 #include "stdio.h"
+
+#include "part1b.h"
 #include "sensor-data.h"
 
 
-int main() {
+int part_1b() {
 	// Define interator variable
 	int i;
 
