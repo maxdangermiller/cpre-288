@@ -15,14 +15,14 @@ int part_3() {
 	cyBOT_init_Scan(0b111);
 
 	// COMMENT OUT WHEN DONE CALIBRATING USING LCD
-	// cyBOT_SERVO_cal();
+	cyBOT_SERVO_cal();
 
 	// End the program here if we're still calibrating
 	// return 0;
 
 	// Values for CyBot #1
-	right_calibration_value = 232750;
-	left_calibration_value = 1225000;
+	// right_calibration_value = 232750;
+	// left_calibration_value = 1225000;
 	
 	// Values for CyBot #26
 	right_calibration_value = 311500;

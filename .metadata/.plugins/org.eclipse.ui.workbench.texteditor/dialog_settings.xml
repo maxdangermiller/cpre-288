@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="send_scan"/>
+		<item key="selection" value="THRESHOLD"/>
 		<list key="findhistory">
+			<item value="THRESHOLD"/>
+			<item value="object"/>
 			<item value="send_scan"/>
 			<item value="macro"/>
 		</list>
