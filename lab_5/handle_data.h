@@ -11,7 +11,7 @@
 #include <math.h>
 
 
-#define JUMP_THRESHOLD 50
+#define JUMP_THRESHOLD 25
 #define MAX_SECTIONS 10
 #define MAX_OBJECTS 10
 

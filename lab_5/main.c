@@ -17,24 +17,26 @@ int main(void) {
 	oi_t *cyBot = oi_alloc();
 
     oi_init(cyBot);
-    oi_setMotorCalibration(1.0, 1.0);
+    // oi_setMotorCalibration(1.0, 1.0);
 
+	
 	// rot_calibrate(cyBot);
-
+	
 	cyBot_uart_init();
-
+	
 	cyBOT_init_Scan(0b111);
+
 	// Values for CyBot #1
 	// right_calibration_value = 232750;
 	// left_calibration_value = 1225000;
 	
 	// CyBot #24
-    // right_calibration_value = 253750;
-    // left_calibration_value = 1235500;
+    right_calibration_value = 253750;
+    left_calibration_value = 1235500;
 
 	// Values for CyBot #26
-	right_calibration_value = 311500;
-	left_calibration_value = 1309000;
+	// right_calibration_value = 311500;
+	// left_calibration_value = 1309000;
 
 	oi_setWheels(0, 0);
 

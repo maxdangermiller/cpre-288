@@ -19,7 +19,7 @@
 #define FINE_THRESHOLD_DIS 50       // mm
 #define FINE_THRESHOLD_ANG 25       // degrees
 #define PRECISION 0.5
-#define Kp 0.01
+#define Kp 0.04
 
 
 // Store current position of the CyBot
