@@ -21,28 +21,8 @@ typedef struct Pos {
 
 
 /**
- * @name Drive to Point
- * @brief Moves the CyBot to Absolute coordinates
- * @param cyBot
- * @param targetX x-coordinate (mm)
- * @param targetY y-coordinate (mm)
- */
-void driveToPoint(oi_t *cyBot, double targetX, double targetY);
-
-
-/**
-* @name Rotate Relative
-* @brief Rotates robot relative to current heading
-* @param cyBot
-* @param degrees positive=CCW, negative=CW
-*/
-void rotateDegrees(oi_t *cyBot, double degrees);
-
-
-/**
  * @name Move Absolute
  * @brief Moves the CyBot to Absolute coordinates
- * @param cyBot
  * @param x x-coordinate (mm)
  * @param y y-coordinate (mm)
  * @param do_avoid true/false
@@ -56,6 +36,14 @@ void move_abs(oi_t *cyBot, double x, double y, int do_avoid);
  * @param target_deg Target Rotation Degrees
  */
 void turn_abs(oi_t *cyBot, double target_deg);
+
+
+/**
+ * @name Turn to Relitive Angle
+ * @param cyBot
+ * @param deg Target rotation change
+ */
+void turn_rel(oi_t *cyBot, double deg);
 
 
 /**

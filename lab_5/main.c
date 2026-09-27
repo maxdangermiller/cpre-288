@@ -14,33 +14,37 @@
 
 static SensorData_t sensor_data_ptr[SCAN_STEPS];
 static ObjectInfo_t objects[MAX_OBJECTS];
+static oi_t *cyBot;
 static char str[50];
 
-Pos_t target_pos;
-
-void map(oi_t *cyBot);
-void get_pos(oi_t *cyBot);
-void return_to_home(oi_t *cyBot);
+void map();
+void get_pos();
+void return_to_home();
 
 
 
 int main(void) {
-	oi_t *cyBot = oi_alloc();
+	timer_init();
+	cyBot_uart_init();
+
+	cyBot = oi_alloc();
     oi_init(cyBot);
 
-	cyBot_uart_init();
 
 	sprintf(str, "\r\n\r\nCprE288 Lab 5 - Created by Max Miller\r\n\r\n\r\n");
 	cyBot_sendString(str);
 
 
-	cyBOT_init_Scan(0b011);
+	cyBOT_init_Scan(0b111);
 
 
     // oi_setMotorCalibration(1.0, 1.0);
 	// rot_calibrate(cyBot);
 	
-	
+	// Stuff for servo calibration
+	// lcd_init();
+	// cyBOT_SERVO_cal();
+
 
 	// Values for CyBot #1
 	// right_calibration_value = 232750;
@@ -50,9 +54,13 @@ int main(void) {
     // right_calibration_value = 253750;
     // left_calibration_value = 1235500;
 
+	// Values for CyBot #25
+    right_calibration_value = 285250;
+    left_calibration_value = 1246000;
+
 	// Values for CyBot #26
-	right_calibration_value = 311500;
-	left_calibration_value = 1309000;
+	// right_calibration_value = 311500;
+	// left_calibration_value = 1309000;
 
 
     // Stop it if it was moving!
@@ -60,9 +68,6 @@ int main(void) {
 	
 	char cmd = 0;
 	int running = true;
-
-	target_pos.x = 0;
-	target_pos.y = 0;
 	
 	/*
 	UART COMMANDS:
@@ -92,7 +97,7 @@ int main(void) {
 			
 			// Forward
 			case 'w':
-				move_forward(cyBot, 500);
+				move_forward(cyBot, 250);
 				break;
 			
 			// Left
@@ -102,7 +107,7 @@ int main(void) {
 
 			// running
 			case 's':
-				move_backward(cyBot, 500);
+				move_backward(cyBot, 250);
 				break;
 			
 			// Right
@@ -141,8 +146,8 @@ int main(void) {
  * @name Map
  * @brief Maps objects and points to the smallest one
  */
-void map(oi_t *cyBot) {
-	turn_abs(cyBot, 0);
+void map() {
+	// turn_abs(cyBot, 0.0);
 	do_scan(sensor_data_ptr);
 	// load_scan(sensor_data_ptr, SCAN_STEPS);
 
@@ -166,7 +171,7 @@ void map(oi_t *cyBot) {
 	sprintf(str, "Smallest Object is #%d\r\n", objects[smallest_index].num);
 	cyBot_sendString(str);
 
-	turn_abs(cyBot, objects[smallest_index].mp - 90.0);
+	turn_rel(cyBot, (double)objects[smallest_index].mp - 90.0);
 }
 
 
@@ -174,11 +179,8 @@ void map(oi_t *cyBot) {
  * @name Get Pos
  * @brief Get position and send it over UART
  */
-void get_pos(oi_t *cyBot) {
-	Pos_t pos = getPosition();
-
-	sprintf(str, "(%.2lf, %.2lf) and is rotated at %.1lf\r\n", pos.x, pos.y, pos.a);
-	cyBot_sendString(str);
+void get_pos() {
+	// TODO: Unimplemented
 }
 
 
@@ -186,9 +188,6 @@ void get_pos(oi_t *cyBot) {
  * @name Return to Home
  * @brief Go back to the origin
  */
-void return_to_home(oi_t *cyBot) {
-	driveToPoint(cyBot, 0.0, 0.0);
-	// Pos_t pos = getPosition();
-	// move_abs(cyBot, 0.0, 0.0, true);
-	// turn_abs(cyBot, pos.a);
+void return_to_home() {
+	// TODO: Unimplemented
 }

@@ -16,266 +16,25 @@
 
 #define FAST_SPEED 150
 #define FINE_SPEED 20
+#define FINE_THRESHOLD_DIS 50       // mm
+#define FINE_THRESHOLD_ANG 25       // degrees
 #define PRECISION 0.5
+#define Kp 0.04
 
-// New position handling
-#define Kp 0.04	
-#define ROT_KP 2.0 		// mm/s per degree, used in rotateDegrees
-#define TURN_KP 300.0 	// mm/s per radian, used in driveToPoint
-#define Kpp 0.8
-#define Kph 60.0
-// #define Kpe 2.0
-
-#define TICKS_TO_MM ((72.0 * M_PI) / 508.8)
-#define TRACK_WIDTH 235.0
-
-#define DEG_TO_RAD M_PI / 180.0
-#define RAD_TO_DEG 180.0 / M_PI
-
-#define POS_PREC 4.0		// Position Precision in mm
-#define ROT_PREC 1.0 		// Rotation Precision degrees
-
-#define NOM_SPEED 200.0		// Nominal Speed in mm/s
-
-#define MAX_TURN 400.0 		// mm/s
-#define MIN_ROT_SPEED 20 	// mm/s
+#define POS_ACCEL 20
 
 
 // Store current position of the CyBot
 static double pos_x = 0.0;          // mm
 static double pos_y = 0.0;          // mm
 static double pos_deg = 0.0;        // degrees
-static double pos_rad = 0.0;		// radians
-
-// static Pos_t target_pos;
 
 static char str[80];
-
-
-double prevLeftTicks = 0.0;
-double prevRightTicks = 0.0;
-
-
-/**
- * @brief Clamp a double value from min to max
- * 
- * @param value 
- * @param min 
- * @param max 
- * @return clamped double 
- */
-double clamp(double value, double min, double max) {
-    if(value < min) return min;
-    if(value > max) return max;
-    return value;
-}
-
-
-/**
- * @name Update Odometry
- * @brief Update the current position and angle global variables 
- * 		  given the information from the encoders
- * 
- * @param leftTicks from the cyBot
- * @param rightTicks from the cyBot
- */
-void updateOdometry(oi_t *cyBot) {
-    double deltaLeftTicks  = cyBot->leftEncoderCount  - prevLeftTicks;
-    double deltaRightTicks = cyBot->rightEncoderCount - prevRightTicks;
-
-    double dL = deltaLeftTicks  * TICKS_TO_MM;
-    double dR = deltaRightTicks * TICKS_TO_MM;
-
-    double dTheta = (dL - dR) / TRACK_WIDTH;
-    double dCenter = (dL + dR) / 2.0;
-
-    pos_x += dCenter * cos(pos_rad + dTheta / 2.0);
-    pos_y += dCenter * sin(pos_rad + dTheta / 2.0);
-    pos_rad += dTheta;
-
-	while(pos_rad > M_PI) {
-		pos_rad -= 2.0 * M_PI;
-	}
-	
-	while(pos_rad < -M_PI) {
-		pos_rad += 2.0 * M_PI;
-	}
-
-	pos_deg += pos_rad * RAD_TO_DEG;
-
-    prevLeftTicks  = cyBot->leftEncoderCount;
-    prevRightTicks = cyBot->rightEncoderCount;
-}
-
-
-/**
- * @name Drive To Absolute Point
- * @brief Drive to a point with error correction
- * 
- * @param cyBot 
- * @param targetX x-coordinate (mm)
- * @param targetY y-coordinate (mm)
- */
-void driveToPoint(oi_t *cyBot, double targetX, double targetY) {
-	// target_pos.x = targetX;
-	// target_pos.y = targetY;
-	oi_update(cyBot);
-	prevLeftTicks = cyBot->leftEncoderCount;
-	prevRightTicks = cyBot->rightEncoderCount;
-
-	double dx, dy, dis, targetHeading, headingError, forward, turn;
-	double leftVel, rightVel;
-
-    while(true) {
-        // Update Sensors
-		oi_update(cyBot);
-
-		// Update the position and rotation
-        updateOdometry(cyBot);
-
-
-        dx = targetX - pos_x;
-        dy = targetY - pos_y;
-
-        dis = sqrt(dx * dx + dy * dy);
-
-        if(dis < POS_PREC) // within 10 mm
-            break;
-
-        targetHeading = atan2(dy, dx);
-
-        sprintf(str, "Current position: (%.2lf mm, %.2lf mm, %.2lf deg)\t", pos_x, pos_y, pos_deg);
-        cyBot_sendString(str);
-
-        sprintf(str, "target: (%.2lf mm, %.2lf mm, %.2lf deg)\t", targetX, targetY, targetHeading);
-        cyBot_sendString(str);
-
-		
-        headingError = targetHeading - pos_rad;
-		
-        while(headingError > M_PI) {
-			headingError -= 2.0 * M_PI;
-		}
-		
-        while(headingError < -M_PI) {
-			headingError += 2.0 * M_PI;
-		}
-		
-		
-		// Slow down if not facing target
-		forward = Kpp * dis * cos(headingError);
-		
-		// Slow down near target
-		if (dis < 200.0) {
-			forward *= dis / 100.0;
-		}
-		
-		// Prevent driving hard while facing wrong way
-		forward *= cos(headingError);
-		
-		if (dis > POS_PREC && fabs(forward) < 30) {
-            forward = (forward >= 0) ? 30 : -30;
-        }
-
-		turn = clamp(Kph * headingError, -NOM_SPEED, NOM_SPEED);
-		
-        // Wheel speed matching
-		/*
-        double leftSpeed = leftTicks - prevLeftTicks;			// Left Speed is based off of the delta between the previous and current ticks
-        double rightSpeed = rightTicks - prevRightTicks;		// Right Speed is based off of the delta between the previous and current ticks
-		
-        double encoderError = leftSpeed - rightSpeed;			// Encoder Error is the delta between the two encoders
-        double encoderCorrection = Kpe * encoderError;			// Calculate encoder correction
-		
-        double lSpeed = forward - turn - encoderCorrection;		// Calculate left speed
-        double rSpeed = forward + turn + encoderCorrection;		// Calculate right speed
-		
-        lSpeed = clamp(lSpeed, -NOM_SPEED, NOM_SPEED);
-        rSpeed = clamp(rSpeed, -NOM_SPEED, NOM_SPEED);
-		*/
-	
-		leftVel = (int)round(forward - turn);
-		rightVel = (int)round(forward + turn);
-
-		clamp(leftVel, -NOM_SPEED, NOM_SPEED);
-		clamp(rightVel, -NOM_SPEED, NOM_SPEED);
-
-		sprintf(str, "Raw Encoder Data: (left/right) = (%d, %d)\t", cyBot->leftEncoderCount, cyBot->rightEncoderCount);
-		cyBot_sendString(str);
-
-		sprintf(str, "Velocities: (left/right) = (%.2lf, %.2lf)\r\n", leftVel, rightVel);
-		cyBot_sendString(str);
-
-		oi_setWheels(leftVel, rightVel);
-    }
-
-	oi_setWheels(0,0);
-
-}
-
-
-/**
-* @name Rotate Relative
-* @brief Rotates robot relative to current heading
-* @param cyBot
-* @param degrees positive=CCW, negative=CW
-*/
-void rotateDegrees(oi_t *cyBot, double degrees) {
-
-    double targetDeg = pos_deg + degrees;
-
-    while (targetDeg >= 180.0)
-        targetDeg -= 360.0;
-
-    while (targetDeg < -180.0)
-        targetDeg += 360.0;
-
-    while (1) {
-
-        oi_update(cyBot);
-
-        updateOdometry(cyBot);
-
-
-        double error = targetDeg - pos_deg;
-
-        while (error > 180.0)
-            error -= 360.0;
-
-        while (error < -180.0)
-            error += 360.0;
-
-        if (fabs(error) < ROT_PREC)
-            break;
-
-        double turnVel = ROT_KP * error;
-
-        if (fabs(turnVel) < MIN_ROT_SPEED) {
-            if (turnVel >= 0)
-                turnVel = MIN_ROT_SPEED;
-            else
-                turnVel = -MIN_ROT_SPEED;
-        }
-
-        turnVel = clamp(
-            turnVel,
-            -MAX_TURN,
-             MAX_TURN);
-
-        int leftVel  = (int)round(-turnVel);
-        int rightVel = (int)round( turnVel);
-
-        oi_setWheels(leftVel, rightVel);
-    }
-
-    oi_setWheels(0, 0);
-}
 
 
 /**
  * @name Move Absolute
  * @brief Moves the CyBot to Absolute coordinates
- * @param cyBot
  * @param x x-coordinate (mm)
  * @param y y-coordinate (mm)
  * @param do_avoid true/false
@@ -285,15 +44,11 @@ void move_abs(oi_t *cyBot, double x, double y, int do_avoid) {
 	// Then turn to that angle
 	// Then go the correct distance to get there
 
-	// Update where our target is
-	// target_pos.x = x;
-	// target_pos.y = y;
-
     sprintf(str, "\r\nCurrent position: (%.2lf, %.2lf); target: (%.2lf, %.2lf)\r\n", pos_x, pos_y, x, y);
     cyBot_sendString(str);
 	
 	double rad = atan2(y - pos_y, x - pos_x);   // Angle to get there in radians
-	double deg = rad * RAD_TO_DEG;	        	// Angle to get there in degrees
+	double deg = rad * 180.0 / M_PI;	        // Angle to get there in degrees
 
 	sprintf(str, "Going to angle %.2lf rad or %.2lf deg\r\n", rad, deg);
 	cyBot_sendString(str);
@@ -307,6 +62,8 @@ void move_abs(oi_t *cyBot, double x, double y, int do_avoid) {
 	double change_x;						// Stores the change in the x direction in each loop
 	double change_y;						// Stores the change in the y direction in each loop
 
+    double cur_speed = 30;
+
 	double error;
 
 	int slow = 0;
@@ -315,25 +72,31 @@ void move_abs(oi_t *cyBot, double x, double y, int do_avoid) {
 	cyBot_sendString(str);
 
 
+
 	// If the CyBot needs to rotate to go to that position, go ahead and rotate it
 	if (fabs(pos_deg - deg) > PRECISION) {
 	    cyBot_sendString("\r\nTurning!\r\n\r\n");
 		turn_abs(cyBot, deg);
 		deg = pos_deg;
-		rad = pos_rad;
 	}
 
-	sprintf(str, "Going to angle %.2lf=%.2lf rad or %.2lf deg\r\n", rad, pos_deg * DEG_TO_RAD, pos_deg);
+	sprintf(str, "Going to angle %.2lf=%.2lf rad or %.2lf deg\r\n", rad, pos_deg / M_PI * 180, pos_deg);
 	cyBot_sendString(str);
 
 	// Set speed to FAST_SPEED
-	oi_setWheels(FAST_SPEED, FAST_SPEED);
+	oi_setWheels(cur_speed, cur_speed);
 
 	sprintf(str, "Distance: %.2lf\r\n", m_d);
 	cyBot_sendString(str);
 
 	// While the distance left is greater than PRECISION, keep iterating
 	while (!isnan(m_d) && m_d > PRECISION) {
+        if (cur_speed < FAST_SPEED) {
+            cur_speed += POS_ACCEL;
+        }
+        else {
+            cur_speed = FAST_SPEED;
+        }
 		
 		oi_update(cyBot);									// Update the CyBot Sensors
 		
@@ -341,7 +104,7 @@ void move_abs(oi_t *cyBot, double x, double y, int do_avoid) {
 		deg_change = cyBot->angle * ANG_CALIBRATION;		// Set the rotation (deg) since last update
 
 		// Dynamic Proportional Correction
-		error = (deg_change - atan2(y - pos_y, x - pos_x) * RAD_TO_DEG) * Kp;
+		error = (deg_change - atan2(y - pos_y, x - pos_x) * (180.0 / M_PI)) * Kp;
 
 		if (do_avoid && has_collided(cyBot)) {				// if do_avoid is enabled check if we have collided
 			avoid(cyBot);										// Run Avoid Function
@@ -349,7 +112,7 @@ void move_abs(oi_t *cyBot, double x, double y, int do_avoid) {
 		}
 
 		if (!slow) {
-			oi_setWheels((int)(FAST_SPEED - error), (int)(FAST_SPEED + error)); // Reset Movement
+			oi_setWheels((int)(cur_speed - error), (int)(cur_speed + error)); // Reset Movement
 		}
 		else {
 			oi_setWheels((int)(FINE_SPEED - error), (int)(FINE_SPEED + error)); // Reset Movement
@@ -361,10 +124,10 @@ void move_abs(oi_t *cyBot, double x, double y, int do_avoid) {
 		// rad = atan2(y - pos_y, x - pos_x);
 		deg += deg_change;
 		pos_deg = deg;
-		pos_rad = deg * DEG_TO_RAD;
+		rad = deg * (M_PI / 180.0);
 
-		change_x = dis_change * cosf(pos_rad);				// Find change in the x direction
-		change_y = dis_change * sinf(pos_rad); 				// Find change in the y direction
+		change_x = dis_change * cosf(rad);					// Find change in the x direction
+		change_y = dis_change * sinf(rad); 					// Find change in the y direction
 
 
 		pos_x += change_x;									// Update current actual position in the x direction
@@ -394,6 +157,8 @@ void move_abs(oi_t *cyBot, double x, double y, int do_avoid) {
 
 	oi_update(cyBot);
 	dis_change = cyBot->distance * DIS_CALIBRATION;
+    pos_deg += (cyBot->angle * ANG_CALIBRATION);
+    rad = pos_deg * (M_PI / 180.0);
 	
 	pos_x += dis_change * cosf(rad);
 	pos_y += dis_change * sinf(rad);
@@ -407,34 +172,38 @@ void move_abs(oi_t *cyBot, double x, double y, int do_avoid) {
  * @param target_deg Target Rotation Degrees
  */
 void turn_abs(oi_t *cyBot, double target_deg) {
+	// turn_internal(cyBot, target_deg - pos_deg);
+	
     // If the angle is negative, the direction is negative (aka clock-wise),
     // otherwise the direction is positive (aka counter-clock-wise)
 	int dir = (pos_deg - target_deg) < 0 ? -1 : 1;
-	
-	double ang_change;				// Var to store the change in each iteration
 
 	int slow = 0;
+
+    oi_update(cyBot); // Clear preivious update
 
 	oi_setWheels(-dir * FAST_SPEED, dir * FAST_SPEED);
 
 
-	sprintf(str, "Turning (abs): from %.2lf to %.2lf!\r\n", pos_deg, target_deg);
+	sprintf(str, "Turning (abs): from %.2lf° to %.2lf°! Currently at: °\r\n", pos_deg, target_deg);
 	cyBot_sendString(str);
 
 	while (dir * (pos_deg - target_deg) > PRECISION) {
 		oi_update(cyBot);
 
 		// Set the change in the angle since the last update
-		ang_change = (cyBot->angle * ANG_CALIBRATION);
+		double ang_change = (cyBot->angle * ANG_CALIBRATION);
 		
 		pos_deg += ang_change;
-		pos_rad = pos_deg * DEG_TO_RAD; 
 
 	    // sprintf(str, "Direction: %d, target: %.2lf, current: %.2lf, delta: %.2lf, change: %.2lf", dir, target_deg, pos_deg, pos_deg - target_deg, ang_change);
 	    // cyBot_sendString(str);
 
 	    // sprintf(str, ", prediction: %0.2lf\r\n", pos_deg - target_deg + 3 * ang_change);
 	    // cyBot_sendString(str);
+
+        sprintf(str, "Turning (abs): Final angle %.2lf°/%.2lf°! Delta: %.2lf°=%.2lf\r\n", pos_deg, target_deg, cyBot->angle, ang_change);
+        cyBot_sendString(str);
 
 	    // If we are going to be there by there in the next three loops, slow down
         if (!slow && dir * (pos_deg - target_deg + 3 * ang_change) <= PRECISION) {
@@ -454,10 +223,19 @@ void turn_abs(oi_t *cyBot, double target_deg) {
 
 	oi_update(cyBot);
 	pos_deg += (cyBot->angle * ANG_CALIBRATION);
-	pos_rad = pos_deg * DEG_TO_RAD;
 
-	sprintf(str, "Turning (abs): Final angle %.2lf where the target was %.2lf!\r\n", pos_deg, target_deg);
+	sprintf(str, "Turning (abs): Final angle %.2lf° where the target was %.2lf°!\r\n", pos_deg, target_deg);
 	cyBot_sendString(str);
+}
+
+
+/**
+ * @name Turn to Relitive Angle
+ * @param cyBot
+ * @param deg Target rotation change
+ */
+void turn_rel(oi_t *cyBot, double deg) {
+    turn_abs(cyBot, pos_deg + deg);
 }
 
 
@@ -467,10 +245,9 @@ void turn_abs(oi_t *cyBot, double target_deg) {
  * @param mm (millimeters)
  */
 void move_forward(oi_t *cyBot, int mm) {
-	// move_rel(cyBot, mm, true);
-	// move_abs(cyBot, pos_x + (double)mm * cos(pos_rad), pos_y + (double)mm * sin(pos_rad), true);
-	driveToPoint(cyBot, pos_x + (double)mm * cos(pos_rad), pos_y + (double)mm * sin(pos_rad));
-	turn_abs(cyBot, 0);
+	move_rel(cyBot, mm, true);
+	// double rad = pos_deg * (M_PI / 180.0);
+	// move_abs(cyBot, pos_x + (double)mm * cos(rad), pos_y + (double)mm * sin(rad), true);
 }
 
 
@@ -480,9 +257,9 @@ void move_forward(oi_t *cyBot, int mm) {
  * @param mm (millimeters)
  */
 void move_backward(oi_t *cyBot, int mm) {
-	// move_rel(cyBot, -mm, true);
-	driveToPoint(cyBot, pos_x - (double)mm * cos(pos_rad), pos_y - (double)mm * sin(pos_rad));
-	turn_abs(cyBot, 0);
+	move_rel(cyBot, -mm, true);
+	// double rad = pos_deg * (M_PI / 180.0);
+	// move_abs(cyBot, pos_x - (double)mm * cos(rad), pos_y - (double)mm * sin(rad), true);
 }
 
 
@@ -496,12 +273,17 @@ void move_backward(oi_t *cyBot, int mm) {
 void move_rel(oi_t *cyBot, int mm, int do_avoid) {
 	int dir = mm < 0 ? -1 : 1;
 
-	double rad = pos_deg * DEG_TO_RAD;
+	double rad = pos_deg / 360.0 * 2 * M_PI;
 
 	double dis_change = 0.0;
 	double dis_tot = 0.0;
 
-	oi_setWheels(dir * FAST_SPEED, dir * FAST_SPEED);
+    double cur_speed = 30;
+
+    // Clear data
+    oi_update(cyBot);
+
+	oi_setWheels(dir * cur_speed, dir * cur_speed);
 
 	sprintf(str, "Distance: %d.00\r\n", mm);
 	cyBot_sendString(str);
@@ -510,6 +292,13 @@ void move_rel(oi_t *cyBot, int mm, int do_avoid) {
 
 	// dir * (mm - dis_tot) > PRECISION
 	while (fabs(dir * mm - dir * dis_tot) > PRECISION) {
+        if (cur_speed < FAST_SPEED) {
+            cur_speed += POS_ACCEL;
+        }
+        else {
+            cur_speed = FAST_SPEED;
+        }
+
 		oi_update(cyBot);									// Update the CyBot Sensors
 
 
@@ -518,22 +307,27 @@ void move_rel(oi_t *cyBot, int mm, int do_avoid) {
 
 		if (do_avoid && has_collided(cyBot)) {				// if do_avoid is enabled check if we have collided
 			avoid(cyBot);										// Run Avoid Function
-			oi_setWheels(dir * FAST_SPEED, dir * FAST_SPEED);	// Reset Movement
 			continue;											// Start the movement loop over again
 		}
+
+        if (!slow) {
+            oi_setWheels(dir * cur_speed, dir * cur_speed);
+        }
+        else {
+            oi_setWheels(dir * FINE_SPEED, dir * FINE_SPEED);
+        }
 
 		sprintf(str, "Move Rel (update): distance: %.2lf, to go: %.2lf\r\n", dis_tot, dir * (mm - dis_tot));
 		cyBot_sendString(str);
 
 		if (dir * (mm - dis_tot) < 0.0) {
 			dir = -dir;
-			oi_setWheels(dir * FINE_SPEED, dir * FINE_SPEED);
+			oi_setWheels(dir * cur_speed, dir * cur_speed);
 		}
 
 		// If we are going to be there by there in the next five loops, slow down
         if (!slow && dir * (mm - dis_tot - 5 * dis_change) <= PRECISION) {
             cyBot_sendString("Slowing down\r\n");
-            oi_setWheels(dir * FINE_SPEED, dir * FINE_SPEED);
             slow = true;
         }
 
@@ -563,8 +357,8 @@ void move_rel(oi_t *cyBot, int mm, int do_avoid) {
  * @param degrees
  */
 void turn_cw(oi_t *cyBot, int degrees) {
-	// turn_abs(cyBot, pos_deg - degrees);
-	rotateDegrees(cyBot, -degrees);
+	// turn_internal(cyBot, -degrees);
+	turn_abs(cyBot, pos_deg - degrees);
 }
 
 
@@ -574,8 +368,58 @@ void turn_cw(oi_t *cyBot, int degrees) {
  * @param degrees
  */
 void turn_ccw(oi_t *cyBot, int degrees) {
-	// turn_abs(cyBot, pos_deg + degrees);
-	rotateDegrees(cyBot, degrees);
+	// turn_internal(cyBot, degrees);
+	turn_abs(cyBot, pos_deg + degrees);
+}
+
+
+/**
+ * @name Turn Internal
+ * @param cyBot
+ * @param target_deg Target Rotation Degrees
+ * @internal
+ * @private
+ * @deprecated 9/24/26
+ */
+void turn_internal(oi_t *cyBot, float target_deg) {
+	// Store current degrees - THIS IS THE *TRUE* VALUE AFTER OFFSET AND DIRECTION
+	double cur_deg = 0.0;
+	
+	// If the angle is negative, the direction is negative (aka clock-wise), 
+	// otherwise the direction is positive (aka counter-clock-wise)
+	int direction = target_deg < 0 ? -1 : 1;
+
+	// Start wheels in oppsite directions, after accounting for direction
+	oi_setWheels(direction * FAST_SPEED, -direction * FAST_SPEED);
+	
+	// Run at the fast speed until the angle is within FINE_THRESHOLD_ANG
+	while (direction * (target_deg - cur_deg) > FINE_THRESHOLD_ANG) {
+		oi_update(cyBot);
+		cur_deg += (cyBot->angle * ANG_CALIBRATION);
+		// printf("Fast: %f\n", cur_deg);
+	}
+
+	// Set wheel speed to the fine speed
+	oi_setWheels(direction * FINE_SPEED, -direction * FINE_SPEED);
+
+	// Run at fine speed until the angle is within precision
+	while (direction * (target_deg - cur_deg) > PRECISION) {
+
+		// Update
+		oi_update(cyBot);
+
+		// Update current angle with the new cyBot data, taking direction and offset into account
+		cur_deg += (cyBot->angle * ANG_CALIBRATION);
+		// printf("Slow: %f\n", cur_deg);
+	}
+
+	oi_setWheels(0, 0); // stop
+
+	oi_update(cyBot);
+	cur_deg += (cyBot->angle * ANG_CALIBRATION);
+	// printf("Final: %f = %f\n", cur_deg, cur_deg / (double)target_deg);
+
+	pos_deg += cur_deg * direction;
 }
 
 
