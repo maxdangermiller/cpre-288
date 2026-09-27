@@ -12,7 +12,7 @@
  * @param sensor_data array of SensorData
  * @param len length of sensor_data array
  */
-void clean_data (struct SensorData sensor_data[], int len) {
+void clean_data (SensorData_t sensor_data[], int len) {
 	int i, j;
 
 	int deg;
@@ -75,15 +75,13 @@ void clean_data (struct SensorData sensor_data[], int len) {
  * @param objects
  * @returns objects found
  */
-int find_objects(struct SensorData sensor_data[], int len, struct ObjectInfo* objects) {
+int find_objects(SensorData_t sensor_data[], int len, ObjectInfo_t* objects) {
 	// Find edges
 
 	int i;
 
-	struct SensorDataSection *sections = malloc(sizeof(struct SensorDataSection) * MAX_SECTIONS);
-
-	struct ObjectInfo object;
-	struct SensorDataSection section;
+	ObjectInfo_t object;
+	SensorDataSection_t section;
 
 
 	int section_count = 1;
@@ -127,7 +125,7 @@ int find_objects(struct SensorData sensor_data[], int len, struct ObjectInfo* ob
  * @param object is a reference to object info to write to if this is a valid object
  * @param data_section is a reference to the data section to analyze
  */
-int identify_object(struct ObjectInfo *object, struct SensorDataSection *data_section) {
+int identify_object(ObjectInfo_t *object, SensorDataSection_t *data_section) {
 	if (data_section->dist >=  135) {
 		return 0;
 	}
@@ -150,7 +148,7 @@ int identify_object(struct ObjectInfo *object, struct SensorDataSection *data_se
  * Get Linear Size
  * @param data_section SensorDataSection to find the size of it useing the angles and linear size
  */
-float get_linear_size(struct SensorDataSection *data_section) {
+float get_linear_size(SensorDataSection_t *data_section) {
 	const float a = data_section->dist;
 	const float rad_width = (float)(data_section->end_ang - data_section->start_ang) / 360.0 * 2.0 * M_PI;
 
@@ -164,7 +162,7 @@ float get_linear_size(struct SensorDataSection *data_section) {
  * @param len length
  * @returns index in objects of smallest object
  */
-int get_smallest_obj(struct ObjectInfo *objects, int len) {
+int get_smallest_obj(ObjectInfo_t *objects, int len) {
 	int min = 0;
 	int i;
 
@@ -183,10 +181,10 @@ int get_smallest_obj(struct ObjectInfo *objects, int len) {
  * @param objects
  * @param object_count
  */
-void send_object_table(struct ObjectInfo *objects, int object_count) {
+void send_object_table(ObjectInfo_t *objects, int object_count) {
 	char str[50];
 	int i;
-	struct ObjectInfo object;
+	ObjectInfo_t object;
 
 	sprintf(str, "\r\nObject#\t\tAngle (deg)\t\tDistance (mm)\t\tWidth (mm)\r\n");
 	cyBot_sendString(str);

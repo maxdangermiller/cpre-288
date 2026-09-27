@@ -16,32 +16,32 @@
 #define MAX_OBJECTS 10
 
 
-struct SensorData {
+typedef struct SensorData {
 	int ang;
 	float dist;
-};
+} SensorData_t;
 
-struct SensorDataSection {
+typedef struct SensorDataSection {
 	int start_ang;
 	int end_ang;
 	float dist;
-};
+} SensorDataSection_t;
 
-struct ObjectInfo {
+typedef struct ObjectInfo {
 	int num;    // Number
 	float mp;   // Midpoint
 	float dist; // Distance
 	float len;  // Length
-};
+} ObjectInfo_t;
 
-void clean_data (struct SensorData sensor_data[], int len);
-int find_objects(struct SensorData sensor_data[], int len, struct ObjectInfo* objects);
-int identify_object(struct ObjectInfo *object, struct SensorDataSection *data_section);  // Helper function for find_objects
-float get_linear_size(struct SensorDataSection *data_section);
+void clean_data (SensorData_t sensor_data[], int len);
+int find_objects(SensorData_t sensor_data[], int len, ObjectInfo_t *objects);
+int identify_object(ObjectInfo_t *object, SensorDataSection_t *data_section);  // Helper function for find_objects
+float get_linear_size(SensorDataSection_t *data_section);
 
-int get_smallest_obj(struct ObjectInfo *objects, int len);
+int get_smallest_obj(ObjectInfo_t *objects, int len);
 
-void send_object_table(struct ObjectInfo *objects, int object_count);
+void send_object_table(ObjectInfo_t *objects, int object_count);
 void cyBot_sendString(char* str);
 
 #endif

@@ -17,8 +17,8 @@
 #define MAX_ANGLE 180
 #define SCAN_STEPS (MAX_ANGLE - MIN_ANGLE) / SCAN_RESOLUTION + 1
 
-void load_scan(struct SensorData sensor_data[], int len);
-void do_scan(struct SensorData sensor_data[]);
-void send_scan(struct SensorData sensor_data[]);
+void load_scan(SensorData_t sensor_data[], int len);
+void do_scan(SensorData_t sensor_data[]);
+void send_scan(SensorData_t sensor_data[]);
 
 #endif

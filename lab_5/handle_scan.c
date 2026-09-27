@@ -9,7 +9,7 @@
  * @param sensor_data
  * @param len
  */
-void load_scan(struct SensorData sensor_data[], int len) {
+void load_scan(SensorData_t sensor_data[], int len) {
     int i;
     
     for (i = 0; i < len; i++) {
@@ -22,7 +22,7 @@ void load_scan(struct SensorData sensor_data[], int len) {
  * Do scan on CyBot and save the data
  * @param sensor_data
  */
-void do_scan(struct SensorData sensor_data[]) {
+void do_scan(SensorData_t sensor_data[]) {
 	int i;
 
 	cyBOT_Scan_t data;
@@ -39,7 +39,7 @@ void do_scan(struct SensorData sensor_data[]) {
  * Send scan back to the uart connection
  * @param sensor_data
  */
-void send_scan(struct SensorData sensor_data[]) {
+void send_scan(SensorData_t sensor_data[]) {
 	
 	int i;
 	char str[35];
