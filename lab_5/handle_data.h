@@ -12,6 +12,7 @@
 
 
 #define JUMP_THRESHOLD 25
+#define OUTLIER_THRESHOLD 20
 #define MAX_SECTIONS 10
 #define MAX_OBJECTS 10
 

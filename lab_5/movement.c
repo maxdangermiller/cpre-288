@@ -185,8 +185,8 @@ void turn_abs(oi_t *cyBot, double target_deg) {
 	oi_setWheels(-dir * FAST_SPEED, dir * FAST_SPEED);
 
 
-	sprintf(str, "Turning (abs): from %.2lf° to %.2lf°! Currently at: °\r\n", pos_deg, target_deg);
-	cyBot_sendString(str);
+	// sprintf(str, "Turning (abs): from %.2lf� to %.2lf�!", pos_deg, target_deg);
+	// cyBot_sendString(str);
 
 	while (dir * (pos_deg - target_deg) > PRECISION) {
 		oi_update(cyBot);
@@ -202,12 +202,12 @@ void turn_abs(oi_t *cyBot, double target_deg) {
 	    // sprintf(str, ", prediction: %0.2lf\r\n", pos_deg - target_deg + 3 * ang_change);
 	    // cyBot_sendString(str);
 
-        sprintf(str, "Turning (abs): Final angle %.2lf°/%.2lf°! Delta: %.2lf°=%.2lf\r\n", pos_deg, target_deg, cyBot->angle, ang_change);
-        cyBot_sendString(str);
+        // sprintf(str, "Turning (abs): Final angle %.2lf�/%.2lf�! Delta: %.2lf=%.2lf\r\n", pos_deg, target_deg, cyBot->angle, ang_change);
+        // cyBot_sendString(str);
 
 	    // If we are going to be there by there in the next three loops, slow down
         if (!slow && dir * (pos_deg - target_deg + 3 * ang_change) <= PRECISION) {
-            cyBot_sendString("Slowing down\r\n");
+            // cyBot_sendString("Slowing down\r\n");
             oi_setWheels(-dir * FINE_SPEED, dir * FINE_SPEED);
             slow = true;
         }
@@ -224,7 +224,7 @@ void turn_abs(oi_t *cyBot, double target_deg) {
 	oi_update(cyBot);
 	pos_deg += (cyBot->angle * ANG_CALIBRATION);
 
-	sprintf(str, "Turning (abs): Final angle %.2lf° where the target was %.2lf°!\r\n", pos_deg, target_deg);
+	sprintf(str, "Turning (abs): Final angle %.2lf� where the target was %.2lf�!\r\n", pos_deg, target_deg);
 	cyBot_sendString(str);
 }
 
@@ -292,11 +292,17 @@ void move_rel(oi_t *cyBot, int mm, int do_avoid) {
 
 	// dir * (mm - dis_tot) > PRECISION
 	while (fabs(dir * mm - dir * dis_tot) > PRECISION) {
-        if (cur_speed < FAST_SPEED) {
+        if (!slow && cur_speed < FAST_SPEED) {
             cur_speed += POS_ACCEL;
         }
-        else {
+        else if (!slow) {
             cur_speed = FAST_SPEED;
+        }
+        else if (slow && cur_speed >= FINE_SPEED) {
+            cur_speed -= POS_ACCEL;
+        }
+        else {
+            cur_speed = FINE_SPEED;
         }
 
 		oi_update(cyBot);									// Update the CyBot Sensors
@@ -310,22 +316,17 @@ void move_rel(oi_t *cyBot, int mm, int do_avoid) {
 			continue;											// Start the movement loop over again
 		}
 
-        if (!slow) {
-            oi_setWheels(dir * cur_speed, dir * cur_speed);
-        }
-        else {
-            oi_setWheels(dir * FINE_SPEED, dir * FINE_SPEED);
-        }
+		oi_setWheels(dir * cur_speed, dir * cur_speed);
 
-		sprintf(str, "Move Rel (update): distance: %.2lf, to go: %.2lf\r\n", dis_tot, dir * (mm - dis_tot));
-		cyBot_sendString(str);
+		// sprintf(str, "Move Rel (update): distance: %.2lf, to go: %.2lf\r\n", dis_tot, dir * (mm - dis_tot));
+		// cyBot_sendString(str);
 
 		if (dir * (mm - dis_tot) < 0.0) {
 			dir = -dir;
 			oi_setWheels(dir * cur_speed, dir * cur_speed);
 		}
 
-		// If we are going to be there by there in the next five loops, slow down
+		// If we are going to be there by there in the next three loops, slow down
         if (!slow && dir * (mm - dis_tot - 5 * dis_change) <= PRECISION) {
             cyBot_sendString("Slowing down\r\n");
             slow = true;

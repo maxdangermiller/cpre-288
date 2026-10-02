@@ -31,7 +31,8 @@ void do_scan(SensorData_t sensor_data[]) {
 		cyBOT_Scan(i * SCAN_RESOLUTION + MIN_ANGLE, &data);
 		
         sensor_data[i].ang = i * SCAN_RESOLUTION + MIN_ANGLE;
-		sensor_data[i].dist = data.sound_dist;
+        // subtract distance from sensor to front of CyBot
+		sensor_data[i].dist = data.sound_dist - 6.0;
 	}
 }
 

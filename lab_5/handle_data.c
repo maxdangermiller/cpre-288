@@ -21,7 +21,7 @@ void clean_data (SensorData_t sensor_data[], int len) {
 	
 	// Start at index 3
 	// For some reason the CyBot's first few values are always weird
-	int start = 0;
+	int start = 3;
 	float start_value = sensor_data[start].dist;
 
 	for (i = start + 1; i < len; i++) {
@@ -31,6 +31,15 @@ void clean_data (SensorData_t sensor_data[], int len) {
 		pre = sensor_data[i - 1].dist;
 		cur = sensor_data[i].dist;
 		nxt = sensor_data[i + 1].dist;
+
+		if (pre - cur >= OUTLIER_THRESHOLD && nxt - cur >= OUTLIER_THRESHOLD) {
+			sensor_data[i].dist = (pre + cur) / 2;
+			cur = sensor_data[i].dist;
+		}
+		else if (pre - cur <= OUTLIER_THRESHOLD && nxt - cur <= OUTLIER_THRESHOLD) {
+			sensor_data[i].dist = (pre + cur) / 2;
+			cur = sensor_data[i].dist;
+		}
 
 		delta = fabsf(cur - start_value);
 
@@ -110,10 +119,13 @@ int find_objects(SensorData_t sensor_data[], int len, ObjectInfo_t* objects) {
 	section.end_ang = sensor_data[len - 1].ang;
 	section.dist = sensor_data[start].dist;
 
+	// Don't count the last section as an object
+	/*
 	if (identify_object(&object, &section)) {
 		object.num = obj_index + 1;
 		objects[obj_index++] = object;
 	}
+	*/
 
 	return obj_index;
 }
@@ -136,7 +148,7 @@ int identify_object(ObjectInfo_t *object, SensorDataSection_t *data_section) {
 	object->dist = data_section->dist;
 	object->len = get_linear_size(data_section);
 
-	if (object->len < 5) {
+	if (object->len < 5.0 || object->len >= 60.0) {
 		return 0;
 	}
 
