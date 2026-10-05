@@ -8,8 +8,8 @@
 
 // Scan value
 typedef struct{
-    float sound_dist;  // Distance from Ping Sensor (cyBOT_Scan returns -1.0 if PING is not enabled)
-    int IR_raw_val;    // Raw ADC value from IR sensor (cyBOT_Scan return -1 if IR is not enabled)
+	float sound_dist;  // Distance from Ping Sensor (cyBOT_Scan returns -1.0 if PING is not enabled)
+	int IR_raw_val;    // Raw ADC value from IR sensor (cyBOT_Scan return -1 if IR is not enabled)
 } cyBOT_Scan_t;
 
 
@@ -56,8 +56,8 @@ int left_calibration_value;
 
 // Servo Calibrate value struct
 typedef struct{
-    int right;  // Right (0 degree) calibration value
-    int left;   // Left (180 degree) calibration value
+	int right;  // Right (0 degree) calibration value
+	int left;   // Left (180 degree) calibration value
 } cyBOT_SERVRO_cal_t;
 
 
