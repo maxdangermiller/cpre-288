@@ -15,9 +15,15 @@
 
 #include "uart_utils.h"
 #include "cyBot_Scan_Cal.h"
+#include "open_interface.h"
+#include "movement.h"
 
 #define UART1_PCTLB_BITMASK 0b00010001
 #define UART1_BITMASK 0b00000011
+
+// #define PART_3
+// #define PART_3A
+#define PART_4
 
 
 
@@ -26,7 +32,7 @@
 extern volatile int button_event;
 extern volatile int button_num;
 
-
+#ifdef PART_3
 int main(void) {
 	button_init();
 	timer_init();
@@ -74,8 +80,10 @@ int main(void) {
 
 
 	// For Part 3a
+	#ifdef PART_3A
 	// lcd_printf("IR CALIBRATION");
 	// cyBot_IR_Calibrate();
+	#endif
 
 
 	char str[50];
@@ -121,3 +129,104 @@ int main(void) {
 	}
 	
 }
+#endif
+
+#ifdef PART_4
+int main(void) {
+	timer_init();
+	lcd_init();
+
+	oi_t* cyBot = oi_alloc();
+    oi_init(cyBot);
+
+	cyBot_uart_init_clean();  // Clean UART initialization, before running your UART GPIO init code
+
+	SYSCTL_RCGCGPIO_R |= 0b000010;
+	timer_waitMillis(1);
+
+	GPIO_PORTB_AFSEL_R |= 0b00000011;
+
+	GPIO_PORTB_PCTL_R &= ~UART1_PCTLB_BITMASK;
+	GPIO_PORTB_PCTL_R |= UART1_PCTLB_BITMASK;
+
+	GPIO_PORTB_DEN_R |= UART1_BITMASK;
+
+	GPIO_PORTB_DIR_R &= ~(0b00000000);
+	GPIO_PORTB_DIR_R |= 0b00000001;
+	
+	cyBot_uart_init_last_half();
+
+	char byte;       	// Variable to get bytes from Client
+	char command[100];  // Buffer to store command from Client
+	int index = 0;      // Index position within the command buffer
+	int running = 1;
+	int i;
+		
+	while(running) {
+		
+		index = 0;
+		byte = cyBot_getByte_blocking();
+
+		// Get the rest of the command until a newline byte (i.e., '\n') received
+		while(byte != '\n' &&  index < 98) {
+			command[index] = byte;
+			index++;
+			byte = cyBot_getByte_blocking();
+		}
+
+		command[index] = '\n';
+		command[index + 1] = 0;
+
+		lcd_printf("Got: %s", command);
+
+		/*
+		UART COMMANDS:
+
+		W: Forward
+		A: Left
+		S: Backward
+		D: Right
+		E: EXIT
+		*/
+
+		for (i = 0; i < index; i++) {
+			switch (command[i]) {
+				// Forward
+				case 'w':
+					move_forward(cyBot, 200);
+					break;
+				
+				// Left
+				case 'a':
+					turn_ccw(cyBot, 45);
+					break;
+
+				// running
+				case 's':
+					move_backward(cyBot, 200);
+					break;
+				
+				// Right
+				case 'd':
+					turn_cw(cyBot, 45);
+					break;
+
+				// Exit
+				case 'e':
+					running = false;
+					break;
+
+				default:
+					break;
+			}
+		}
+
+		cyBot_sendByte(command[0]);
+
+		if(command[0] != '\n') {
+			cyBot_sendByte('\n');
+		}
+
+	}
+}
+#endif
