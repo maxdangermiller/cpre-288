@@ -18,21 +18,24 @@
 
 
 typedef struct SensorData {
-	int ang;
-	float dist;
+	int ang;		// Angle (degrees)
+	float s_dist;	// Sound Distance (cm)
+	float ir_dist;	// IR Distance (cm)
 } SensorData_t;
 
 typedef struct SensorDataSection {
-	int start_ang;
-	int end_ang;
-	float dist;
+	int start_ang;	// Start Angle (degrees)
+	int end_ang;	// End Angle (degrees)
+	float s_dist;	// Sound Distance (cm)
+	float ir_dist;	// IR Distance (cm)
 } SensorDataSection_t;
 
 typedef struct ObjectInfo {
-	int num;    // Number
-	float mp;   // Midpoint
-	float dist; // Distance
-	float len;  // Length
+	int num;    	// Number (index)
+	float mp;   	// Midpoint (degrees)
+	float s_dist; 	// Sound Distance (cm)
+	float ir_dist;	// IR Distance (cm)
+	float len;  	// Length 
 } ObjectInfo_t;
 
 void clean_data (SensorData_t sensor_data[], int len);

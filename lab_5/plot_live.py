@@ -27,17 +27,13 @@ filename = "putty.txt"
 # Create a polar plot
 fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
 
-angle_degrees = []
-angle_radians = []
-distance = []
-cleaned_distances = []
-
 def animate(frame):
 
     angle_degrees = []
     angle_radians = []
-    distance = []
-    cleaned_distances = []
+    s_dists = []
+    ir_dists = []
+    clean_s_dists = []
     
     with open(full_path + filename, 'r') as f:
         lines = f.read().splitlines()
@@ -57,7 +53,7 @@ def animate(frame):
                 rawStart = i + 2
                 break
 
-            elif line == "Object#		Angle (deg)		Distance (mm)		Width (mm)":
+            elif line[:7] == "Object#":
                 cleanEnd = i - 1
 
         # print(f"Start: {lines[start]}")
@@ -66,19 +62,21 @@ def animate(frame):
         for i in range(rawStart, cleanStart):
             data = lines[i].split()
             angle_degrees.append(float(data[0]))
-            distance.append(float(data[1]))
+            s_dists.append(float(data[1]))
+            ir_dists.append(float(data[2]))
 
         angle_degrees = np.array(angle_degrees)
         angle_radians = (np.pi/180) * angle_degrees
 
         for i in range(cleanStart + 2, cleanEnd):
             data = lines[i].split()
-            cleaned_distances.append(float(data[1]))
+            clean_s_dists.append(float(data[1]))
 
     ax.clear()
 
-    ax.plot(angle_radians, distance, color='r', linewidth=4.0)
-    ax.plot(angle_radians, cleaned_distances, color='g', linewidth=3.0)
+    ax.plot(angle_radians, s_dists, color='b', linewidth=4.0)
+    ax.plot(angle_radians, clean_s_dists, color='g', linewidth=3.0)
+    ax.plot(angle_radians, ir_dists, color='r', linewidth=3.0)
 
     ax.set_xlabel('Distance (cm)', fontsize = 14.0)
     ax.set_ylabel('Angle (degrees)', fontsize = 14.0)

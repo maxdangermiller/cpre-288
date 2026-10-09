@@ -34,12 +34,10 @@ int main(void) {
     oi_init(cyBot);
 
 
-	sprintf(str, "\r\n\r\nCprE288 Lab 5 - Created by Max Miller\r\n\r\n\r\n");
+	sprintf(str, "\r\n\r\nCprE288 Simple Mission\r\n\r\n\r\n");
 	cyBot_sendString(str);
 
-
-	cyBOT_init_Scan(0b111);
-
+	cyBot_init_Scan_cust(0b111);
 
     // oi_setMotorCalibration(1.0, 1.0);
 	// rot_calibrate(cyBot);
@@ -47,32 +45,7 @@ int main(void) {
 	// Stuff for servo calibration
 	// lcd_init();
 	// cyBOT_SERVO_cal();
-
-
-	// Values for CyBot #1
-	// right_calibration_value = 232750;
-	// left_calibration_value = 1225000;
 	
-	// CyBot #17
-    right_calibration_value = 248500;
-    left_calibration_value = 1204000;
-
-	// CyBot #22
-    // right_calibration_value = 248500;
-    // left_calibration_value = 1267000;
-
-	// CyBot #24
-    // right_calibration_value = 253750;
-    // left_calibration_value = 1235500;
-
-	// Values for CyBot #25
-    // right_calibration_value = 285250;
-    // left_calibration_value = 1246000;
-
-	// Values for CyBot #26
-	// right_calibration_value = 311500;
-	// left_calibration_value = 1309000;
-
 
     // Stop it if it was moving!
 	oi_setWheels(0, 0);

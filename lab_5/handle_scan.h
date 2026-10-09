@@ -11,6 +11,7 @@
 #include "sensor-data.h"
 #include "cyBot_Scan.h"
 #include "cyBot_uart.h"
+#include "cyBot_Scan_Cal.h"
 
 #define SCAN_RESOLUTION 2
 #define MIN_ANGLE 0

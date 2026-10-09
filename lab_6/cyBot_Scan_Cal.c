@@ -1,8 +1,6 @@
 #include "cyBot_Scan_Cal.h"
 
 
-extern volatile int button_event;
-
 /**
  * Calibrate IR Distance
  */
@@ -12,48 +10,48 @@ void cyBot_IR_Calibrate() {
 		double dist_m_ir;   // Measured distance (IR)
 		double dist_m_s;   	// Measured distance (Sound)
 	} calibration_data[24];
-	
+
 	static int distances[] = {9, 10, 12, 20, 30, 40, 50};
 
 	char str[50];
 	cyBOT_Scan_t data;
 	int i,j;
 	int dist;
-	
+
 	sprintf(str, "\r\nStarting IR Calibration\r\n\r\n");
 	cyBot_sendString(str);
 
 	// Go ahead and move the servo to 90 degrees
 	cyBOT_Scan(90, &data);
-	
+
 	for (i = 0; i < 7; i++) {
 		dist = distances[i];
-		
+
 		sprintf(str, "Place IR Sensor %dcm from object (press and button to measure)\r\n", dist);
 		cyBot_sendString(str);
-		
+
 		// while (cyBot_getByte_blocking() != 'm');
 		while (!button_event);
 
-		
+
 		for (j = 0; j < 3; j++) {
 			cyBOT_Scan(90, &data);
-			
+
 			calibration_data[3 * i + j].dist_a = dist;
 			calibration_data[3 * i + j].dist_m_ir = data.IR_raw_val;
 			calibration_data[3 * i + j].dist_m_s = data.sound_dist;
 		}
-		
+
 		timer_waitMillis(50); // Debounce
 		button_event = 0;
 	}
-	
+
 	sprintf(str, "All Data Collected. Sending Data in csv format.\r\n\r\n");
 	cyBot_sendString(str);
-	
+
 	sprintf(str, "actual,ir,sound\r\n");
 	cyBot_sendString(str);
-	
+
 	for (i = 0; i < 24; i++) {
 		sprintf(str, "%d,%lf,%lf\r\n", calibration_data[i].dist_a, calibration_data[i].dist_m_ir, calibration_data[i].dist_m_s);
 		cyBot_sendString(str);
@@ -61,7 +59,7 @@ void cyBot_IR_Calibrate() {
 
 	sprintf(str, "\r\nCalibration Finished.\r\n");
 	cyBot_sendString(str);
-	
+
 }
 
 /**

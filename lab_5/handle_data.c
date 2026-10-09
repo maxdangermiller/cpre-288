@@ -22,23 +22,23 @@ void clean_data (SensorData_t sensor_data[], int len) {
 	// Start at index 3
 	// For some reason the CyBot's first few values are always weird
 	int start = 3;
-	float start_value = sensor_data[start].dist;
+	float start_value = sensor_data[start].s_dist;
 
 	for (i = start + 1; i < len; i++) {
 
 		
 		deg = sensor_data[i].ang;
-		pre = sensor_data[i - 1].dist;
-		cur = sensor_data[i].dist;
-		nxt = sensor_data[i + 1].dist;
+		pre = sensor_data[i - 1].s_dist;
+		cur = sensor_data[i].s_dist;
+		nxt = sensor_data[i + 1].s_dist;
 
 		if (pre - cur >= OUTLIER_THRESHOLD && nxt - cur >= OUTLIER_THRESHOLD) {
-			sensor_data[i].dist = (pre + cur) / 2;
-			cur = sensor_data[i].dist;
+			sensor_data[i].s_dist = (pre + cur) / 2;
+			cur = sensor_data[i].s_dist;
 		}
 		else if (pre - cur <= OUTLIER_THRESHOLD && nxt - cur <= OUTLIER_THRESHOLD) {
-			sensor_data[i].dist = (pre + cur) / 2;
-			cur = sensor_data[i].dist;
+			sensor_data[i].s_dist = (pre + cur) / 2;
+			cur = sensor_data[i].s_dist;
 		}
 
 		delta = fabsf(cur - start_value);
@@ -48,13 +48,13 @@ void clean_data (SensorData_t sensor_data[], int len) {
 			tot = 0.0;
 
 			for (j = start; j < i; j++) {
-				tot += sensor_data[j].dist;
+				tot += sensor_data[j].s_dist;
 			}
 
 			avg = tot / (i - start);
 
 			for (j = start; j < i; j++) {
-				sensor_data[j].dist = avg;
+				sensor_data[j].s_dist = avg;
 			}
 
 			start = i;
@@ -66,13 +66,13 @@ void clean_data (SensorData_t sensor_data[], int len) {
 	tot = 0.0;
 
 	for (i = start; i < len; i++) {
-		tot += sensor_data[i].dist;
+		tot += sensor_data[i].s_dist;
 	}
 
 	avg = tot / (i - start);
 
 	for (j = start; j < i; j++) {
-		sensor_data[j].dist = avg;
+		sensor_data[j].s_dist = avg;
 	}
 }
 
@@ -99,10 +99,10 @@ int find_objects(SensorData_t sensor_data[], int len, ObjectInfo_t* objects) {
 	int start = 0;
 
 	for (i = 1; i < len; i++) {
-		if (sensor_data[i].dist != sensor_data[i-1].dist) {
+		if (sensor_data[i].s_dist != sensor_data[i-1].s_dist) {
 			section.start_ang = sensor_data[start].ang;
 			section.end_ang = sensor_data[i].ang;
-			section.dist = sensor_data[start].dist;
+			section.s_dist = sensor_data[start].s_dist;
 
 			if (identify_object(&object, &section)) {
 				object.num = obj_index + 1;
@@ -117,7 +117,7 @@ int find_objects(SensorData_t sensor_data[], int len, ObjectInfo_t* objects) {
 
 	section.start_ang = sensor_data[start].ang;
 	section.end_ang = sensor_data[len - 1].ang;
-	section.dist = sensor_data[start].dist;
+	section.s_dist = sensor_data[start].s_dist;
 
 	// Don't count the last section as an object
 	/*
@@ -138,14 +138,14 @@ int find_objects(SensorData_t sensor_data[], int len, ObjectInfo_t* objects) {
  * @param data_section is a reference to the data section to analyze
  */
 int identify_object(ObjectInfo_t *object, SensorDataSection_t *data_section) {
-	if (data_section->dist >=  135) {
+	if (data_section->s_dist >=  135) {
 		return 0;
 	}
 
 	const int ang_width = data_section->end_ang - data_section->start_ang;
 
 	object->mp = (float)ang_width / 2.0 + data_section->start_ang;
-	object->dist = data_section->dist;
+	object->s_dist = data_section->s_dist;
 	object->len = get_linear_size(data_section);
 
 	if (object->len < 5.0 || object->len >= 60.0) {
@@ -161,7 +161,7 @@ int identify_object(ObjectInfo_t *object, SensorDataSection_t *data_section) {
  * @param data_section SensorDataSection to find the size of it useing the angles and linear size
  */
 float get_linear_size(SensorDataSection_t *data_section) {
-	const float a = data_section->dist;
+	const float a = data_section->s_dist;
 	const float rad_width = (float)(data_section->end_ang - data_section->start_ang) / 360.0 * 2.0 * M_PI;
 
 	// a^2 + b^2 - 2 * a * b * cos(ang C)
@@ -198,12 +198,12 @@ void send_object_table(ObjectInfo_t *objects, int object_count) {
 	int i;
 	ObjectInfo_t object;
 
-	sprintf(str, "\r\nObject#\t\tAngle (deg)\t\tDistance (mm)\t\tWidth (mm)\r\n");
+	sprintf(str, "\r\nObject#\t\tAngle (deg)\t\tSound Dist (cm)\t\tIR Dist (cm)\t\tWidth (cm)\r\n");
 	cyBot_sendString(str);
 
 	for(i = 0; i < object_count; i++) {
 		object = objects[i];
-		sprintf(str, "%d\t\t\t%.1f\t\t\t%.2f\t\t\t%.2f\r\n", object.num, object.mp, object.dist, object.len);
+		sprintf(str, "%d\t\t\t%.1f\t\t\t%.2f\t\t\t%.2f\r\n", object.num, object.mp, object.s_dist, object.ir_dist, object.len);
 		cyBot_sendString(str);
 	}
 }
