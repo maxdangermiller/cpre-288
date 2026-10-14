@@ -25,7 +25,7 @@ full_path = os.path.join(absolute_path, relative_path)
 filename = "putty.txt"
 
 # Create a polar plot
-fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'}, figsize=(18, 10))
 
 def animate(frame):
 
@@ -74,9 +74,9 @@ def animate(frame):
 
     ax.clear()
 
-    ax.plot(angle_radians, s_dists, color='b', linewidth=4.0)
-    ax.plot(angle_radians, clean_s_dists, color='g', linewidth=3.0)
-    ax.plot(angle_radians, ir_dists, color='r', linewidth=3.0)
+    ax.plot(angle_radians, s_dists, color='b', linewidth=4.0, label='Sound Distance')
+    ax.plot(angle_radians, clean_s_dists, color='g', linewidth=3.0, label='Cleaned Distance')
+    ax.plot(angle_radians, ir_dists, color='r', linewidth=3.0, label='IR Distance')
 
     ax.set_xlabel('Distance (cm)', fontsize = 14.0)
     ax.set_ylabel('Angle (degrees)', fontsize = 14.0)
@@ -86,6 +86,8 @@ def animate(frame):
     ax.set_rlabel_position(-22.5)
     ax.set_thetamax(180)
     ax.set_xticks(np.arange(0,np.pi+.1,np.pi/4))
+
+    plt.legend()
 
     ax.grid(True)
     ax.set_title(f"Live output from PuTTy Log File", size=14, y=1.0, pad=-24) 

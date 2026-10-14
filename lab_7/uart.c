@@ -46,8 +46,8 @@ void uart_init(void){
 
 	GPIO_PORTB_DEN_R |= 0b00000011;		
 
-	GPIO_PORTB_DIR_R |= 0b00000001;		// sets pb0 as output	(TX)
-	GPIO_PORTB_DIR_R &= ~(0b0000010);	// sets pb1 as input	(RX)
+	GPIO_PORTB_DIR_R &= ~(0b00000001);		// sets pb0 as input	(RX)
+	GPIO_PORTB_DIR_R |= 0b0000010;			// sets pb1 as output	(TX)
 	
 	double fbrd;						// Float baud rate
     int    ibrd;						// Int baud rate

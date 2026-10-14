@@ -32,6 +32,12 @@ void cyBot_init_Scan_cust(int feature) {
 	left_calibration_value = 1225000;
 	#endif
 	
+    #ifdef USE_CYBOT_04
+    // Values for CyBot #1
+    right_calibration_value = 280000;
+    left_calibration_value = 1225000;
+    #endif
+
 	#ifdef USE_CYBOT_11
 	// CyBot #11
 	right_calibration_value = 295750;
