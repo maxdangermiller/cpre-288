@@ -21,9 +21,9 @@
 #define UART1_PCTLB_BITMASK 0b00010001
 #define UART1_BITMASK 0b00000011
 
-// #define PART_3
-// #define PART_3A
-#define PART_4
+#define PART_3
+#define PART_3A
+// #define PART_4
 
 
 
@@ -81,8 +81,8 @@ int main(void) {
 
 	// For Part 3a
 	#ifdef PART_3A
-	// lcd_printf("IR CALIBRATION");
-	// cyBot_IR_Calibrate();
+	lcd_printf("IR CALIBRATION");
+	cyBot_IR_Calibrate();
 	#endif
 
 

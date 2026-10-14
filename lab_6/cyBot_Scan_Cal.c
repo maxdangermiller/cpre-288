@@ -1,6 +1,9 @@
 #include "cyBot_Scan_Cal.h"
 
 
+extern volatile int button_event;
+
+
 /**
  * Calibrate IR Distance
  */
