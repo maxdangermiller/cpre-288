@@ -34,6 +34,7 @@ def animate(frame):
     s_dists = []
     ir_dists = []
     clean_s_dists = []
+    clean_ir_dists = []
     
     try:
         with open(full_path + filename, 'r') as f:
@@ -72,14 +73,16 @@ def animate(frame):
             for i in range(cleanStart + 2, cleanEnd):
                 data = lines[i].split()
                 clean_s_dists.append(float(data[1]))
+                clean_ir_dists.append(float(data[2]))
     except:
         print("File doesn't have data yet.")
 
     ax.clear()
 
-    ax.plot(angle_radians, s_dists, color='b', linewidth=4.0, label='Sound Distance')
-    ax.plot(angle_radians, clean_s_dists, color='g', linewidth=3.0, label='Cleaned Distance')
-    ax.plot(angle_radians, ir_dists, color='r', linewidth=3.0, label='IR Distance')
+    ax.plot(angle_radians, s_dists, color='b', linewidth=1.0, label='Sound Distance')
+    ax.plot(angle_radians, clean_s_dists, color='g', linewidth=3.0, label='Cleaned Sound Distance')
+    ax.plot(angle_radians, ir_dists, color='r', linewidth=1.0, label='IR Distance')
+    ax.plot(angle_radians, clean_ir_dists, color="#00A29A", linewidth=3.0, label='Cleaned IR Distance')
 
     ax.set_xlabel('Distance (cm)', fontsize = 14.0)
     ax.set_ylabel('Angle (degrees)', fontsize = 14.0)

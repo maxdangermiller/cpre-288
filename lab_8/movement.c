@@ -12,7 +12,8 @@
 
 // CyBot 24
 #define DIS_CALIBRATION 1.0
-#define ANG_CALIBRATION 1.00425832
+// #define ANG_CALIBRATION 1.00425832
+#define ANG_CALIBRATION 1.055
 
 #define FAST_SPEED 150
 #define FINE_SPEED 20
@@ -180,15 +181,20 @@ void turn_abs(oi_t *cyBot, double target_deg) {
 
 	int slow = 0;
 
+	int cur_speed = 30;
+
     oi_update(cyBot); // Clear preivious update
 
-	oi_setWheels(-dir * FAST_SPEED, dir * FAST_SPEED);
-
-
-	// sprintf(str, "Turning (abs): from %.2lf° to %.2lf°!", pos_deg, target_deg);
-	// cyBot_sendString(str);
+	oi_setWheels(-dir * cur_speed, dir * cur_speed);
 
 	while (dir * (pos_deg - target_deg) > PRECISION) {
+		if (cur_speed < FAST_SPEED) {
+            cur_speed += POS_ACCEL;
+        }
+        else {
+            cur_speed = FAST_SPEED;
+        }
+		
 		oi_update(cyBot);
 
 		// Set the change in the angle since the last update
@@ -196,14 +202,9 @@ void turn_abs(oi_t *cyBot, double target_deg) {
 		
 		pos_deg += ang_change;
 
-	    // sprintf(str, "Direction: %d, target: %.2lf, current: %.2lf, delta: %.2lf, change: %.2lf", dir, target_deg, pos_deg, pos_deg - target_deg, ang_change);
-	    // cyBot_sendString(str);
-
-	    // sprintf(str, ", prediction: %0.2lf\r\n", pos_deg - target_deg + 3 * ang_change);
-	    // cyBot_sendString(str);
-
-        // sprintf(str, "Turning (abs): Final angle %.2lf°/%.2lf°! Delta: %.2lf=%.2lf\r\n", pos_deg, target_deg, cyBot->angle, ang_change);
-        // cyBot_sendString(str);
+		if (!slow) {
+			oi_setWheels(-dir * cur_speed, dir * cur_speed);
+		}
 
 	    // If we are going to be there by there in the next three loops, slow down
         if (!slow && dir * (pos_deg - target_deg + 3 * ang_change) <= PRECISION) {
@@ -224,7 +225,7 @@ void turn_abs(oi_t *cyBot, double target_deg) {
 	oi_update(cyBot);
 	pos_deg += (cyBot->angle * ANG_CALIBRATION);
 
-	sprintf(str, "Turning (abs): Final angle %.2lf° where the target was %.2lf°!\r\n", pos_deg, target_deg);
+	sprintf(str, "Turning (abs): Final angle %.2lf where the target was %.2lf!\r\n", pos_deg, target_deg);
 	cyBot_sendString(str);
 }
 

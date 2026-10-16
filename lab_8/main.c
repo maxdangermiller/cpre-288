@@ -18,8 +18,10 @@ static ObjectInfo_t objects[MAX_OBJECTS];
 static oi_t *cyBot;
 static char str[50];
 
-static double smallest_ang = 90;
+static double smallest_ang = 0;
+static double target_ang = 0;
 
+void point();
 void map(int point_en);
 void get_pos();
 void return_to_home();
@@ -84,7 +86,7 @@ int main(void) {
 
             // Map & Point
             case 'p':
-                turn_rel(cyBot, smallest_ang - 90.0);
+                point();
                 break;
 
 
@@ -95,7 +97,9 @@ int main(void) {
 
             // Left
             case 'a':
-                turn_ccw(cyBot, 45);
+                target_ang += 45.0;
+                // turn_ccw(cyBot, 45);
+                turn_abs(cyBot, target_ang);
                 break;
 
             // running
@@ -105,7 +109,9 @@ int main(void) {
 
             // Right
             case 'd':
-                turn_cw(cyBot, 45);
+                target_ang -= 45.0;
+                // turn_cw(cyBot, 45);
+                turn_abs(cyBot, target_ang);
                 break;
 
             // Send current position
@@ -139,6 +145,14 @@ int main(void) {
 }
 
 
+void point() {
+    if (fabs(smallest_ang - target_ang) > 0.5) {
+        target_ang = smallest_ang;
+        turn_abs(cyBot, target_ang);
+    }
+}
+
+
 /**
  * @name Map
  * @brief Maps objects and points to the smallest one
@@ -168,7 +182,7 @@ void map(int point_en) {
     sprintf(str, "Smallest Object is #%d\r\n", objects[smallest_index].num);
     cyBot_sendString(str);
 
-    smallest_ang =  (double)objects[smallest_index].mp;
+    smallest_ang =  target_ang + (double)objects[smallest_index].mp - 90.0;
 
     if (point_en) {
         turn_rel(cyBot, (double)objects[smallest_index].mp - 90.0);

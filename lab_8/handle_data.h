@@ -12,9 +12,11 @@
 
 
 #define JUMP_THRESHOLD 25
-#define OUTLIER_THRESHOLD 20
+#define OUTLIER_THRESHOLD 2
 #define MAX_SECTIONS 10
 #define MAX_OBJECTS 10
+#define DATA_START_POS 1 	// Any index of data before this point will be ignored when cleaning
+#define DATA_END_POS 90 	// Any index of data after this point will be ignored when cleaning
 
 
 typedef struct SensorData {
