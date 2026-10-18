@@ -23,6 +23,10 @@
 #define Kp 0.04
 
 #define POS_ACCEL 20
+#define ROT_ACCEL 10
+#define MIN_ROT_SPEED 20
+
+#define CYBOT_DEG_TO_DIST 0.203330857857 // Constant that relates the cybot's arc distance covered over a certain number of degrees
 
 
 // Store current position of the CyBot
@@ -181,37 +185,60 @@ void turn_abs(oi_t *cyBot, double target_deg) {
 
 	int slow = 0;
 
-	int cur_speed = 30;
+	int cur_speed = MIN_ROT_SPEED;
+
+	// Store initial angle
+	double half_way = fabs(target_deg - pos_deg) / 2;
+	double accel_deg = 0.0;
+	double ang_change;
 
     oi_update(cyBot); // Clear preivious update
 
 	oi_setWheels(-dir * cur_speed, dir * cur_speed);
 
 	while (dir * (pos_deg - target_deg) > PRECISION) {
-		if (cur_speed < FAST_SPEED) {
-            cur_speed += POS_ACCEL;
-        }
-        else {
-            cur_speed = FAST_SPEED;
-        }
 		
 		oi_update(cyBot);
-
+		
 		// Set the change in the angle since the last update
-		double ang_change = (cyBot->angle * ANG_CALIBRATION);
+		ang_change = (cyBot->angle * ANG_CALIBRATION);
 		
 		pos_deg += ang_change;
 
+		// sprintf(str, "Current Acceleration: %d, dir: %d, pos_deg: %lf, target: %lf, change: %lf\r\n", cur_speed, dir, pos_deg, target_deg, ang_change);
+		// cyBot_sendString(str);
+		sprintf(str, "%d, %lf, %lf, %lf\r\n", cur_speed, pos_deg, target_deg, ang_change);
+		cyBot_sendString(str);
+		
+		// If we're not slowing down, then do shit
 		if (!slow) {
-			oi_setWheels(-dir * cur_speed, dir * cur_speed);
-		}
+			// If we are going to be there by there in the next three loops, slow down
+			if (dir * (pos_deg - target_deg + 3 * ang_change) < half_way && dir * (pos_deg - target_deg + 3 * ang_change) <= fabs(accel_deg)) {
+				
+				cyBot_sendString("Slowing down\r\n");
 
-	    // If we are going to be there by there in the next three loops, slow down
-        if (!slow && dir * (pos_deg - target_deg + 3 * ang_change) <= PRECISION) {
-            // cyBot_sendString("Slowing down\r\n");
-            oi_setWheels(-dir * FINE_SPEED, dir * FINE_SPEED);
-            slow = true;
+				sprintf(str, "%d * (%lf + 3%lf) < %lf && %d * (%lf - %lf) >= |%lf|\r\n", dir, (pos_deg - target_deg), half_way, dir, pos_deg, target_deg, accel_deg);
+				cyBot_sendString(str);
+				slow = true;
+			}
+
+			// Otherwise if we can accelerate, do it daddy
+			else if (cur_speed < FAST_SPEED) {
+				cur_speed += ROT_ACCEL;
+
+				// If we're still accelerating, add it to the amount of degrees that were accelerated
+				accel_deg += -dir * ang_change;	
+			}
         }
+        
+		// Check if we need to start decelerating
+		if (slow && (cur_speed - ROT_ACCEL) > MIN_ROT_SPEED) {
+            cur_speed -= ROT_ACCEL;
+        }
+
+
+		oi_setWheels(-dir * cur_speed, dir * cur_speed);
+		
 
 		// If we are going to be there by the next time we do a loop, go ahead and stop
 		if (dir *(pos_deg - target_deg + ang_change) <= PRECISION) {

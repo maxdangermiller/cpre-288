@@ -81,7 +81,7 @@ int main(void) {
         switch (cmd) {
             // Map
             case 'm':
-                map(false);
+                map(true);
                 break;
 
             // Map & Point
@@ -110,6 +110,13 @@ int main(void) {
             // Right
             case 'd':
                 target_ang -= 45.0;
+                // turn_cw(cyBot, 45);
+                turn_abs(cyBot, target_ang);
+                break;
+
+            // Right
+            case 'f':
+                target_ang -= 360.0;
                 // turn_cw(cyBot, 45);
                 turn_abs(cyBot, target_ang);
                 break;
@@ -185,7 +192,7 @@ void map(int point_en) {
     smallest_ang =  target_ang + (double)objects[smallest_index].mp - 90.0;
 
     if (point_en) {
-        turn_rel(cyBot, (double)objects[smallest_index].mp - 90.0);
+        point();
     }
 }
 
