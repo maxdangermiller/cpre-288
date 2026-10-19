@@ -22,7 +22,7 @@ void cyBot_IR_Calibrate() {
     int dist;
 
     sprintf(str, "\r\nStarting IR Calibration\r\n\r\n");
-    cyBot_sendString(str);
+    uart_sendStr(str);
 
     // Go ahead and move the servo to 90 degrees
     cyBOT_Scan(90, &data);
@@ -31,7 +31,7 @@ void cyBot_IR_Calibrate() {
         dist = distances[i];
 
         sprintf(str, "Place IR Sensor %dcm from object (press and button to measure)\r\n", dist);
-        cyBot_sendString(str);
+        uart_sendStr(str);
 
         // while (cyBot_getByte_blocking() != 'm');
         while (!button_event);
@@ -50,18 +50,18 @@ void cyBot_IR_Calibrate() {
     }
 
     sprintf(str, "All Data Collected. Sending Data in csv format.\r\n\r\n");
-    cyBot_sendString(str);
+    uart_sendStr(str);
 
     sprintf(str, "actual,ir,sound\r\n");
-    cyBot_sendString(str);
+    uart_sendStr(str);
 
     for (i = 0; i < 21; i++) {
         sprintf(str, "%d,%lf,%lf\r\n", calibration_data[i].dist_a, calibration_data[i].dist_m_ir, calibration_data[i].dist_m_s);
-        cyBot_sendString(str);
+        uart_sendStr(str);
     }
 
     sprintf(str, "\r\nCalibration Finished.\r\n");
-    cyBot_sendString(str);
+    uart_sendStr(str);
 
 }
 

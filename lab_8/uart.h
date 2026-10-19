@@ -16,9 +16,12 @@
 
 #include "Timer.h"
 #include <inc/tm4c123gh6pm.h>
+#include <stdio.h>
 
 
 void uart_init(void);
+
+int uart_char_avl();
 
 void uart_sendChar(char data);
 

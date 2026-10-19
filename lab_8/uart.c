@@ -75,8 +75,12 @@ void uart_sendChar(char data) {
 	UART1_DR_R = data;
 }
 
+int uart_char_avl() {
+	return (UART1_FR_R & 0x10) == 0;
+}
+
 char uart_receive(void) {
-	while ((UART1_FR_R & 0x10) != 0);
+	while (!(uart_char_avl()));
 
 	if (UART1_DR_R & 0b111100000000) {
 		// And error occured

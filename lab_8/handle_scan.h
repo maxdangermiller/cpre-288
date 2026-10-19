@@ -10,8 +10,8 @@
 #include "handle_data.h"
 #include "sensor-data.h"
 #include "cyBot_Scan.h"
-#include "cyBot_uart.h"
 #include "cyBot_Scan_Cal.h"
+#include "uart.h"
 
 #define SCAN_RESOLUTION 2
 #define MIN_ANGLE 0
@@ -24,5 +24,6 @@
 void load_scan(SensorData_t sensor_data[], int len);
 void do_scan(SensorData_t sensor_data[]);
 void send_scan(SensorData_t sensor_data[]);
+void scan_ahead(double *dist_ahead, int use_IR);
 
 #endif

@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include "uart.h"
 
 
 #define JUMP_THRESHOLD 25
@@ -48,6 +49,5 @@ float get_linear_size(SensorDataSection_t *data_section);
 int get_smallest_obj(ObjectInfo_t *objects, int len);
 
 void send_object_table(ObjectInfo_t *objects, int object_count);
-void cyBot_sendString(char* str);
 
 #endif

@@ -5,6 +5,7 @@
  */
 #include "handle_data.h"
 
+static void smooth(SensorData_t sensor_data[], int len, int threshold);
 
 /**
  * Clean Data
@@ -100,7 +101,7 @@ void fix_outliers(SensorData_t sensor_data[], int len) {
 /**
  * Smooth
  */
-void smooth(SensorData_t sensor_data[], int len, int threshold) {
+static void smooth(SensorData_t sensor_data[], int len, int threshold) {
 
 	int start = DATA_START_POS;
 	int i, j;
@@ -235,7 +236,6 @@ static double convert_s_ang(double a_s, double d_s) {
  * @param data_section is a reference to the data section to analyze
  */
 int identify_object(ObjectInfo_t *object, SensorDataSection_t *data_section) {
-	char str[50];
 	if (data_section->s_dist >=  100) {
 		return 0;
 	}
@@ -243,12 +243,9 @@ int identify_object(ObjectInfo_t *object, SensorDataSection_t *data_section) {
 	const int ang_width = data_section->end_ang - data_section->start_ang;
 
 	object->mp = (float)ang_width / 2.0 + data_section->start_ang;
-	// sprintf(str, "\r\nAngle Before: %.1f\r\n", object->mp);
-	// cyBot_sendString(str);
+
 	//recalculate midpoint using trig 
 	object->mp = convert_s_ang(object->mp, data_section->s_dist);
-	// sprintf(str, "\r\nAngle After: %.1f\r\n", object->mp);
-	// cyBot_sendString(str);
 	
 	object->s_dist = data_section->s_dist;
 	object->ir_dist = data_section->ir_dist;
@@ -305,24 +302,11 @@ void send_object_table(ObjectInfo_t *objects, int object_count) {
 	ObjectInfo_t object;
 
 	sprintf(str, "\r\nObject#\tAngle (deg)\tSound Dist (cm)\tIR Dist (cm)\tWidth (cm)\r\n");
-	cyBot_sendString(str);
+	uart_sendStr(str);
 
 	for(i = 0; i < object_count; i++) {
 		object = objects[i];
 		sprintf(str, "%d\t\t%.1f\t\t%.2f\t\t%.2f\t\t%.2f\r\n", object.num, object.mp, object.s_dist, object.ir_dist, object.len);
-		cyBot_sendString(str);
-	}
-}
-
-
-/**
- * cyBot send string back to user
- * @param str
- */
-void cyBot_sendString(char* str) {
-	int i = -1;
-
-	while (str[++i] != '\0') {
-		cyBot_sendByte(str[i]);
+		uart_sendStr(str);
 	}
 }

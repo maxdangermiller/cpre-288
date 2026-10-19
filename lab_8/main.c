@@ -8,10 +8,10 @@
 #include "sensor-data.h"
 #include "handle_scan.h"
 #include "cyBot_Scan.h"
-#include "cyBot_uart.h"
 #include "cyBot_Scan_Cal.h"
 #include "movement.h"
 #include "timer.h"
+#include "uart.h"
 
 static SensorData_t sensor_data_ptr[SCAN_STEPS];
 static double dist_ahead;
@@ -24,6 +24,7 @@ static double target_ang = 0;
 
 void point();
 void map(int point_en);
+void move_to_object();
 void get_pos();
 void return_to_home();
 void send_help();
@@ -31,16 +32,17 @@ void send_help();
 extern volatile int button_event;
 extern volatile int button_num;
 
+
 int main(void) {
     timer_init();
-    cyBot_uart_init();
+    uart_init();
 
     cyBot = oi_alloc();
     oi_init(cyBot);
 
 
     sprintf(str, "\r\n\r\nCprE288 Simple Mission\r\n\r\n\r\n");
-    cyBot_sendString(str);
+    uart_sendStr(str);
 
     cyBot_init_Scan_cust(0b111);
 
@@ -73,10 +75,10 @@ int main(void) {
     */
 
     while (running) {
-        cmd = (char)cyBot_getByte();
+        cmd = uart_receive();
 
         sprintf(str, "Pressed: %c\r\n\r\n", cmd);
-        cyBot_sendString(str);
+        uart_sendStr(str);
 
 
         switch (cmd) {
@@ -176,17 +178,17 @@ void map(int point_en) {
     // load_scan(sensor_data_ptr, SCAN_STEPS);
 
     // Send Raw Sensor Data
-    cyBot_sendString("**Raw noisy sensor data**\r\n");
+    uart_sendStr("**Raw noisy sensor data**\r\n");
     send_scan(sensor_data_ptr);
 
     clean_data(sensor_data_ptr, SCAN_STEPS);
 
     // Send Cleaned Sensor Data
-    cyBot_sendString("** Cleaned data **\r\n");
+    uart_sendStr("** Cleaned data **\r\n");
     send_scan(sensor_data_ptr);
 
     // Send Cleaned Sensor Data
-    cyBot_sendString("** Cleaned data (after trig) **\r\n");
+    uart_sendStr("** Cleaned data (after trig) **\r\n");
     send_scan(sensor_data_ptr);
 
     // Determine Object count
@@ -197,7 +199,7 @@ void map(int point_en) {
 
     int smallest_index = get_smallest_obj(objects, object_count);
     sprintf(str, "Smallest Object is #%d\r\n", objects[smallest_index].num);
-    cyBot_sendString(str);
+    uart_sendStr(str);
 
     smallest_ang =  target_ang + (double)objects[smallest_index].mp - 90.0;
 
@@ -217,12 +219,12 @@ void move_to_object() {
     scan_ahead(&dist_ahead, false);
 
     // Send Raw Sensor Data
-    cyBot_sendString("**Raw sensor data**\r\n");
+    uart_sendStr("**Raw sensor data**\r\n");
 
 	sprintf(str, "Sound Distance(cm)\r\n");
-    cyBot_sendString(str);
+    uart_sendStr(str);
     sprintf(str, "%f\r\n", dist_ahead);
-    cyBot_sendString(str);
+    uart_sendStr(str);
 
     int buffer = 3; //adjust how much space between Cybot and object, in cm
     move_forward(cyBot, (int)((dist_ahead-buffer)*10)); 
@@ -265,14 +267,14 @@ void send_help() {
     R: RETURN TO START POINT
     E: EXIT
     */
-    cyBot_sendString("\r\nUART COMMANDS: \r\n\r\n");
-    cyBot_sendString("M: MAP\r\n");
-    cyBot_sendString("P: MAP & POINT\r\n");
-    cyBot_sendString("W: Forward\r\n");
-    cyBot_sendString("A: Left\r\n");
-    cyBot_sendString("S: Backward\r\n");
-    cyBot_sendString("D: Right\r\n");
-    cyBot_sendString("Q: GET CURRENT POSITION\r\n");
-    cyBot_sendString("R: RETURN TO START POINT\r\n");
-    cyBot_sendString("E: EXIT\r\n");
+    uart_sendStr("\r\nUART COMMANDS: \r\n\r\n");
+    uart_sendStr("M: MAP\r\n");
+    uart_sendStr("P: MAP & POINT\r\n");
+    uart_sendStr("W: Forward\r\n");
+    uart_sendStr("A: Left\r\n");
+    uart_sendStr("S: Backward\r\n");
+    uart_sendStr("D: Right\r\n");
+    uart_sendStr("Q: GET CURRENT POSITION\r\n");
+    uart_sendStr("R: RETURN TO START POINT\r\n");
+    uart_sendStr("E: EXIT\r\n");
 }

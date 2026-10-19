@@ -97,12 +97,12 @@ void send_scan(SensorData_t sensor_data[]) {
 
 	sprintf(str, "Angle(Degrees)\tSound Distance(cm)\tIR Distance (cm)\r\n");
 
-	cyBot_sendString(str);
+	uart_sendStr(str);
 
 	for(i = 0; i < SCAN_STEPS; i++) {
 		// Print Data Line
 		sprintf(str, "%d\t\t%f\t\t%f\r\n", sensor_data[i].ang, sensor_data[i].s_dist, sensor_data[i].ir_dist);
 
-		cyBot_sendString(str);
+		uart_sendStr(str);
 	}
 }
