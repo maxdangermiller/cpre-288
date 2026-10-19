@@ -207,18 +207,18 @@ void turn_abs(oi_t *cyBot, double target_deg) {
 
 		// sprintf(str, "Current Acceleration: %d, dir: %d, pos_deg: %lf, target: %lf, change: %lf\r\n", cur_speed, dir, pos_deg, target_deg, ang_change);
 		// cyBot_sendString(str);
-		sprintf(str, "%d, %lf, %lf, %lf\r\n", cur_speed, pos_deg, target_deg, ang_change);
-		cyBot_sendString(str);
+		//sprintf(str, "%d, %lf, %lf, %lf\r\n", cur_speed, pos_deg, target_deg, ang_change);
+		//cyBot_sendString(str);
 		
 		// If we're not slowing down, then do shit
 		if (!slow) {
 			// If we are going to be there by there in the next three loops, slow down
-			if (dir * (pos_deg - target_deg + 3 * ang_change) < half_way && dir * (pos_deg - target_deg + 3 * ang_change) <= fabs(accel_deg)) {
+			if (dir * (pos_deg - target_deg + 5 * ang_change) < half_way && dir * (pos_deg - target_deg + 5 * ang_change) <= fabs(accel_deg)) {
 				
 				cyBot_sendString("Slowing down\r\n");
 
-				sprintf(str, "%d * (%lf + 3%lf) < %lf && %d * (%lf - %lf) >= |%lf|\r\n", dir, (pos_deg - target_deg), half_way, dir, pos_deg, target_deg, accel_deg);
-				cyBot_sendString(str);
+				//sprintf(str, "%d * (%lf + 3%lf) < %lf && %d * (%lf - %lf) >= |%lf|\r\n", dir, (pos_deg - target_deg), half_way, dir, pos_deg, target_deg, accel_deg);
+				//cyBot_sendString(str);
 				slow = true;
 			}
 

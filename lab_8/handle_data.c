@@ -214,12 +214,28 @@ int find_objects(SensorData_t sensor_data[], int len, ObjectInfo_t* objects) {
 
 
 /**
+ * Convert Sensor Angle to Bot Angle
+ * @param a_s angle in degrees
+ * @param d_s distance in cm
+ */
+static double convert_s_ang(double a_s, double d_s) {
+	a_s = (a_s - 90.0) * (M_PI / 180.0);
+	d_s = d_s + 6.0;
+	// np.atan((clean_s_dists * np.sin(new_rads)) / (clean_s_dists * np.cos(new_rads) + 10.0)) + (np.pi / 2.0)
+	double corrected = atan((d_s * sin(a_s)) / (d_s * cos(a_s) + 10.0)) + (M_PI / 2.0);
+	return corrected * 180.0 / M_PI;
+
+}
+
+
+/**
  * Identify Object
  * @brief Identify if object is in the data section
  * @param object is a reference to object info to write to if this is a valid object
  * @param data_section is a reference to the data section to analyze
  */
 int identify_object(ObjectInfo_t *object, SensorDataSection_t *data_section) {
+	char str[50];
 	if (data_section->s_dist >=  100) {
 		return 0;
 	}
@@ -227,11 +243,18 @@ int identify_object(ObjectInfo_t *object, SensorDataSection_t *data_section) {
 	const int ang_width = data_section->end_ang - data_section->start_ang;
 
 	object->mp = (float)ang_width / 2.0 + data_section->start_ang;
+	// sprintf(str, "\r\nAngle Before: %.1f\r\n", object->mp);
+	// cyBot_sendString(str);
+	//recalculate midpoint using trig 
+	object->mp = convert_s_ang(object->mp, data_section->s_dist);
+	// sprintf(str, "\r\nAngle After: %.1f\r\n", object->mp);
+	// cyBot_sendString(str);
+	
 	object->s_dist = data_section->s_dist;
 	object->ir_dist = data_section->ir_dist;
 	object->len = get_linear_size(data_section);
 
-	if (object->len < 2.0 || object->len >= 30.0) {
+	if (object->len < 1.0 || object->len >= 30.0) {
 		return 0;
 	}
 

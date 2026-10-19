@@ -19,6 +19,8 @@
 #define SCAN_STEPS (MAX_ANGLE - MIN_ANGLE) / SCAN_RESOLUTION + 1
 #define SCANS_PER_ANG 3
 
+#define CYBOT_FRONT_TO_SENSOR 6.0
+
 void load_scan(SensorData_t sensor_data[], int len);
 void do_scan(SensorData_t sensor_data[]);
 void send_scan(SensorData_t sensor_data[]);

@@ -18,6 +18,7 @@ void load_scan(SensorData_t sensor_data[], int len) {
     }
 }
 
+
 /**
  * Do scan on CyBot and save the data
  * @param sensor_data
@@ -30,24 +31,59 @@ void do_scan(SensorData_t sensor_data[]) {
 	double sound_mes = 0.0;
 	double ir_mes = 0.0;
 
+	double degrees = 0.0;
+
 	for (i = 0; i < SCAN_STEPS; i++) {
 
 		sound_mes = 0.0;
 		ir_mes = 0.0;
+		degrees = i * SCAN_RESOLUTION + MIN_ANGLE;
 
 		// Scan 3 times
 		for (j = 0; j < SCANS_PER_ANG; j++) {
-			cyBOT_Scan(i * SCAN_RESOLUTION + MIN_ANGLE, &data);
+			cyBOT_Scan(degrees, &data);
 	
-			sound_mes += (double)(data.sound_dist - 6.0);
-			ir_mes += (double)(cyBot_est_IR_dist(data.IR_raw_val) - 6.0);
+			// subtract distance from sensor to front of CyBot
+			sound_mes += (double)(data.sound_dist - CYBOT_FRONT_TO_SENSOR);
+			ir_mes += (double)(cyBot_est_IR_dist(data.IR_raw_val) - CYBOT_FRONT_TO_SENSOR);
 		}
+
 		
-        sensor_data[i].ang = i * SCAN_RESOLUTION + MIN_ANGLE;
-        // subtract distance from sensor to front of CyBot
 		sensor_data[i].s_dist = (float)(sound_mes / (double)SCANS_PER_ANG);
 		sensor_data[i].ir_dist = (float)(ir_mes / (double)SCANS_PER_ANG);
+	
+        sensor_data[i].ang = degrees;
 	}
+}
+
+
+/**
+ * Do scan on CyBot for only the angle directly ahead and return the sound data
+ * @param sensor_data
+ */
+void scan_ahead(double *dist_ahead, int use_IR) {
+	int i;
+	//char str[50];
+	cyBOT_Scan_t data;
+	double mes = 0.0;
+
+	cyBOT_Scan(90 + MIN_ANGLE, &data); 
+	timer_waitMillis(50); //initial turn then delay is necessary to make sure sensor gets accurate info
+
+	// Scan 3 times
+	for (i = 0; i < SCANS_PER_ANG; i++) {
+		cyBOT_Scan(90 + MIN_ANGLE, &data);
+		if(use_IR){
+			mes += (double)(cyBot_est_IR_dist(data.IR_raw_val) - 6.0);
+		}
+		else {
+			mes += (double)(data.sound_dist - 6.0);
+		}
+	}
+	
+	// subtract distance from sensor to front of CyBot
+	*dist_ahead = (float)(mes / (double)SCANS_PER_ANG);
+
 }
 
 /**

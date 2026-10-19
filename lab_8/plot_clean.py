@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os
 import sys
 
-from clean_data import clean_file_data
+from clean_algo import clean_file_data
 
 if len(sys.argv) < 2:
 	print("Missing REQUIRED arguments!\n\nFormat\n\tpython plot_clean.py [text-filename:str] [threshold(optional):int]\n")

@@ -14,6 +14,7 @@
 #include "timer.h"
 
 static SensorData_t sensor_data_ptr[SCAN_STEPS];
+static double dist_ahead;
 static ObjectInfo_t objects[MAX_OBJECTS];
 static oi_t *cyBot;
 static char str[50];
@@ -120,6 +121,11 @@ int main(void) {
                 // turn_cw(cyBot, 45);
                 turn_abs(cyBot, target_ang);
                 break;
+            
+            //move to 5 cm from the object directly ahead
+            case 'c':
+                move_to_object();
+                break;
 
             // Send current position
             case 'q':
@@ -179,6 +185,10 @@ void map(int point_en) {
     cyBot_sendString("** Cleaned data **\r\n");
     send_scan(sensor_data_ptr);
 
+    // Send Cleaned Sensor Data
+    cyBot_sendString("** Cleaned data (after trig) **\r\n");
+    send_scan(sensor_data_ptr);
+
     // Determine Object count
     int object_count = find_objects(&(sensor_data_ptr[2]), SCAN_STEPS - 2, objects);
 
@@ -195,6 +205,32 @@ void map(int point_en) {
         point();
     }
 }
+
+
+/**
+ * @name move_to_object
+ * @brief Moves within 5cm of the closest object
+ */
+void move_to_object() {
+
+
+    scan_ahead(&dist_ahead, false);
+
+    // Send Raw Sensor Data
+    cyBot_sendString("**Raw sensor data**\r\n");
+
+	sprintf(str, "Sound Distance(cm)\r\n");
+    cyBot_sendString(str);
+    sprintf(str, "%f\r\n", dist_ahead);
+    cyBot_sendString(str);
+
+    int buffer = 3; //adjust how much space between Cybot and object, in cm
+    move_forward(cyBot, (int)((dist_ahead-buffer)*10)); 
+
+
+}
+
+
 
 
 /**
