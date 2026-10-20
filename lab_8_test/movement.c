@@ -37,7 +37,7 @@ void spin();
  * Initilize Movement
  * @param interface
  */
-void init_movement(oi_t *interface) {
+void move_init(oi_t *interface) {
 	cyBot = interface;
 	oi_init(cyBot);
 	oi_setWheels(0, 0);
@@ -180,7 +180,7 @@ void spin(){
  * @param y
  * @param a
  */
-void set_target(double x, double y, double a) {
+void move_set_target(double x, double y, double a) {
 	tar_pos.x = x;
 	tar_pos.y = y;
 	tar_pos.a = a;
@@ -190,7 +190,7 @@ void set_target(double x, double y, double a) {
  * Set Target Angle
  * @param a
  */
-void set_target_angle(double a) {
+void move_set_target_angle(double a) {
 	tar_pos.a = a;
 }
 
@@ -199,7 +199,7 @@ void set_target_angle(double a) {
  * @param x
  * @param y
  */
-void set_target_position(double x, double y) {
+void move_set_target_position(double x, double y) {
 	tar_pos.x = x;
 	tar_pos.y = y;
 }

@@ -1,10 +1,19 @@
+/**
+ * @file movement.c
+ * @authors Max Miller, Miles Davis
+ * @brief This file manages all movement for the cyBot
+ * @version 0.4
+ * @date 2026-10-20
+ * 
+ */
 #include "movement.h"
 #include "uart.h"
 #include <stdio.h>
 
 // CyBot 24
-#define DIS_CALIBRATION 1.0
-#define ANG_CALIBRATION 1.055
+#define DIS_CALIBRATION 1.0		// Calibration macro for the distance
+#define ANG_CALIBRATION 1.055	// Calibration macro for rotation
+#define ANG_CALIBRATION 1.0		// Calibration macro for rotation
 
 #define POS_PRECISION 2.0		// mm, how close counts as "there"
 #define ANG_PRECISION 1.0		// degrees, how close a spin needs to get before stopping
@@ -13,42 +22,36 @@
 #define DRIVE_MARGIN 10.0		// degrees, max heading error while moving before we stop and re-spin
 #define LOOKAHEAD 8				// number of updates ahead to look when deciding to slow down
 
-#define POS_ACCEL 20
-#define MIN_SPEED 20
-#define MAX_SPEED 150
-#define Kp 2.0					// Steering correction (mm/s per degree of heading error)
+#define MAX_SPEED 150			// Maximum speed the cyBot is allowed to travel when moving 	(mm/s)
+#define MIN_SPEED 20			// Minimum speed the cyBot is allowed to travel when moving 	(mm/s)
+#define POS_ACCEL 20			// Acceleration for moving forward/backward 					(mm/s)
+#define Kp 2.0					// Steering correction (mm/s per degree of heading error)		(mm/(s*degree))
 
-#define ROT_ACCEL 10
-#define MIN_ROT_SPEED 20
-#define MAX_ROT_SPEED 100
-#define ROT_Kp 2.0				// Spin speed (mm/s per degree of heading error)
+#define MAX_ROT_SPEED 100		// Maximum speed the cyBot is allowed to travel when rotating 	(mm/s)
+#define MIN_ROT_SPEED 20		// Minimum speed the cyBot is allowed to travel when rotating 	(mm/s)
+#define ROT_ACCEL 10			// Acceleration for rotation 									(mm/s)
+#define ROT_Kp 2.0				// Spin speed (mm/s per degree of heading error)				(mm/(s*degree))
 
-#define DEBUG_MOVEMENT
+#define DEBUG_MOVEMENT			// Debug enable macro
 
 
-static struct Pos {
-	double a;	// Angular Heading in degrees from origin
-	double x;	// X position
-	double y;	// Y position
-} cur_pos, tar_pos, change;
+Pos_t cur_pos, tar_pos, change;
 
-static enum STATE {
-	STOP, ACCEL, CRUISE, DECEL, CREEP, SPIN
-} move_state;
+static STATE move_state;
 
-static oi_t *cyBot;
+static oi_t *cyBot;				// Store cyBot reference
 
 static int cur_speed;			// Current wheel speed (mm/s), always positive
 static int move_dir;			// Direction of the current move: 1 forward, -1 backward
 static double dist_change;		// Distance (mm) traveled since the last update
 
-static char str[100];
+static char str[100];			// For debugging 
 
 
+// Internal methods
 static double cur_ang_rad();
 static double tar_ang_rad();
 static double norm_ang(double angle);
-
 static double dist_left();
 static double dist_along();
 static double dist_to_go();
@@ -64,15 +67,17 @@ static void handle_movement();
 static void spin(double target);
 static void halt();
 
+
 /**
  * Initialize Movement
  * Expects oi_init to already have been called on the interface
  * @param interface
  */
-void init_movement(oi_t *interface) {
+void move_init(oi_t *interface) {
 	cyBot = interface;
 	oi_setWheels(0, 0);
 	oi_update(cyBot);	// Clear data
+	oi_setMotorCalibration(1.0, 1.0);
 
 	cur_pos.a = 0;
 	cur_pos.x = 0;
@@ -93,7 +98,7 @@ void init_movement(oi_t *interface) {
  * Movement Update
  * @brief Main update method for all movement of the cyBot. Call AS MUCH AS POSSIBLE
  */
-void movement_update() {
+void move_update() {
 
     oi_update(cyBot);
 
@@ -404,7 +409,7 @@ static void halt() {
  * @param y
  * @param a
  */
-void set_target(double x, double y, double a) {
+void move_set_target(double x, double y, double a) {
 	tar_pos.x = x;
 	tar_pos.y = y;
 	tar_pos.a = a;
@@ -415,7 +420,7 @@ void set_target(double x, double y, double a) {
  * Set Target Angle
  * @param a
  */
-void set_target_angle(double a) {
+void move_set_target_angle(double a) {
 	tar_pos.a = a;
 }
 
@@ -426,7 +431,7 @@ void set_target_angle(double a) {
  * @param x
  * @param y
  */
-void set_target_position(double x, double y) {
+void move_set_target_position(double x, double y) {
 	if (x != tar_pos.x || y != tar_pos.y) {
 		tar_pos.a = atan2(y - tar_pos.y, x - tar_pos.x) * (180.0 / M_PI);
 	}
@@ -459,7 +464,7 @@ void move_backward(int mm) {
  * Turn clockwise
  * @param degrees
  */
-void turn_cw(int degrees) {
+void move_turn_cw(int degrees) {
 	tar_pos.a -= degrees;
 }
 
@@ -468,7 +473,7 @@ void turn_cw(int degrees) {
  * Turn Counter-clockwise
  * @param degrees
  */
-void turn_ccw(int degrees) {
+void move_turn_ccw(int degrees) {
 	tar_pos.a += degrees;
 }
 
@@ -506,4 +511,33 @@ static double norm_ang(double angle) {
     }
 
     return angle;
+}
+
+/**
+ * @brief Get the target pos object
+ * 
+ * @return Pos_t  tar_pos
+ */
+Pos_t move_get_target_pos() {
+	return tar_pos;
+}
+
+
+/**
+ * @brief Get the current pos object
+ * 
+ * @return Pos_t cur_pos
+ */
+Pos_t move_get_current_pos() {
+	return cur_pos;
+}
+
+
+/**
+ * @brief Get Move State
+ * 
+ * @return STATE 
+ */
+STATE move_get_state() {
+	return move_state;
 }

@@ -1,7 +1,7 @@
 /**
  * @name Main File
- * @brief Main file for CprE 288 Lab 5
- * @author Max Miller
+ * @brief Main file for CprE 288 Lab 8
+ * @author Max Miller, Miles Davis
  */
 
 #include "handle_data.h"
@@ -43,16 +43,13 @@ int main(void) {
 
     cyBot = oi_alloc();
     oi_init(cyBot);
-    init_movement(cyBot);
+    move_init(cyBot);
 
 
     sprintf(str, "\r\n\r\nCprE288 Simple Mission\r\n\r\n\r\n");
     uart_sendStr(str);
 
     cyBot_init_Scan_cust(0b111);
-
-    // oi_setMotorCalibration(1.0, 1.0);
-    // rot_calibrate(cyBot);
 
     // Stuff for servo calibration
     // lcd_init();
@@ -65,7 +62,6 @@ int main(void) {
     UART COMMANDS:
 
     M: MAP
-    P: MAP & POINT
     W: Forward
     A: Left
     S: Backward
@@ -76,7 +72,7 @@ int main(void) {
     */
 
     while (running) {
-        movement_update();
+        move_update();
 
         if (uart_flag) {
             uart_flag = 0;
@@ -91,11 +87,6 @@ int main(void) {
                 // Map
                 case 'm':
                     map(true);
-                    break;
-    
-                // Map & Point
-                case 'p':
-                    point();
                     break;
     
     
@@ -229,14 +220,15 @@ void move_to_object() {
 }
 
 
-
-
 /**
  * @name Get Pos
  * @brief Get position and send it over UART
  */
 void get_pos() {
-    // TODO: Unimplemented
+    Pos_t pos = move_get_current_pos();
+
+    sprintf(str, "Current Absolute Position is (%6.2lf, %6.2lf) with a heading of %6.2lf\r\n", pos.x, pos.y, pos.a);
+    uart_sendStr(str);
 }
 
 
@@ -245,7 +237,7 @@ void get_pos() {
  * @brief Go back to the origin
  */
 void return_to_home() {
-    // TODO: Unimplemented
+    move_set_target_position()
 }
 
 
@@ -265,7 +257,6 @@ void send_help() {
     */
     uart_sendStr("\r\nUART COMMANDS: \r\n\r\n");
     uart_sendStr("M: MAP\r\n");
-    uart_sendStr("P: MAP & POINT\r\n");
     uart_sendStr("W: Forward\r\n");
     uart_sendStr("A: Left\r\n");
     uart_sendStr("S: Backward\r\n");

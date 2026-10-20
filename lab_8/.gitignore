@@ -1,1 +1,5 @@
 /Debug/
+/targetConfigs/
+.settings/
+.launches/
+__pycache__/

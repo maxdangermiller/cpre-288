@@ -6,13 +6,13 @@
 
 
 
-void init_movement(oi_t *interface);
+void move_init(oi_t *interface);
 
-void movement_update();
+void move_update();
 
-void set_target(double x, double y, double a);
-void set_target_angle(double a);
-void set_target_position(double x, double y);
+void move_set_target(double x, double y, double a);
+void move_set_target_angle(double a);
+void move_set_target_position(double x, double y);
 
 void move_forward(int mm);
 void move_backward(int mm);
