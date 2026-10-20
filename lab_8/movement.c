@@ -35,9 +35,16 @@
 #define DEBUG_MOVEMENT			// Debug enable macro
 
 
-Pos_t cur_pos, tar_pos, change;
+/**
+ * cur_pos: Current Position
+ * tar_pos: Target Position
+ * change: Change in position between updates
+ * saved_pos: Saved target position while avoiding
+ */
+static Pos_t cur_pos, tar_pos, change, saved_pos;
 
 static STATE move_state;
+static AvoidPhase_t avoid_phase;
 
 static oi_t *cyBot;				// Store cyBot reference
 
@@ -67,6 +74,15 @@ static void handle_movement();
 static void spin(double target);
 static void halt();
 
+static void handle_avoid();
+static int is_avoiding();
+static int has_collided_left();
+static int has_collided_right();
+static int has_collided();
+static void start_avoid();
+
+
+#pragma region Base_User_Functions
 
 /**
  * Initialize Movement
@@ -87,7 +103,9 @@ void move_init(oi_t *interface) {
 	tar_pos.x = 0;
 	tar_pos.y = 0;
 
-	move_state = STOP;
+	saved_pos = tar_pos;
+
+	move_state = MS_STOP;
 	cur_speed = 0;
 	move_dir = 1;
 	dist_change = 0;
@@ -109,8 +127,13 @@ void move_update() {
 	change.x = dist_change * cos(cur_ang_rad());		// Set change in x position
 	change.y = dist_change * sin(cur_ang_rad());		// Set change in y position
 
-	cur_pos.x += change.x;		// Update global x position
-	cur_pos.y += change.y;		// Update global y position
+	cur_pos.x += change.x;								// Update global x position
+	cur_pos.y += change.y;								// Update global y position
+
+	// Check bump sensors
+	if (has_collided()) {
+		start_avoid();
+	}
 
 #ifdef DEBUG_MOVEMENT
 	snprintf(str, sizeof(str), "(%.2lf, %.2lf, %.2lf) -> (%.2lf, %.2lf, %.2lf) state %d speed %d\r\n",
@@ -130,7 +153,11 @@ void move_update() {
 	 * 			If yes: stop
 	 */
 	if (!arrived()) {
-		if (is_facing()) {
+		if (is_avoiding()) {
+			// Continue Avoiding
+			handle_avoid();
+		}
+		else if (is_facing()) {
 			if (is_moving()) {
 				handle_movement();
 			}
@@ -159,7 +186,10 @@ void move_update() {
 
 }
 
+#pragma endregion
 
+
+#pragma region Internal_Movement_Helpers
 /**
  * Straight line distance (mm) to the target
  */
@@ -233,7 +263,7 @@ static int get_direction() {
  * Are we currently driving (not stopped or spinning)
  */
 static int is_moving() {
-	return move_state != STOP && move_state != SPIN;
+	return move_state != MS_STOP && move_state != MS_SPIN;
 }
 
 
@@ -284,7 +314,7 @@ static int getting_close() {
 static void start_movement() {
 	move_dir = get_direction();
 	cur_speed = MIN_SPEED;
-	move_state = ACCEL;
+	move_state = MS_ACCEL;
 	oi_setWheels(move_dir * cur_speed, move_dir * cur_speed);
 }
 
@@ -303,31 +333,31 @@ static void handle_movement() {
 		return;
 	}
 
-	if ((move_state == ACCEL || move_state == CRUISE) && getting_close()) {
-		move_state = DECEL;
+	if ((move_state == MS_ACCEL || move_state == MS_CRUISE) && getting_close()) {
+		move_state = MS_DECEL;
 	}
 
 	// Handle Acceleration
 	switch (move_state) {
-		case ACCEL:
+		case MS_ACCEL:
 			if (cur_speed < MAX_SPEED) {
 				cur_speed += POS_ACCEL;
 			}
 
 			if (cur_speed >= MAX_SPEED) {
 				cur_speed = MAX_SPEED;
-				move_state = CRUISE;
+				move_state = MS_CRUISE;
 			}
 			break;
 
-		case DECEL:
+		case MS_DECEL:
 			if (cur_speed > MIN_SPEED) {
 				cur_speed -= POS_ACCEL;
 			}
 
 			if (cur_speed <= MIN_SPEED) {
 				cur_speed = MIN_SPEED;
-				move_state = CREEP;
+				move_state = MS_CREEP;
 			}
 			break;
 
@@ -374,8 +404,8 @@ static void spin(double target) {
 		tar_speed = MAX_ROT_SPEED;
 	}
 
-	if (move_state != SPIN) {
-		move_state = SPIN;
+	if (move_state != MS_SPIN) {
+		move_state = MS_SPIN;
 		cur_speed = MIN_ROT_SPEED;
 	}
 	else if (cur_speed + ROT_ACCEL < tar_speed) {
@@ -395,14 +425,139 @@ static void spin(double target) {
  * Stop the wheels
  */
 static void halt() {
-	if (move_state != STOP) {
+	if (move_state != MS_STOP) {
 		oi_setWheels(0, 0);
 	}
 	cur_speed = 0;
-	move_state = STOP;
+	move_state = MS_STOP;
+}
+
+#pragma endregion
+
+
+#pragma region Avoid
+
+
+/**
+ * @brief Handle Avoiding
+ * 
+ * @return int 
+ */
+static void handle_avoid() {
+	if (!arrived()) {
+		handle_movement();
+		return;
+	}
+	
+	switch (avoid_phase) {
+		case AP_BACK:
+			if (move_state == MS_AVOID_LEFT)  	move_turn_cw(90);
+			else 							move_turn_ccw(90);
+
+			avoid_phase = AP_TURN1;
+			break;
+		
+		case AP_TURN1:
+			move_forward(250);
+			avoid_phase = AP_SIDE_MOVE;
+			break;
+
+		case AP_SIDE_MOVE:
+			if (move_state == MS_AVOID_LEFT)  	move_turn_ccw(90);
+			else 							move_turn_cw(90);
+
+			avoid_phase = AP_TURN2;
+			break;
+		
+		case AP_TURN2:
+			move_forward(250);
+			avoid_phase = AP_FORWARD;
+			break;
+		
+		case AP_FORWARD:
+			// Resume previous movement
+			tar_pos = saved_pos;
+			start_movement();
+			break;
+		
+	}
+}
+
+/**
+ * @brief Check if we're currently avoiding
+ * 
+ * @return move_state value if we are avoiding, otherwise return 0 
+ */
+static int is_avoiding() {
+	if (move_state == MS_AVOID_LEFT || move_state == MS_AVOID_RIGHT) {
+		return move_state;
+	}
+	return 0;
+}
+
+/**
+ * @name Has Collided on the left side
+ * @returns if the left has collided
+ */
+static int has_collided_left() {
+	return cyBot->bumpLeft;
 }
 
 
+/**
+ * @name Has Collided on the right side
+ * @returns if the right has collided
+ */
+static int has_collided_right() {
+	return cyBot->bumpRight;
+}
+
+
+/**
+ * @name Has Collided on either side
+ * @returns if the has collided
+ */
+static int has_collided() {
+	return has_collided_left(cyBot) || has_collided_right(cyBot);
+}
+
+
+/**
+ * @name Avoid obstacle
+ * @param cyBot
+ */
+static void start_avoid() {
+	/* 
+		If collided back up 15 cm, turn 90 degrees, move laterally 25cm, then turn 90 degrees forward.
+		If the collision occurs with the right bumper, the robot should initially spin 90 degrees to the left. 
+		If the collision occurs with the left bumper, the platform should spin 90 degrees to the right.
+		If both cyBots report a collision, then pick a direction and perform a 90 degree spin.
+	*/
+
+	// If right is triggered or if both are triggered
+	if (has_collided_right(cyBot)) {
+		move_state = MS_AVOID_RIGHT;
+		avoid_phase = AP_BACK;
+		saved_pos = tar_pos;
+
+		tar_pos.x = cur_pos.x - 150 * cos(tar_ang_rad());
+		tar_pos.y = cur_pos.y - 150 * sin(tar_ang_rad());
+	}
+
+	// If left is triggered
+	else if (has_collided_left(cyBot)) {
+		move_state = MS_AVOID_LEFT;
+		move_backward(-250);
+	}
+
+	// Otherwise nothing was triggered so do nothing
+}
+
+
+#pragma endregion
+
+
+#pragma region User_CTRL_Functions
 /**
  * Set Target Position and Angle
  * @param x
@@ -444,7 +599,7 @@ void move_set_target_position(double x, double y) {
  * Move forward
  * @param mm
  */
-void move_forward(int mm) {
+void move_forward(double mm) {
 	tar_pos.x += mm * cos(tar_ang_rad());
 	tar_pos.y += mm * sin(tar_ang_rad());
 }
@@ -454,7 +609,7 @@ void move_forward(int mm) {
  * Move Backward
  * @param mm
  */
-void move_backward(int mm) {
+void move_backward(double mm) {
 	tar_pos.x -= mm * cos(tar_ang_rad());
 	tar_pos.y -= mm * sin(tar_ang_rad());
 }
@@ -464,7 +619,7 @@ void move_backward(int mm) {
  * Turn clockwise
  * @param degrees
  */
-void move_turn_cw(int degrees) {
+void move_turn_cw(double degrees) {
 	tar_pos.a -= degrees;
 }
 
@@ -473,10 +628,75 @@ void move_turn_cw(int degrees) {
  * Turn Counter-clockwise
  * @param degrees
  */
-void move_turn_ccw(int degrees) {
+void move_turn_ccw(double degrees) {
 	tar_pos.a += degrees;
 }
 
+
+/**
+ * Turn to relative degrees
+ * @param degrees 
+ */
+void move_turn_rel(double degrees) {
+	tar_pos.a += degrees;
+}
+
+
+/**
+ * Move Abort
+ * @brief Stops the cyBot and sets the target position to the current position
+ */
+void move_abort() {
+	halt();
+	saved_pos = tar_pos;
+	tar_pos = cur_pos;
+}
+
+
+/**
+ * Move Resume
+ * @brief Resumes movement to whatever the saved_pos
+ * Only call after a call to move_abort
+ */
+void move_resume() {
+	tar_pos = saved_pos;
+}
+
+
+/**
+ * @brief Get the target pos object
+ * 
+ * @return Pos_t  tar_pos
+ */
+Pos_t move_get_target_pos() {
+	return tar_pos;
+}
+
+
+/**
+ * @brief Get the current pos object
+ * 
+ * @return Pos_t cur_pos
+ */
+Pos_t move_get_current_pos() {
+	return cur_pos;
+}
+
+
+/**
+ * @brief Get Move State
+ * 
+ * @return STATE 
+ */
+STATE move_get_state() {
+	return move_state;
+}
+
+
+#pragma endregion
+
+
+#pragma region Trig_Conversions
 
 /**
  * Current angle in radians
@@ -513,31 +733,4 @@ static double norm_ang(double angle) {
     return angle;
 }
 
-/**
- * @brief Get the target pos object
- * 
- * @return Pos_t  tar_pos
- */
-Pos_t move_get_target_pos() {
-	return tar_pos;
-}
-
-
-/**
- * @brief Get the current pos object
- * 
- * @return Pos_t cur_pos
- */
-Pos_t move_get_current_pos() {
-	return cur_pos;
-}
-
-
-/**
- * @brief Get Move State
- * 
- * @return STATE 
- */
-STATE move_get_state() {
-	return move_state;
-}
+#pragma endregion

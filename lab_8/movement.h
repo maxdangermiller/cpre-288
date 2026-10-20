@@ -5,20 +5,33 @@
 #include <math.h>
 
 
+// Struct to store a position
 typedef struct {
 	double a;	// Angular Heading 	(degrees)
 	double x;	// X position		(mm)
 	double y;	// Y position		(mm)
 } Pos_t;
 
+
+// Enum to store what state the movement is in
 typedef enum {
-	STOP = 0, 
-	ACCEL = 1, 
-	CRUISE = 2, 
-	DECEL = 3, 
-	CREEP = 4,
-	SPIN = 5
+	MS_STOP = 0, 		
+	MS_ACCEL = 1, 
+	MS_CRUISE = 2, 
+	MS_DECEL = 3, 
+	MS_CREEP = 4,
+	MS_SPIN = 5,
+	MS_AVOID_LEFT = 6,
+	MS_AVOID_RIGHT = 7
 } STATE;
+
+typedef enum {
+	AP_BACK, 		
+	AP_TURN1, 
+	AP_SIDE_MOVE, 
+	AP_TURN2, 
+	AP_FORWARD
+} AvoidPhase_t;
 
 
 void move_init(oi_t *interface);
@@ -29,10 +42,13 @@ void move_set_target(double x, double y, double a);
 void move_set_target_angle(double a);
 void move_set_target_position(double x, double y);
 
-void move_forward(int mm);
-void move_backward(int mm);
-void move_turn_cw(int degrees);
-void move_turn_ccw(int degrees);
+void move_forward(double mm);
+void move_backward(double mm);
+void move_turn_cw(double degrees);
+void move_turn_ccw(double degrees);
+void move_turn_rel(double degrees);
+void move_abort();
+void move_resume();
 
 Pos_t move_get_target_pos();
 Pos_t move_get_current_pos();
