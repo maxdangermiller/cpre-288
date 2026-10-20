@@ -16,10 +16,11 @@
 #define PARITY 0
 
 volatile char uart_data;
-volatile char flag;
+volatile char uart_flag;
 
 void uart_interrupt_init();
 void uart_interrupt_handler();
+
 
 void uart_init(void){
 	//Turn on PORTB system clock
@@ -76,11 +77,11 @@ void uart_sendChar(char data) {
 }
 
 int uart_char_avl() {
-	return (UART1_FR_R & 0x10) == 0;
+	return uart_flag;
 }
 
 char uart_receive(void) {
-	while (!(uart_char_avl()));
+	while ((UART1_FR_R & 0x10) != 0);
 
 	if (UART1_DR_R & 0b111100000000) {
 		// And error occured
@@ -120,7 +121,7 @@ void uart_interrupt_handler() {
 
 	//STEP2:  Copy the data 
 	uart_data = uart_receive();
-	flag = 1;
+	uart_flag = 1;
 	
 	//STEP3:  Clear the interrup   
 	UART1_ICR_R &= ~0b10000;

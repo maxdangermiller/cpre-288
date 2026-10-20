@@ -9,6 +9,7 @@
 #include "handle_scan.h"
 #include "cyBot_Scan.h"
 #include "cyBot_Scan_Cal.h"
+#include "open_interface.h"
 #include "movement.h"
 #include "timer.h"
 #include "uart.h"
@@ -32,6 +33,9 @@ void send_help();
 extern volatile int button_event;
 extern volatile int button_num;
 
+extern volatile char uart_data;
+extern volatile char uart_flag;
+
 
 int main(void) {
     timer_init();
@@ -39,6 +43,7 @@ int main(void) {
 
     cyBot = oi_alloc();
     oi_init(cyBot);
+    init_movement(cyBot);
 
 
     sprintf(str, "\r\n\r\nCprE288 Simple Mission\r\n\r\n\r\n");
@@ -52,10 +57,6 @@ int main(void) {
     // Stuff for servo calibration
     // lcd_init();
     // cyBOT_SERVO_cal();
-
-
-    // Stop it if it was moving!
-    oi_setWheels(0, 0);
 
     char cmd = 0;
     int running = true;
@@ -75,81 +76,76 @@ int main(void) {
     */
 
     while (running) {
-        cmd = uart_receive();
+        movement_update();
 
-        sprintf(str, "Pressed: %c\r\n\r\n", cmd);
-        uart_sendStr(str);
+        if (uart_flag) {
+            uart_flag = 0;
 
-
-        switch (cmd) {
-            // Map
-            case 'm':
-                map(true);
-                break;
-
-            // Map & Point
-            case 'p':
-                point();
-                break;
-
-
-            // Forward
-            case 'w':
-                move_forward(cyBot, 20);
-                break;
-
-            // Left
-            case 'a':
-                target_ang += 45.0;
-                // turn_ccw(cyBot, 45);
-                turn_abs(cyBot, target_ang);
-                break;
-
-            // running
-            case 's':
-                move_backward(cyBot, 20);
-                break;
-
-            // Right
-            case 'd':
-                target_ang -= 45.0;
-                // turn_cw(cyBot, 45);
-                turn_abs(cyBot, target_ang);
-                break;
-
-            // Right
-            case 'f':
-                target_ang -= 360.0;
-                // turn_cw(cyBot, 45);
-                turn_abs(cyBot, target_ang);
-                break;
-            
-            //move to 5 cm from the object directly ahead
-            case 'c':
-                move_to_object();
-                break;
-
-            // Send current position
-            case 'q':
-                get_pos(cyBot);
-                break;
-
-            // Return to start position
-            case 'r':
-                return_to_home(cyBot);
-                break;
-
-            case 'h':
-                send_help();
-                break;
-
-            // Exit
-            case 'e':
-                running = false;
-                break;
-
-            default:
-                break;
+            cmd = uart_data;
+    
+            sprintf(str, "Pressed: %c\r\n\r\n", cmd);
+            uart_sendStr(str);
+    
+    
+            switch (cmd) {
+                // Map
+                case 'm':
+                    map(true);
+                    break;
+    
+                // Map & Point
+                case 'p':
+                    point();
+                    break;
+    
+    
+                // Forward
+                case 'w':
+                    move_forward(20);
+                    break;
+    
+                // Left
+                case 'a':
+                    oi_setWheels(0, 0);
+                    break;
+    
+                // running
+                case 's':
+                    move_backward(20);
+                    break;
+    
+                // Right
+                case 'd':
+                    // TODO
+                    break;
+    
+                //move to 5 cm from the object directly ahead
+                case 'c':
+                    move_to_object();
+                    break;
+    
+                // Send current position
+                case 'q':
+                    get_pos(cyBot);
+                    break;
+    
+                // Return to start position
+                case 'r':
+                    return_to_home(cyBot);
+                    break;
+    
+                case 'h':
+                    send_help();
+                    break;
+    
+                // Exit
+                case 'e':
+                    running = false;
+                    break;
+    
+                default:
+                    break;
+            }
         }
     }
 
@@ -163,7 +159,7 @@ int main(void) {
 void point() {
     if (fabs(smallest_ang - target_ang) > 0.5) {
         target_ang = smallest_ang;
-        turn_abs(cyBot, target_ang);
+        // turn_abs(cyBot, target_ang);
     }
 }
 
@@ -227,7 +223,7 @@ void move_to_object() {
     uart_sendStr(str);
 
     int buffer = 3; //adjust how much space between Cybot and object, in cm
-    move_forward(cyBot, (int)((dist_ahead-buffer)*10)); 
+    move_forward((int)((dist_ahead-buffer)*10)); 
 
 
 }
