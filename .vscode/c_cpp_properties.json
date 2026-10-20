@@ -10,7 +10,8 @@
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE"
-            ]
+            ],
+            "compilerPath": "C:/cygwin64/bin/gcc.exe"
         },
         {
             "name": "Mac",

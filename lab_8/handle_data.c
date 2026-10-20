@@ -251,7 +251,7 @@ int identify_object(ObjectInfo_t *object, SensorDataSection_t *data_section) {
 	object->ir_dist = data_section->ir_dist;
 	object->len = get_linear_size(data_section);
 
-	if (object->len < 1.0 || object->len >= 30.0) {
+	if (object->len < 2.5 || object->len >= 30.0) {
 		return 0;
 	}
 

@@ -19,14 +19,16 @@ static SensorData_t sensor_data_ptr[SCAN_STEPS];
 static double dist_ahead;
 static ObjectInfo_t objects[MAX_OBJECTS];
 static oi_t *cyBot;
-static char str[50];
+static char str[100];
 
 
 static enum { MODE_AUTO = 0, MODE_MAN = 1 } ctrl_mode;
-static enum { AMS_SCAN, AMS_MOVE, AMS_DONE } auto_mode_state;
+static enum { AMS_WAIT, AMS_SCAN, AMS_POINT, AMS_MOVE, AMS_AVOID, AMS_DONE } auto_mode_state, next_auto_mode_state;
 
 static int running;
 static char cmd;
+static int am_sent_wait_msg;
+static int smallest_object_index;
 
 
 // Interrupt Vars
@@ -40,7 +42,7 @@ extern volatile char uart_flag;
 static void handle_manual_mode();
 static void handle_auto_mode();
 static void handle_mode_toggle();
-static void map(int point_en);
+static int map(int point_en);
 static void move_to_object();
 static void get_pos();
 static void return_to_home();
@@ -98,9 +100,12 @@ int main(void) {
                 handle_mode_toggle();
             }
     
-            handle_manual_mode();
-            handle_auto_mode();
         }
+        else {
+            cmd = '\0';
+        }
+        handle_manual_mode();
+        handle_auto_mode();
     }
 
     free(sensor_data_ptr);
@@ -124,22 +129,22 @@ static void handle_manual_mode() {
 
         // Forward
         case 'w':
-            move_forward(20);
+            move_forward(50);
             break;
 
         // Left
         case 'a':
-            move_turn_ccw(22.5);
+            move_turn_ccw(45);
             break;
 
         // running
         case 's':
-            move_backward(20);
+            move_backward(50);
             break;
 
         // Right
         case 'd':
-            move_turn_cw(22.5);
+            move_turn_cw(45);
             break;
 
         // move to 5 cm from the object directly ahead
@@ -176,26 +181,65 @@ static void handle_manual_mode() {
  * @name Handle Auto Mode 
  */
 static void handle_auto_mode() {
-    if (ctrl_mode != MODE_AUTO) { return; }
-
-    if (move_get_state() != MS_STOP) { 
-        return;
+    if (ctrl_mode != MODE_AUTO)         return;
+    if (move_get_state() != MS_STOP)    return;
+    
+    if (auto_mode_state == AMS_WAIT) {
+        if (cmd != 'h' && !am_sent_wait_msg) {
+            switch (next_auto_mode_state) {
+                case AMS_SCAN:
+                    sprintf(str, "Press 'h' key to start scan!\r\n");
+                    break;
+                case AMS_MOVE:
+                    sprintf(
+                        str, 
+                        "Press 'h' key to move to the smallest index (%d) at %6.2lf degrees!\r\n", 
+                        objects[smallest_object_index].num, 
+                        objects[smallest_object_index].mp
+                    );
+                    break;
+                case AMS_POINT:
+                    sprintf(
+                        str, 
+                        "Press 'h' key to point to the smallest index (%d) at %6.2lf degrees!\r\n", 
+                        objects[smallest_object_index].num, 
+                        objects[smallest_object_index].mp
+                    );
+                    break;
+                case AMS_DONE:
+                    uart_sendStr("Done.\r\n");
+                    break;
+            }
+            am_sent_wait_msg = 1;
+            uart_sendStr(str);
+            return;
+        }
+        else if (cmd == 'h') {
+            auto_mode_state = next_auto_mode_state;
+        }
     }
 
     switch (auto_mode_state) {
-        case AMS_SCAN:      // 1) Map & Point
-            map(1);
+        case AMS_SCAN:      // 1) Map
+            smallest_object_index = map(0);
+            auto_mode_state = AMS_WAIT;
+            next_auto_mode_state = AMS_POINT;
+            break;
+
+        case AMS_POINT:      // 2) Point
+            move_turn_rel((double)objects[smallest_object_index].mp - 90.0);
+            auto_mode_state = AMS_WAIT;
+            next_auto_mode_state = AMS_MOVE;
             break;
         
         case AMS_MOVE:      // 2) Move Towards Smallest Object
             move_to_object();
+            auto_mode_state = AMS_WAIT;
+            next_auto_mode_state = AMS_DONE;
             break;
         case AMS_DONE:
             break;
     }
-    map(1);
-    // 2) Move Towards Smallest Object
-    move_to_object();
 }
 
 
@@ -207,8 +251,11 @@ static void handle_mode_toggle() {
 
     switch (ctrl_mode) {
         case MODE_AUTO:
-            auto_mode_state = AMS_SCAN;
+            auto_mode_state = AMS_WAIT;
+            next_auto_mode_state = AMS_SCAN;
+            am_sent_wait_msg = 0;
             sprintf(str, "Switching to AUTO mode!\r\n\r\n");
+            sprintf(str, "Press 'h' key to start scan!\r\n");
             break;
         case MODE_MAN:
             sprintf(str, "Switching to MANUAL mode!\r\n\r\n");
@@ -225,9 +272,10 @@ static void handle_mode_toggle() {
 
 /**
  * @name Map
- * @brief Maps objects and points to the smallest one
+ * @brief Maps objects and points to the smallest one (if enabled)
+ * @returns smallest object index
  */
-static void map(int point_en) {
+static int map(int point_en) {
     // turn_abs(cyBot, 0.0);
     do_scan(sensor_data_ptr);
     // load_scan(sensor_data_ptr, SCAN_STEPS);
@@ -259,6 +307,8 @@ static void map(int point_en) {
     if (point_en) {
         move_turn_rel((double)objects[smallest_index].mp - 90.0);
     }
+
+    return smallest_index;
 }
 
 
@@ -276,7 +326,7 @@ static void move_to_object() {
     sprintf(str, "%f\r\n", dist_ahead);
     uart_sendStr(str);
 
-    int buffer = 3; //adjust how much space between Cybot and object, in cm
+    int buffer = 0; //adjust how much space between Cybot and object, in cm
     move_forward((int)((dist_ahead-buffer)*10)); 
 
 
@@ -290,7 +340,7 @@ static void move_to_object() {
 static void get_pos() {
     Pos_t pos = move_get_current_pos();
 
-    sprintf(str, "Current Absolute Position is (%6.2lf, %6.2lf) with a heading of %6.2lf\r\n", pos.x, pos.y, pos.a);
+    sprintf(str, "Current Absolute Position is (%6.2lf, %6.2lf) with a heading of %6.2lf in state %d.\r\n", pos.x, pos.y, pos.a, move_get_state());
     uart_sendStr(str);
 }
 

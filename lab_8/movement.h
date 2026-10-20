@@ -14,18 +14,22 @@ typedef struct {
 
 
 // Enum to store what state the movement is in
-typedef enum {
+typedef enum MoveState {
 	MS_STOP = 0, 		
 	MS_ACCEL = 1, 
 	MS_CRUISE = 2, 
 	MS_DECEL = 3, 
 	MS_CREEP = 4,
-	MS_SPIN = 5,
-	MS_AVOID_LEFT = 6,
-	MS_AVOID_RIGHT = 7
+	MS_SPIN = 5
 } STATE;
 
-typedef enum {
+typedef enum AvoidState {
+	AS_NONE,
+	MS_AVOID_LEFT,
+	MS_AVOID_RIGHT
+} AvoidState_t;
+
+typedef enum AvoidPhase {
 	AP_BACK, 		
 	AP_TURN1, 
 	AP_SIDE_MOVE, 

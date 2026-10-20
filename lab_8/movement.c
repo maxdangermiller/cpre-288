@@ -12,11 +12,11 @@
 
 // CyBot 24
 #define DIS_CALIBRATION 1.0		// Calibration macro for the distance
-#define ANG_CALIBRATION 1.055	// Calibration macro for rotation
+// #define ANG_CALIBRATION 1.055	// Calibration macro for rotation
 #define ANG_CALIBRATION 1.0		// Calibration macro for rotation
 
-#define POS_PRECISION 2.0		// mm, how close counts as "there"
-#define ANG_PRECISION 1.0		// degrees, how close a spin needs to get before stopping
+#define POS_PRECISION 20		// mm, how close counts as "there"
+#define ANG_PRECISION 2.0		// degrees, how close a spin needs to get before stopping
 #define FINE_DIST 20.0			// mm, inside this we stop steering and only care about distance along our heading
 #define FACE_MARGIN 3.0			// degrees, max heading error allowed to start moving
 #define DRIVE_MARGIN 10.0		// degrees, max heading error while moving before we stop and re-spin
@@ -25,14 +25,14 @@
 #define MAX_SPEED 150			// Maximum speed the cyBot is allowed to travel when moving 	(mm/s)
 #define MIN_SPEED 20			// Minimum speed the cyBot is allowed to travel when moving 	(mm/s)
 #define POS_ACCEL 20			// Acceleration for moving forward/backward 					(mm/s)
-#define Kp 2.0					// Steering correction (mm/s per degree of heading error)		(mm/(s*degree))
+#define Kp 4.0					// Steering correction (mm/s per degree of heading error)		(mm/(s*degree))
 
 #define MAX_ROT_SPEED 100		// Maximum speed the cyBot is allowed to travel when rotating 	(mm/s)
 #define MIN_ROT_SPEED 20		// Minimum speed the cyBot is allowed to travel when rotating 	(mm/s)
 #define ROT_ACCEL 10			// Acceleration for rotation 									(mm/s)
-#define ROT_Kp 2.0				// Spin speed (mm/s per degree of heading error)				(mm/(s*degree))
+#define ROT_Kp 4.0				// Spin speed (mm/s per degree of heading error)				(mm/(s*degree))
 
-#define DEBUG_MOVEMENT			// Debug enable macro
+// #define DEBUG_MOVEMENT			// Debug enable macro
 
 
 /**
@@ -44,6 +44,7 @@
 static Pos_t cur_pos, tar_pos, change, saved_pos;
 
 static STATE move_state;
+static AvoidState_t avoid_state;
 static AvoidPhase_t avoid_phase;
 
 static oi_t *cyBot;				// Store cyBot reference
@@ -74,7 +75,7 @@ static void handle_movement();
 static void spin(double target);
 static void halt();
 
-static void handle_avoid();
+static int handle_avoid();
 static int is_avoiding();
 static int has_collided_left();
 static int has_collided_right();
@@ -131,7 +132,7 @@ void move_update() {
 	cur_pos.y += change.y;								// Update global y position
 
 	// Check bump sensors
-	if (has_collided()) {
+	if (has_collided() && avoid_state != MS_AVOID_LEFT && avoid_state != MS_AVOID_RIGHT) {
 		start_avoid();
 	}
 
@@ -152,12 +153,10 @@ void move_update() {
 	 * 			If no: stop if driving, then start/continue spin to the target angle
 	 * 			If yes: stop
 	 */
-	if (!arrived()) {
-		if (is_avoiding()) {
-			// Continue Avoiding
-			handle_avoid();
-		}
-		else if (is_facing()) {
+	if ((avoid_state == MS_AVOID_LEFT || avoid_state == MS_AVOID_RIGHT) && handle_avoid()) {}
+	else if (!arrived()) {
+
+		if (is_facing()) {
 			if (is_moving()) {
 				handle_movement();
 			}
@@ -443,33 +442,38 @@ static void halt() {
  * 
  * @return int 
  */
-static void handle_avoid() {
+static int handle_avoid() {
+	if (avoid_state != MS_AVOID_LEFT && avoid_state != MS_AVOID_RIGHT) return;
+
 	if (!arrived()) {
-		handle_movement();
-		return;
-	}
+		return 0;
+	};
 	
+	sprintf(str, "Handle Avoid - Avoid phase %d\r\n", avoid_phase);
+	uart_sendStr(str);
 	switch (avoid_phase) {
 		case AP_BACK:
-			if (move_state == MS_AVOID_LEFT)  	move_turn_cw(90);
-			else 							move_turn_ccw(90);
+			if (avoid_state == MS_AVOID_LEFT)  	move_turn_cw(90);
+			else 								move_turn_ccw(90);
 
 			avoid_phase = AP_TURN1;
 			break;
 		
 		case AP_TURN1:
 			move_forward(250);
+
 			avoid_phase = AP_SIDE_MOVE;
 			break;
 
 		case AP_SIDE_MOVE:
-			if (move_state == MS_AVOID_LEFT)  	move_turn_ccw(90);
-			else 							move_turn_cw(90);
+			if (avoid_state == MS_AVOID_LEFT)  	move_turn_cw(90);
+			else 								move_turn_ccw(90);
 
 			avoid_phase = AP_TURN2;
 			break;
 		
 		case AP_TURN2:
+
 			move_forward(250);
 			avoid_phase = AP_FORWARD;
 			break;
@@ -477,10 +481,12 @@ static void handle_avoid() {
 		case AP_FORWARD:
 			// Resume previous movement
 			tar_pos = saved_pos;
-			start_movement();
+			move_state = MS_ACCEL;
+			avoid_state = AS_NONE;
 			break;
 		
 	}
+	return 1;
 }
 
 /**
@@ -489,8 +495,8 @@ static void handle_avoid() {
  * @return move_state value if we are avoiding, otherwise return 0 
  */
 static int is_avoiding() {
-	if (move_state == MS_AVOID_LEFT || move_state == MS_AVOID_RIGHT) {
-		return move_state;
+	if (avoid_state == MS_AVOID_LEFT || avoid_state == MS_AVOID_RIGHT) {
+		return avoid_state;
 	}
 	return 0;
 }
@@ -534,11 +540,15 @@ static void start_avoid() {
 		If both cyBots report a collision, then pick a direction and perform a 90 degree spin.
 	*/
 
+	uart_sendStr("Starting Avoid!\r\n");
+
 	// If right is triggered or if both are triggered
 	if (has_collided_right(cyBot)) {
-		move_state = MS_AVOID_RIGHT;
+		avoid_state = MS_AVOID_RIGHT;
 		avoid_phase = AP_BACK;
 		saved_pos = tar_pos;
+
+		halt();
 
 		tar_pos.x = cur_pos.x - 150 * cos(tar_ang_rad());
 		tar_pos.y = cur_pos.y - 150 * sin(tar_ang_rad());
@@ -546,8 +556,14 @@ static void start_avoid() {
 
 	// If left is triggered
 	else if (has_collided_left(cyBot)) {
-		move_state = MS_AVOID_LEFT;
-		move_backward(-250);
+		avoid_state = MS_AVOID_LEFT;
+		avoid_phase = AP_BACK;
+		saved_pos = tar_pos;
+
+		halt();
+
+		tar_pos.x = cur_pos.x - 150 * cos(tar_ang_rad());
+		tar_pos.y = cur_pos.y - 150 * sin(tar_ang_rad());
 	}
 
 	// Otherwise nothing was triggered so do nothing
@@ -568,6 +584,7 @@ void move_set_target(double x, double y, double a) {
 	tar_pos.x = x;
 	tar_pos.y = y;
 	tar_pos.a = a;
+	start_movement();
 }
 
 
@@ -577,6 +594,7 @@ void move_set_target(double x, double y, double a) {
  */
 void move_set_target_angle(double a) {
 	tar_pos.a = a;
+	spin(tar_pos.a);
 }
 
 
@@ -592,6 +610,7 @@ void move_set_target_position(double x, double y) {
 	}
 	tar_pos.x = x;
 	tar_pos.y = y;
+	start_movement();
 }
 
 
@@ -602,6 +621,7 @@ void move_set_target_position(double x, double y) {
 void move_forward(double mm) {
 	tar_pos.x += mm * cos(tar_ang_rad());
 	tar_pos.y += mm * sin(tar_ang_rad());
+	start_movement();
 }
 
 
@@ -612,6 +632,7 @@ void move_forward(double mm) {
 void move_backward(double mm) {
 	tar_pos.x -= mm * cos(tar_ang_rad());
 	tar_pos.y -= mm * sin(tar_ang_rad());
+	start_movement();
 }
 
 
@@ -621,6 +642,7 @@ void move_backward(double mm) {
  */
 void move_turn_cw(double degrees) {
 	tar_pos.a -= degrees;
+	spin(tar_pos.a);
 }
 
 
@@ -630,6 +652,7 @@ void move_turn_cw(double degrees) {
  */
 void move_turn_ccw(double degrees) {
 	tar_pos.a += degrees;
+	spin(tar_pos.a);
 }
 
 
@@ -639,6 +662,7 @@ void move_turn_ccw(double degrees) {
  */
 void move_turn_rel(double degrees) {
 	tar_pos.a += degrees;
+	spin(tar_pos.a);
 }
 
 
