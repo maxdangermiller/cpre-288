@@ -154,6 +154,7 @@ void movement_update() {
 
 }
 
+
 /**
  * Straight line distance (mm) to the target
  */
@@ -162,6 +163,7 @@ static double dist_left() {
 	double m_y = tar_pos.y - cur_pos.y;			// Distance to move in the y direction
 	return sqrt(m_x*m_x + m_y*m_y);				// Distance to move along the hypotenuse
 }
+
 
 /**
  * Distance (mm) to the target projected onto our current heading.
@@ -173,6 +175,7 @@ static double dist_along() {
 	return m_x * cos(cur_ang_rad()) + m_y * sin(cur_ang_rad());
 }
 
+
 /**
  * Distance (mm) we still need to drive.
  * When we're close, the angle to the target gets noisy, so only count the distance along our heading
@@ -183,6 +186,7 @@ static double dist_to_go() {
 	}
 	return dist_left();
 }
+
 
 /**
  * Angle (degrees) the CyBot needs to face to drive to the target, taking direction into account
@@ -197,6 +201,7 @@ static double face_angle() {
 
 	return a;
 }
+
 
 /**
  * Which way to drive to get to the target
@@ -218,6 +223,7 @@ static int get_direction() {
 	return 1;
 }
 
+
 /**
  * Are we currently driving (not stopped or spinning)
  */
@@ -225,12 +231,14 @@ static int is_moving() {
 	return move_state != STOP && move_state != SPIN;
 }
 
+
 /**
  * Are we at the target position, or going to be by the next update
  */
 static int arrived() {
 	return dist_to_go() - fabs(dist_change) <= POS_PRECISION;
 }
+
 
 /**
  * Are we facing the target position (or the back of the cyBot is if backing up)
@@ -247,12 +255,14 @@ static int is_facing() {
 	return fabs(norm_ang(face_angle() - cur_pos.a)) <= margin;
 }
 
+
 /**
  * Are we at the target angle
  */
 static int is_at_angle() {
 	return fabs(norm_ang(tar_pos.a - cur_pos.a)) <= FACE_MARGIN;
 }
+
 
 /**
  * Are we going to be there within the next LOOKAHEAD updates
@@ -261,6 +271,11 @@ static int getting_close() {
 	return dist_to_go() - LOOKAHEAD * fabs(dist_change) <= POS_PRECISION;
 }
 
+
+/**
+ * Start Movement
+ * 
+ */
 static void start_movement() {
 	move_dir = get_direction();
 	cur_speed = MIN_SPEED;
@@ -268,6 +283,11 @@ static void start_movement() {
 	oi_setWheels(move_dir * cur_speed, move_dir * cur_speed);
 }
 
+
+/**
+ * Handle Movement
+ * 
+ */
 static void handle_movement() {
 
 	int dir = get_direction();
@@ -322,6 +342,7 @@ static void handle_movement() {
 
 }
 
+
 /**
  * Spin in place towards an angle
  * @param target angle in degrees
@@ -364,6 +385,7 @@ static void spin(double target) {
 
 }
 
+
 /**
  * Stop the wheels
  */
@@ -374,8 +396,6 @@ static void halt() {
 	cur_speed = 0;
 	move_state = STOP;
 }
-
-
 
 
 /**
@@ -390,6 +410,7 @@ void set_target(double x, double y, double a) {
 	tar_pos.a = a;
 }
 
+
 /**
  * Set Target Angle
  * @param a
@@ -397,6 +418,7 @@ void set_target(double x, double y, double a) {
 void set_target_angle(double a) {
 	tar_pos.a = a;
 }
+
 
 /**
  * Set Target Position
@@ -412,6 +434,7 @@ void set_target_position(double x, double y) {
 	tar_pos.y = y;
 }
 
+
 /**
  * Move forward
  * @param mm
@@ -420,6 +443,7 @@ void move_forward(int mm) {
 	tar_pos.x += mm * cos(tar_ang_rad());
 	tar_pos.y += mm * sin(tar_ang_rad());
 }
+
 
 /**
  * Move Backward
@@ -430,6 +454,7 @@ void move_backward(int mm) {
 	tar_pos.y -= mm * sin(tar_ang_rad());
 }
 
+
 /**
  * Turn clockwise
  * @param degrees
@@ -437,6 +462,7 @@ void move_backward(int mm) {
 void turn_cw(int degrees) {
 	tar_pos.a -= degrees;
 }
+
 
 /**
  * Turn Counter-clockwise
@@ -446,6 +472,7 @@ void turn_ccw(int degrees) {
 	tar_pos.a += degrees;
 }
 
+
 /**
  * Current angle in radians
  */
@@ -453,12 +480,14 @@ static double cur_ang_rad() {
 	return cur_pos.a * (M_PI / 180.0);
 }
 
+
 /**
  * Target angle in radians
  */
 static double tar_ang_rad() {
 	return tar_pos.a * (M_PI / 180.0);
 }
+
 
 /**
  * Normalize an angle in degrees to [-180, 180)
