@@ -25,5 +25,6 @@ void load_scan(SensorData_t sensor_data[], int len);
 void do_scan(SensorData_t sensor_data[]);
 void send_scan(SensorData_t sensor_data[]);
 void scan_ahead(double *dist_ahead, int use_IR);
+void servo_point(double angle);
 
 #endif

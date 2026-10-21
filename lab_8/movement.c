@@ -15,21 +15,21 @@
 // #define ANG_CALIBRATION 1.055	// Calibration macro for rotation
 #define ANG_CALIBRATION 1.0		// Calibration macro for rotation
 
-#define POS_PRECISION 20		// mm, how close counts as "there"
+#define POS_PRECISION 10		// mm, how close counts as "there"
 #define ANG_PRECISION 2.0		// degrees, how close a spin needs to get before stopping
 #define FINE_DIST 20.0			// mm, inside this we stop steering and only care about distance along our heading
 #define FACE_MARGIN 3.0			// degrees, max heading error allowed to start moving
 #define DRIVE_MARGIN 10.0		// degrees, max heading error while moving before we stop and re-spin
 #define LOOKAHEAD 8				// number of updates ahead to look when deciding to slow down
 
-#define MAX_SPEED 150			// Maximum speed the cyBot is allowed to travel when moving 	(mm/s)
+#define MAX_SPEED 400			// Maximum speed the cyBot is allowed to travel when moving 	(mm/s)
 #define MIN_SPEED 20			// Minimum speed the cyBot is allowed to travel when moving 	(mm/s)
-#define POS_ACCEL 20			// Acceleration for moving forward/backward 					(mm/s)
+#define POS_ACCEL 25			// Acceleration for moving forward/backward 					(mm/s)
 #define Kp 4.0					// Steering correction (mm/s per degree of heading error)		(mm/(s*degree))
 
-#define MAX_ROT_SPEED 100		// Maximum speed the cyBot is allowed to travel when rotating 	(mm/s)
+#define MAX_ROT_SPEED 200		// Maximum speed the cyBot is allowed to travel when rotating 	(mm/s)
 #define MIN_ROT_SPEED 20		// Minimum speed the cyBot is allowed to travel when rotating 	(mm/s)
-#define ROT_ACCEL 10			// Acceleration for rotation 									(mm/s)
+#define ROT_ACCEL 20			// Acceleration for rotation 									(mm/s)
 #define ROT_Kp 4.0				// Spin speed (mm/s per degree of heading error)				(mm/(s*degree))
 
 // #define DEBUG_MOVEMENT			// Debug enable macro
@@ -132,7 +132,7 @@ void move_update() {
 	cur_pos.y += change.y;								// Update global y position
 
 	// Check bump sensors
-	if (has_collided() && avoid_state != MS_AVOID_LEFT && avoid_state != MS_AVOID_RIGHT) {
+	if (has_collided() && avoid_state != AS_AVOID_LEFT && avoid_state != AS_AVOID_RIGHT) {
 		start_avoid();
 	}
 
@@ -153,7 +153,7 @@ void move_update() {
 	 * 			If no: stop if driving, then start/continue spin to the target angle
 	 * 			If yes: stop
 	 */
-	if ((avoid_state == MS_AVOID_LEFT || avoid_state == MS_AVOID_RIGHT) && handle_avoid()) {}
+	if (handle_avoid()) {}
 	else if (!arrived()) {
 
 		if (is_facing()) {
@@ -312,9 +312,12 @@ static int getting_close() {
  */
 static void start_movement() {
 	move_dir = get_direction();
-	cur_speed = MIN_SPEED;
+
+	if (cur_speed < MIN_SPEED) {
+		cur_speed = MIN_SPEED;
+		oi_setWheels(move_dir * cur_speed, move_dir * cur_speed);
+	}
 	move_state = MS_ACCEL;
-	oi_setWheels(move_dir * cur_speed, move_dir * cur_speed);
 }
 
 
@@ -325,6 +328,9 @@ static void start_movement() {
 static void handle_movement() {
 
 	int dir = get_direction();
+
+	// sprintf(str, "Moving in direction: %d\r\n", dir);
+	// uart_sendStr(str);
 
 	// If we overshot and need to go the other way, stop. We'll start back up next update
 	if (dir != move_dir) {
@@ -443,9 +449,9 @@ static void halt() {
  * @return int 
  */
 static int handle_avoid() {
-	if (avoid_state != MS_AVOID_LEFT && avoid_state != MS_AVOID_RIGHT) return;
+	if (!is_avoiding()) return 0;
 
-	if (!arrived()) {
+	if (!arrived() || !is_at_angle()) {
 		return 0;
 	};
 	
@@ -453,32 +459,43 @@ static int handle_avoid() {
 	uart_sendStr(str);
 	switch (avoid_phase) {
 		case AP_BACK:
-			if (avoid_state == MS_AVOID_LEFT)  	move_turn_cw(90);
-			else 								move_turn_ccw(90);
+			move_backward(100);
 
 			avoid_phase = AP_TURN1;
 			break;
 		
 		case AP_TURN1:
-			move_forward(250);
+			if (avoid_state == AS_AVOID_LEFT) {
+				move_turn_cw(90);
+			}
+			else {
+				move_turn_ccw(90);
+			}
 
 			avoid_phase = AP_SIDE_MOVE;
 			break;
 
 		case AP_SIDE_MOVE:
-			if (avoid_state == MS_AVOID_LEFT)  	move_turn_cw(90);
-			else 								move_turn_ccw(90);
+			move_forward(250);
+			
 
 			avoid_phase = AP_TURN2;
 			break;
 		
 		case AP_TURN2:
-
-			move_forward(250);
+			if (avoid_state == AS_AVOID_LEFT) {
+				move_turn_ccw(90);
+			}
+			else {
+				move_turn_cw(90);
+			}
+			move_forward(100);
 			avoid_phase = AP_FORWARD;
 			break;
 		
 		case AP_FORWARD:
+			move_forward(250);
+
 			// Resume previous movement
 			tar_pos = saved_pos;
 			move_state = MS_ACCEL;
@@ -495,7 +512,7 @@ static int handle_avoid() {
  * @return move_state value if we are avoiding, otherwise return 0 
  */
 static int is_avoiding() {
-	if (avoid_state == MS_AVOID_LEFT || avoid_state == MS_AVOID_RIGHT) {
+	if (avoid_state == AS_AVOID_LEFT || avoid_state == AS_AVOID_RIGHT) {
 		return avoid_state;
 	}
 	return 0;
@@ -544,26 +561,18 @@ static void start_avoid() {
 
 	// If right is triggered or if both are triggered
 	if (has_collided_right(cyBot)) {
-		avoid_state = MS_AVOID_RIGHT;
+		move_abort();
+
+		avoid_state = AS_AVOID_RIGHT;
 		avoid_phase = AP_BACK;
-		saved_pos = tar_pos;
-
-		halt();
-
-		tar_pos.x = cur_pos.x - 150 * cos(tar_ang_rad());
-		tar_pos.y = cur_pos.y - 150 * sin(tar_ang_rad());
 	}
 
 	// If left is triggered
 	else if (has_collided_left(cyBot)) {
-		avoid_state = MS_AVOID_LEFT;
+		move_abort();
+
+		avoid_state = AS_AVOID_LEFT;
 		avoid_phase = AP_BACK;
-		saved_pos = tar_pos;
-
-		halt();
-
-		tar_pos.x = cur_pos.x - 150 * cos(tar_ang_rad());
-		tar_pos.y = cur_pos.y - 150 * sin(tar_ang_rad());
 	}
 
 	// Otherwise nothing was triggered so do nothing
@@ -674,6 +683,8 @@ void move_abort() {
 	halt();
 	saved_pos = tar_pos;
 	tar_pos = cur_pos;
+
+	avoid_state = AS_NONE;
 }
 
 

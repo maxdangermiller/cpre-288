@@ -106,3 +106,10 @@ void send_scan(SensorData_t sensor_data[]) {
 		uart_sendStr(str);
 	}
 }
+
+
+void servo_point(double angle) {
+	cyBOT_Scan_t data;
+
+	cyBOT_Scan((int)angle, &data); 
+}

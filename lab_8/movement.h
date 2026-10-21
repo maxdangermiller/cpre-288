@@ -25,8 +25,8 @@ typedef enum MoveState {
 
 typedef enum AvoidState {
 	AS_NONE,
-	MS_AVOID_LEFT,
-	MS_AVOID_RIGHT
+	AS_AVOID_LEFT,
+	AS_AVOID_RIGHT
 } AvoidState_t;
 
 typedef enum AvoidPhase {

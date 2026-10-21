@@ -118,6 +118,7 @@ int main(void) {
  * @name Handle Manual Mode
  */
 static void handle_manual_mode() {
+    static int index = 0;
     if (ctrl_mode != MODE_MAN) { return; }
 
     switch (cmd) {
@@ -125,7 +126,6 @@ static void handle_manual_mode() {
         case 'm':
             map(true);
             break;
-
 
         // Forward
         case 'w':
@@ -190,22 +190,23 @@ static void handle_auto_mode() {
                 case AMS_SCAN:
                     sprintf(str, "Press 'h' key to start scan!\r\n");
                     break;
-                case AMS_MOVE:
-                    sprintf(
-                        str, 
-                        "Press 'h' key to move to the smallest index (%d) at %6.2lf degrees!\r\n", 
-                        objects[smallest_object_index].num, 
-                        objects[smallest_object_index].mp
-                    );
-                    break;
+
                 case AMS_POINT:
                     sprintf(
                         str, 
-                        "Press 'h' key to point to the smallest index (%d) at %6.2lf degrees!\r\n", 
-                        objects[smallest_object_index].num, 
-                        objects[smallest_object_index].mp
+                        "Next Step: Point towards object #%d.\r\nPress 'h' key to continue...\r\n", 
+                        objects[smallest_object_index].num
                     );
                     break;
+
+                case AMS_MOVE:
+                    sprintf(
+                        str, 
+                        "Next Step: Move towards object #%d.\r\nPress 'h' key to continue...\r\n", 
+                        objects[smallest_object_index].num
+                    );
+                    break;
+                
                 case AMS_DONE:
                     uart_sendStr("Done.\r\n");
                     break;
@@ -216,6 +217,7 @@ static void handle_auto_mode() {
         }
         else if (cmd == 'h') {
             auto_mode_state = next_auto_mode_state;
+            am_sent_wait_msg = 0;
         }
     }
 
@@ -251,17 +253,25 @@ static void handle_mode_toggle() {
 
     switch (ctrl_mode) {
         case MODE_AUTO:
+            sprintf(str, "Switching to AUTO mode!\r\n\r\n");
+            uart_sendStr(str);
+
             auto_mode_state = AMS_WAIT;
             next_auto_mode_state = AMS_SCAN;
             am_sent_wait_msg = 0;
-            sprintf(str, "Switching to AUTO mode!\r\n\r\n");
-            sprintf(str, "Press 'h' key to start scan!\r\n");
+
             break;
+            
         case MODE_MAN:
             sprintf(str, "Switching to MANUAL mode!\r\n\r\n");
+            uart_sendStr(str);
+            move_abort();
+            
             break;
+
         default:
             sprintf(str, "Switching to an UNKNOWN mode!\r\n\r\n");
+            uart_sendStr(str);
     }
 
     uart_sendStr(str);
@@ -276,6 +286,9 @@ static void handle_mode_toggle() {
  * @returns smallest object index
  */
 static int map(int point_en) {
+    // Stop it if it's moving
+    move_abort();
+
     // turn_abs(cyBot, 0.0);
     do_scan(sensor_data_ptr);
     // load_scan(sensor_data_ptr, SCAN_STEPS);
@@ -304,8 +317,20 @@ static int map(int point_en) {
     sprintf(str, "Smallest Object is #%d\r\n", objects[smallest_index].num);
     uart_sendStr(str);
 
+    
+    // Point to all objects
+    int i;
+    
+    for (i = 0; i < object_count; i++) {
+        servo_point((double)objects[i].mp);
+        timer_waitMillis(500);
+    }
+    
     if (point_en) {
         move_turn_rel((double)objects[smallest_index].mp - 90.0);
+    }
+    else {
+        servo_point((double)objects[smallest_index].mp);
     }
 
     return smallest_index;
@@ -318,14 +343,20 @@ static int map(int point_en) {
  */
 static void move_to_object() {
 
+    sprintf(str, "Scanning for distance to object in front of CyBot...\n");
+    uart_sendStr(str);
 
     scan_ahead(&dist_ahead, false);
 
-	sprintf(str, "Sound Distance(cm)\r\n");
-    uart_sendStr(str);
-    sprintf(str, "%f\r\n", dist_ahead);
+    sprintf(str, "\rScanning for distance to object in front of CyBot... Found %6.2fcm\r\n", dist_ahead);
     uart_sendStr(str);
 
+	// sprintf(str, "Sound Distance(cm)\r\n");
+    // uart_sendStr(str);
+    // sprintf(str, "%f\r\n", dist_ahead);
+    // uart_sendStr(str);
+
+    sprintf(str, "Moving towards object in front of cybot\r\n");
     int buffer = 0; //adjust how much space between Cybot and object, in cm
     move_forward((int)((dist_ahead-buffer)*10)); 
 

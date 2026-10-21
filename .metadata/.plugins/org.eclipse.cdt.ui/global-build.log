@@ -15080,3 +15080,733 @@ Finished building target: "lab_8.out"
  
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../cyBot_Scan_Cal.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="cyBot_Scan_Cal.d_raw"  "../cyBot_Scan_Cal.c"
+Finished building: "../cyBot_Scan_Cal.c"
+ 
+Building file: "../handle_scan.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="handle_scan.d_raw"  "../handle_scan.c"
+Finished building: "../handle_scan.c"
+ 
+Building file: "../uart.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="uart.d_raw"  "../uart.c"
+Finished building: "../uart.c"
+ 
+Building file: "../handle_data.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="handle_data.d_raw"  "../handle_data.c"
+Finished building: "../handle_data.c"
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 250: warning #190-D: enumerated type mixed with another type
+Finished building: "../main.c"
+ 
+Building file: "../movement.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="movement.d_raw"  "../movement.c"
+"../movement.c", line 86: warning #163-D: unrecognized #pragma
+"../movement.c", line 188: warning #163-D: unrecognized #pragma
+"../movement.c", line 191: warning #163-D: unrecognized #pragma
+"../movement.c", line 434: warning #163-D: unrecognized #pragma
+"../movement.c", line 437: warning #163-D: unrecognized #pragma
+"../movement.c", line 446: warning #118-D: non-void function "handle_avoid" should return a value
+"../movement.c", line 527: warning #141-D: too many arguments in function call
+"../movement.c", line 527: warning #141-D: too many arguments in function call
+"../movement.c", line 546: warning #141-D: too many arguments in function call
+"../movement.c", line 558: warning #141-D: too many arguments in function call
+"../movement.c", line 573: warning #163-D: unrecognized #pragma
+"../movement.c", line 576: warning #163-D: unrecognized #pragma
+"../movement.c", line 720: warning #163-D: unrecognized #pragma
+"../movement.c", line 723: warning #163-D: unrecognized #pragma
+"../movement.c", line 760: warning #163-D: unrecognized #pragma
+"../movement.c", line 497: warning #179-D: function "is_avoiding" was declared but never referenced
+Finished building: "../movement.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../cyBot_Scan_Cal.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="cyBot_Scan_Cal.d_raw"  "../cyBot_Scan_Cal.c"
+Finished building: "../cyBot_Scan_Cal.c"
+ 
+Building file: "../handle_scan.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="handle_scan.d_raw"  "../handle_scan.c"
+Finished building: "../handle_scan.c"
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 250: warning #190-D: enumerated type mixed with another type
+Finished building: "../main.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 251: warning #190-D: enumerated type mixed with another type
+Finished building: "../main.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 252: warning #190-D: enumerated type mixed with another type
+Finished building: "../main.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 252: warning #190-D: enumerated type mixed with another type
+Finished building: "../main.c"
+ 
+Building file: "../movement.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="movement.d_raw"  "../movement.c"
+"../movement.c", line 86: warning #163-D: unrecognized #pragma
+"../movement.c", line 188: warning #163-D: unrecognized #pragma
+"../movement.c", line 191: warning #163-D: unrecognized #pragma
+"../movement.c", line 437: warning #163-D: unrecognized #pragma
+"../movement.c", line 440: warning #163-D: unrecognized #pragma
+"../movement.c", line 449: warning #118-D: non-void function "handle_avoid" should return a value
+"../movement.c", line 530: warning #141-D: too many arguments in function call
+"../movement.c", line 530: warning #141-D: too many arguments in function call
+"../movement.c", line 549: warning #141-D: too many arguments in function call
+"../movement.c", line 561: warning #141-D: too many arguments in function call
+"../movement.c", line 576: warning #163-D: unrecognized #pragma
+"../movement.c", line 579: warning #163-D: unrecognized #pragma
+"../movement.c", line 723: warning #163-D: unrecognized #pragma
+"../movement.c", line 726: warning #163-D: unrecognized #pragma
+"../movement.c", line 763: warning #163-D: unrecognized #pragma
+"../movement.c", line 500: warning #179-D: function "is_avoiding" was declared but never referenced
+Finished building: "../movement.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../movement.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="movement.d_raw"  "../movement.c"
+"../movement.c", line 86: warning #163-D: unrecognized #pragma
+"../movement.c", line 188: warning #163-D: unrecognized #pragma
+"../movement.c", line 191: warning #163-D: unrecognized #pragma
+"../movement.c", line 437: warning #163-D: unrecognized #pragma
+"../movement.c", line 440: warning #163-D: unrecognized #pragma
+"../movement.c", line 530: warning #141-D: too many arguments in function call
+"../movement.c", line 530: warning #141-D: too many arguments in function call
+"../movement.c", line 549: warning #141-D: too many arguments in function call
+"../movement.c", line 562: warning #141-D: too many arguments in function call
+"../movement.c", line 578: warning #163-D: unrecognized #pragma
+"../movement.c", line 581: warning #163-D: unrecognized #pragma
+"../movement.c", line 725: warning #163-D: unrecognized #pragma
+"../movement.c", line 728: warning #163-D: unrecognized #pragma
+"../movement.c", line 765: warning #163-D: unrecognized #pragma
+"../movement.c", line 500: warning #179-D: function "is_avoiding" was declared but never referenced
+Finished building: "../movement.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+gmake[1]: 'lab_8.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../movement.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="movement.d_raw"  "../movement.c"
+"../movement.c", line 86: warning #163-D: unrecognized #pragma
+"../movement.c", line 188: warning #163-D: unrecognized #pragma
+"../movement.c", line 191: warning #163-D: unrecognized #pragma
+"../movement.c", line 437: warning #163-D: unrecognized #pragma
+"../movement.c", line 440: warning #163-D: unrecognized #pragma
+"../movement.c", line 530: warning #141-D: too many arguments in function call
+"../movement.c", line 530: warning #141-D: too many arguments in function call
+"../movement.c", line 549: warning #141-D: too many arguments in function call
+"../movement.c", line 562: warning #141-D: too many arguments in function call
+"../movement.c", line 578: warning #163-D: unrecognized #pragma
+"../movement.c", line 581: warning #163-D: unrecognized #pragma
+"../movement.c", line 728: warning #163-D: unrecognized #pragma
+"../movement.c", line 731: warning #163-D: unrecognized #pragma
+"../movement.c", line 768: warning #163-D: unrecognized #pragma
+"../movement.c", line 500: warning #179-D: function "is_avoiding" was declared but never referenced
+Finished building: "../movement.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 265: warning #190-D: enumerated type mixed with another type
+Finished building: "../main.c"
+ 
+Building file: "../movement.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="movement.d_raw"  "../movement.c"
+"../movement.c", line 86: warning #163-D: unrecognized #pragma
+"../movement.c", line 188: warning #163-D: unrecognized #pragma
+"../movement.c", line 191: warning #163-D: unrecognized #pragma
+"../movement.c", line 437: warning #163-D: unrecognized #pragma
+"../movement.c", line 440: warning #163-D: unrecognized #pragma
+"../movement.c", line 530: warning #141-D: too many arguments in function call
+"../movement.c", line 530: warning #141-D: too many arguments in function call
+"../movement.c", line 549: warning #141-D: too many arguments in function call
+"../movement.c", line 562: warning #141-D: too many arguments in function call
+"../movement.c", line 578: warning #163-D: unrecognized #pragma
+"../movement.c", line 581: warning #163-D: unrecognized #pragma
+"../movement.c", line 730: warning #163-D: unrecognized #pragma
+"../movement.c", line 733: warning #163-D: unrecognized #pragma
+"../movement.c", line 770: warning #163-D: unrecognized #pragma
+Finished building: "../movement.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 267: warning #190-D: enumerated type mixed with another type
+Finished building: "../main.c"
+ 
+Building file: "../movement.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="movement.d_raw"  "../movement.c"
+"../movement.c", line 86: warning #163-D: unrecognized #pragma
+"../movement.c", line 188: warning #163-D: unrecognized #pragma
+"../movement.c", line 191: warning #163-D: unrecognized #pragma
+"../movement.c", line 437: warning #163-D: unrecognized #pragma
+"../movement.c", line 440: warning #163-D: unrecognized #pragma
+"../movement.c", line 530: warning #141-D: too many arguments in function call
+"../movement.c", line 530: warning #141-D: too many arguments in function call
+"../movement.c", line 549: warning #141-D: too many arguments in function call
+"../movement.c", line 562: warning #141-D: too many arguments in function call
+"../movement.c", line 578: warning #163-D: unrecognized #pragma
+"../movement.c", line 581: warning #163-D: unrecognized #pragma
+"../movement.c", line 730: warning #163-D: unrecognized #pragma
+"../movement.c", line 733: warning #163-D: unrecognized #pragma
+"../movement.c", line 770: warning #163-D: unrecognized #pragma
+Finished building: "../movement.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 284: warning #190-D: enumerated type mixed with another type
+Finished building: "../main.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 286: warning #190-D: enumerated type mixed with another type
+Finished building: "../main.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 286: warning #190-D: enumerated type mixed with another type
+Finished building: "../main.c"
+ 
+Building file: "../movement.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="movement.d_raw"  "../movement.c"
+"../movement.c", line 86: warning #163-D: unrecognized #pragma
+"../movement.c", line 188: warning #163-D: unrecognized #pragma
+"../movement.c", line 191: warning #163-D: unrecognized #pragma
+"../movement.c", line 437: warning #163-D: unrecognized #pragma
+"../movement.c", line 440: warning #163-D: unrecognized #pragma
+"../movement.c", line 541: warning #141-D: too many arguments in function call
+"../movement.c", line 541: warning #141-D: too many arguments in function call
+"../movement.c", line 560: warning #141-D: too many arguments in function call
+"../movement.c", line 568: warning #141-D: too many arguments in function call
+"../movement.c", line 578: warning #163-D: unrecognized #pragma
+"../movement.c", line 581: warning #163-D: unrecognized #pragma
+"../movement.c", line 730: warning #163-D: unrecognized #pragma
+"../movement.c", line 733: warning #163-D: unrecognized #pragma
+"../movement.c", line 770: warning #163-D: unrecognized #pragma
+Finished building: "../movement.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../movement.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="movement.d_raw"  "../movement.c"
+"../movement.c", line 86: warning #163-D: unrecognized #pragma
+"../movement.c", line 188: warning #163-D: unrecognized #pragma
+"../movement.c", line 191: warning #163-D: unrecognized #pragma
+"../movement.c", line 437: warning #163-D: unrecognized #pragma
+"../movement.c", line 440: warning #163-D: unrecognized #pragma
+"../movement.c", line 541: warning #141-D: too many arguments in function call
+"../movement.c", line 541: warning #141-D: too many arguments in function call
+"../movement.c", line 560: warning #141-D: too many arguments in function call
+"../movement.c", line 568: warning #141-D: too many arguments in function call
+"../movement.c", line 579: warning #163-D: unrecognized #pragma
+"../movement.c", line 582: warning #163-D: unrecognized #pragma
+"../movement.c", line 731: warning #163-D: unrecognized #pragma
+"../movement.c", line 734: warning #163-D: unrecognized #pragma
+"../movement.c", line 771: warning #163-D: unrecognized #pragma
+Finished building: "../movement.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../movement.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="movement.d_raw"  "../movement.c"
+"../movement.c", line 86: warning #163-D: unrecognized #pragma
+"../movement.c", line 188: warning #163-D: unrecognized #pragma
+"../movement.c", line 191: warning #163-D: unrecognized #pragma
+"../movement.c", line 440: warning #163-D: unrecognized #pragma
+"../movement.c", line 443: warning #163-D: unrecognized #pragma
+"../movement.c", line 544: warning #141-D: too many arguments in function call
+"../movement.c", line 544: warning #141-D: too many arguments in function call
+"../movement.c", line 563: warning #141-D: too many arguments in function call
+"../movement.c", line 571: warning #141-D: too many arguments in function call
+"../movement.c", line 582: warning #163-D: unrecognized #pragma
+"../movement.c", line 585: warning #163-D: unrecognized #pragma
+"../movement.c", line 734: warning #163-D: unrecognized #pragma
+"../movement.c", line 737: warning #163-D: unrecognized #pragma
+"../movement.c", line 774: warning #163-D: unrecognized #pragma
+Finished building: "../movement.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../movement.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="movement.d_raw"  "../movement.c"
+"../movement.c", line 86: warning #163-D: unrecognized #pragma
+"../movement.c", line 188: warning #163-D: unrecognized #pragma
+"../movement.c", line 191: warning #163-D: unrecognized #pragma
+"../movement.c", line 440: warning #163-D: unrecognized #pragma
+"../movement.c", line 443: warning #163-D: unrecognized #pragma
+"../movement.c", line 544: warning #141-D: too many arguments in function call
+"../movement.c", line 544: warning #141-D: too many arguments in function call
+"../movement.c", line 563: warning #141-D: too many arguments in function call
+"../movement.c", line 571: warning #141-D: too many arguments in function call
+"../movement.c", line 582: warning #163-D: unrecognized #pragma
+"../movement.c", line 585: warning #163-D: unrecognized #pragma
+"../movement.c", line 734: warning #163-D: unrecognized #pragma
+"../movement.c", line 737: warning #163-D: unrecognized #pragma
+"../movement.c", line 774: warning #163-D: unrecognized #pragma
+Finished building: "../movement.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../movement.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="movement.d_raw"  "../movement.c"
+"../movement.c", line 86: warning #163-D: unrecognized #pragma
+"../movement.c", line 188: warning #163-D: unrecognized #pragma
+"../movement.c", line 191: warning #163-D: unrecognized #pragma
+"../movement.c", line 440: warning #163-D: unrecognized #pragma
+"../movement.c", line 443: warning #163-D: unrecognized #pragma
+"../movement.c", line 544: warning #141-D: too many arguments in function call
+"../movement.c", line 544: warning #141-D: too many arguments in function call
+"../movement.c", line 563: warning #141-D: too many arguments in function call
+"../movement.c", line 571: warning #141-D: too many arguments in function call
+"../movement.c", line 582: warning #163-D: unrecognized #pragma
+"../movement.c", line 585: warning #163-D: unrecognized #pragma
+"../movement.c", line 734: warning #163-D: unrecognized #pragma
+"../movement.c", line 737: warning #163-D: unrecognized #pragma
+"../movement.c", line 774: warning #163-D: unrecognized #pragma
+Finished building: "../movement.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../movement.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="movement.d_raw"  "../movement.c"
+"../movement.c", line 86: warning #163-D: unrecognized #pragma
+"../movement.c", line 188: warning #163-D: unrecognized #pragma
+"../movement.c", line 191: warning #163-D: unrecognized #pragma
+"../movement.c", line 440: warning #163-D: unrecognized #pragma
+"../movement.c", line 443: warning #163-D: unrecognized #pragma
+"../movement.c", line 544: warning #141-D: too many arguments in function call
+"../movement.c", line 544: warning #141-D: too many arguments in function call
+"../movement.c", line 563: warning #141-D: too many arguments in function call
+"../movement.c", line 571: warning #141-D: too many arguments in function call
+"../movement.c", line 582: warning #163-D: unrecognized #pragma
+"../movement.c", line 585: warning #163-D: unrecognized #pragma
+"../movement.c", line 734: warning #163-D: unrecognized #pragma
+"../movement.c", line 737: warning #163-D: unrecognized #pragma
+"../movement.c", line 774: warning #163-D: unrecognized #pragma
+Finished building: "../movement.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 286: warning #190-D: enumerated type mixed with another type
+Finished building: "../main.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../handle_scan.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="handle_scan.d_raw"  "../handle_scan.c"
+Finished building: "../handle_scan.c"
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 286: warning #190-D: enumerated type mixed with another type
+Finished building: "../main.c"
+ 
+Building file: "../movement.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="movement.d_raw"  "../movement.c"
+"../movement.c", line 86: warning #163-D: unrecognized #pragma
+"../movement.c", line 188: warning #163-D: unrecognized #pragma
+"../movement.c", line 191: warning #163-D: unrecognized #pragma
+"../movement.c", line 440: warning #163-D: unrecognized #pragma
+"../movement.c", line 443: warning #163-D: unrecognized #pragma
+"../movement.c", line 544: warning #141-D: too many arguments in function call
+"../movement.c", line 544: warning #141-D: too many arguments in function call
+"../movement.c", line 563: warning #141-D: too many arguments in function call
+"../movement.c", line 571: warning #141-D: too many arguments in function call
+"../movement.c", line 582: warning #163-D: unrecognized #pragma
+"../movement.c", line 585: warning #163-D: unrecognized #pragma
+"../movement.c", line 731: warning #163-D: unrecognized #pragma
+"../movement.c", line 734: warning #163-D: unrecognized #pragma
+"../movement.c", line 771: warning #163-D: unrecognized #pragma
+Finished building: "../movement.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../movement.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="movement.d_raw"  "../movement.c"
+"../movement.c", line 86: warning #163-D: unrecognized #pragma
+"../movement.c", line 188: warning #163-D: unrecognized #pragma
+"../movement.c", line 191: warning #163-D: unrecognized #pragma
+"../movement.c", line 440: warning #163-D: unrecognized #pragma
+"../movement.c", line 443: warning #163-D: unrecognized #pragma
+"../movement.c", line 544: warning #141-D: too many arguments in function call
+"../movement.c", line 544: warning #141-D: too many arguments in function call
+"../movement.c", line 563: warning #141-D: too many arguments in function call
+"../movement.c", line 571: warning #141-D: too many arguments in function call
+"../movement.c", line 582: warning #163-D: unrecognized #pragma
+"../movement.c", line 585: warning #163-D: unrecognized #pragma
+"../movement.c", line 731: warning #163-D: unrecognized #pragma
+"../movement.c", line 734: warning #163-D: unrecognized #pragma
+"../movement.c", line 771: warning #163-D: unrecognized #pragma
+Finished building: "../movement.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../movement.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="movement.d_raw"  "../movement.c"
+"../movement.c", line 86: warning #163-D: unrecognized #pragma
+"../movement.c", line 188: warning #163-D: unrecognized #pragma
+"../movement.c", line 191: warning #163-D: unrecognized #pragma
+"../movement.c", line 440: warning #163-D: unrecognized #pragma
+"../movement.c", line 443: warning #163-D: unrecognized #pragma
+"../movement.c", line 544: warning #141-D: too many arguments in function call
+"../movement.c", line 544: warning #141-D: too many arguments in function call
+"../movement.c", line 563: warning #141-D: too many arguments in function call
+"../movement.c", line 571: warning #141-D: too many arguments in function call
+"../movement.c", line 582: warning #163-D: unrecognized #pragma
+"../movement.c", line 585: warning #163-D: unrecognized #pragma
+"../movement.c", line 731: warning #163-D: unrecognized #pragma
+"../movement.c", line 734: warning #163-D: unrecognized #pragma
+"../movement.c", line 771: warning #163-D: unrecognized #pragma
+Finished building: "../movement.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 286: warning #190-D: enumerated type mixed with another type
+Finished building: "../main.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_8 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../movement.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_8" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="movement.d_raw"  "../movement.c"
+"../movement.c", line 86: warning #163-D: unrecognized #pragma
+"../movement.c", line 188: warning #163-D: unrecognized #pragma
+"../movement.c", line 191: warning #163-D: unrecognized #pragma
+"../movement.c", line 440: warning #163-D: unrecognized #pragma
+"../movement.c", line 443: warning #163-D: unrecognized #pragma
+"../movement.c", line 544: warning #141-D: too many arguments in function call
+"../movement.c", line 544: warning #141-D: too many arguments in function call
+"../movement.c", line 563: warning #141-D: too many arguments in function call
+"../movement.c", line 571: warning #141-D: too many arguments in function call
+"../movement.c", line 582: warning #163-D: unrecognized #pragma
+"../movement.c", line 585: warning #163-D: unrecognized #pragma
+"../movement.c", line 731: warning #163-D: unrecognized #pragma
+"../movement.c", line 734: warning #163-D: unrecognized #pragma
+"../movement.c", line 771: warning #163-D: unrecognized #pragma
+Finished building: "../movement.c"
+ 
+Building target: "lab_8.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_8.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_8_linkInfo.xml" --rom_model -o "lab_8.out" "./Timer.obj" "./button.obj" "./cyBot_Scan_Cal.obj" "./handle_data.obj" "./handle_scan.obj" "./lcd.obj" "./main.obj" "./movement.obj" "./open_interface.obj" "./tm4c123gh6pm_startup_ccs.obj" "./uart.obj" "../libcybotScan.lib" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_8.out"
+ 
+
+**** Build Finished ****
