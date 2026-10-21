@@ -6,5 +6,6 @@ org.eclipse.cdt.ui.formatterprofiles=<?xml version\="1.0" encoding\="UTF-8" stan
 org.eclipse.cdt.ui.formatterprofiles.version=1
 sourceHoverBackgroundColor=255,255,225
 spelling_locale_initialized=true
+spelling_user_dictionary_encoding=
 useAnnotationsPrefPage=true
 useQuickDiffPrefPage=true

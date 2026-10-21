@@ -23,7 +23,7 @@ static char str[100];
 
 
 static enum { MODE_AUTO = 0, MODE_MAN = 1 } ctrl_mode;
-static enum { AMS_WAIT, AMS_SCAN, AMS_POINT, AMS_MOVE, AMS_AVOID, AMS_DONE } auto_mode_state, next_auto_mode_state;
+static enum { AMS_WAIT, AMS_SCAN, AMS_POINT, AMS_GET_DIST, AMS_MOVE, AMS_AVOID, AMS_DONE } auto_mode_state, next_auto_mode_state;
 
 static int running;
 static char cmd;
@@ -149,6 +149,7 @@ static void handle_manual_mode() {
 
         // move to 5 cm from the object directly ahead
         case 'c':
+            scan_ahead(&dist_ahead, false);    
             move_to_object();
             break;
 
@@ -199,6 +200,14 @@ static void handle_auto_mode() {
                     );
                     break;
 
+                case AMS_GET_DIST:
+                    sprintf(
+                        str, 
+                        "Next Step: Get distance of object #%d when facing it.\r\nPress 'h' key to continue...\r\n", 
+                        objects[smallest_object_index].num
+                    );
+                    break;
+
                 case AMS_MOVE:
                     sprintf(
                         str, 
@@ -208,7 +217,7 @@ static void handle_auto_mode() {
                     break;
                 
                 case AMS_DONE:
-                    uart_sendStr("Done.\r\n");
+                    uart_sendStr("Done. Press 'h' key to restart. \r\n");
                     break;
             }
             am_sent_wait_msg = 1;
@@ -231,15 +240,30 @@ static void handle_auto_mode() {
         case AMS_POINT:      // 2) Point
             move_turn_rel((double)objects[smallest_object_index].mp - 90.0);
             auto_mode_state = AMS_WAIT;
+            next_auto_mode_state = AMS_GET_DIST;
+            break;
+
+        case AMS_GET_DIST:      // 3) Get Distance to object
+            sprintf(str, "Scanning for distance to object in front of CyBot...\n");
+            uart_sendStr(str);
+
+            scan_ahead(&dist_ahead, false);
+
+            sprintf(str, "\rScanning for distance to object in front of CyBot... Found %6.2fcm\r\n", dist_ahead);
+            uart_sendStr(str);
+
+            auto_mode_state = AMS_WAIT;
             next_auto_mode_state = AMS_MOVE;
             break;
         
-        case AMS_MOVE:      // 2) Move Towards Smallest Object
+        case AMS_MOVE:      // 4) Move Towards Smallest Object
             move_to_object();
             auto_mode_state = AMS_WAIT;
             next_auto_mode_state = AMS_DONE;
             break;
         case AMS_DONE:
+            auto_mode_state = AMS_WAIT;
+            next_auto_mode_state = AMS_SCAN;    
             break;
     }
 }
@@ -254,7 +278,6 @@ static void handle_mode_toggle() {
     switch (ctrl_mode) {
         case MODE_AUTO:
             sprintf(str, "Switching to AUTO mode!\r\n\r\n");
-            uart_sendStr(str);
 
             auto_mode_state = AMS_WAIT;
             next_auto_mode_state = AMS_SCAN;
@@ -264,14 +287,11 @@ static void handle_mode_toggle() {
             
         case MODE_MAN:
             sprintf(str, "Switching to MANUAL mode!\r\n\r\n");
-            uart_sendStr(str);
-            move_abort();
             
             break;
 
         default:
             sprintf(str, "Switching to an UNKNOWN mode!\r\n\r\n");
-            uart_sendStr(str);
     }
 
     uart_sendStr(str);
@@ -343,21 +363,13 @@ static int map(int point_en) {
  */
 static void move_to_object() {
 
-    sprintf(str, "Scanning for distance to object in front of CyBot...\n");
-    uart_sendStr(str);
-
-    scan_ahead(&dist_ahead, false);
-
-    sprintf(str, "\rScanning for distance to object in front of CyBot... Found %6.2fcm\r\n", dist_ahead);
-    uart_sendStr(str);
-
 	// sprintf(str, "Sound Distance(cm)\r\n");
     // uart_sendStr(str);
     // sprintf(str, "%f\r\n", dist_ahead);
     // uart_sendStr(str);
 
     sprintf(str, "Moving towards object in front of cybot\r\n");
-    int buffer = 0; //adjust how much space between Cybot and object, in cm
+    int buffer = 1; //adjust how much space between Cybot and object, in cm
     move_forward((int)((dist_ahead-buffer)*10)); 
 
 

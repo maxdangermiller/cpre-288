@@ -22,14 +22,14 @@
 #define DRIVE_MARGIN 10.0		// degrees, max heading error while moving before we stop and re-spin
 #define LOOKAHEAD 8				// number of updates ahead to look when deciding to slow down
 
-#define MAX_SPEED 400			// Maximum speed the cyBot is allowed to travel when moving 	(mm/s)
+#define MAX_SPEED 150			// Maximum speed the cyBot is allowed to travel when moving 	(mm/s)
 #define MIN_SPEED 20			// Minimum speed the cyBot is allowed to travel when moving 	(mm/s)
-#define POS_ACCEL 25			// Acceleration for moving forward/backward 					(mm/s)
+#define POS_ACCEL 20			// Acceleration for moving forward/backward 					(mm/s)
 #define Kp 4.0					// Steering correction (mm/s per degree of heading error)		(mm/(s*degree))
 
-#define MAX_ROT_SPEED 200		// Maximum speed the cyBot is allowed to travel when rotating 	(mm/s)
+#define MAX_ROT_SPEED 100		// Maximum speed the cyBot is allowed to travel when rotating 	(mm/s)
 #define MIN_ROT_SPEED 20		// Minimum speed the cyBot is allowed to travel when rotating 	(mm/s)
-#define ROT_ACCEL 20			// Acceleration for rotation 									(mm/s)
+#define ROT_ACCEL 10			// Acceleration for rotation 									(mm/s)
 #define ROT_Kp 4.0				// Spin speed (mm/s per degree of heading error)				(mm/(s*degree))
 
 // #define DEBUG_MOVEMENT			// Debug enable macro
@@ -494,11 +494,12 @@ static int handle_avoid() {
 			break;
 		
 		case AP_FORWARD:
-			move_forward(250);
+			move_forward(0);
 
+			
 			// Resume previous movement
-			tar_pos = saved_pos;
-			move_state = MS_ACCEL;
+			//tar_pos = saved_pos;
+			//move_state = MS_ACCEL;
 			avoid_state = AS_NONE;
 			break;
 		
