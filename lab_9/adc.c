@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <math.h>
+#include "Timer.h"
 
 /**
  * @brief Initialize ADC for IR sensor
@@ -95,22 +96,22 @@ void adc_init(void) {
  * @return int IR sensor value in 12 bits (0-4095)
  */
 int adc_read(void) {
+    static int i;
+    static int t;
 
-	/**
-	 * Sample Sequence Results found in registers 17-20, FIFO 0-3 respectively (see page 860)
-	 * Let's use 3
-	 */
+    t = 0;
 
-	
-	ADC0_PSSI_R |= ADC_PSSI_SS0; // trigger conversion in SS0
+    for (i = 0; i < 64; i++) {
+        ADC0_PSSI_R |= ADC_PSSI_SS0; // trigger conversion in SS0
 
-	while((ADC0_RIS_R & ADC_PSSI_SS0) == 0);
+        while((ADC0_RIS_R & ADC_PSSI_SS0) == 0);
 
-	int result = ADC0_SSFIFO0_R;
+        t += ADC0_SSFIFO0_R;
 
-	ADC0_ISC_R |= ADC_ISC_IN0;
+        ADC0_ISC_R |= ADC_ISC_IN0;
+    }
 
-	return result;
+	return t / 64;
 }
 
 
@@ -135,7 +136,6 @@ float adc_get_dist(float ir_dist) {
 #include "button.h"
 #include "uart.h"
 #include "lcd.h"
-#include "Timer.h"
 #include "servo.h"
 
 extern volatile int button_event;
@@ -173,18 +173,17 @@ void adc_calibrate() {
     cyBOT_Scan(90, &data);
 
     for (i = 0; i < DIST_COUNT; i++) {
-        uart_sendStr("Place IR Sensor At a new distance between 9cm and 50cm (press and button to measure)\n\r");
+        uart_sendStr("\r\nPlace IR Sensor At a new distance between 9cm and 50cm (press and button to measure)\r\n");
 
         while (!button_event) {
 			cyBOT_Scan(90, &data);
-			lcd_printf("Cur Dist of %6.2lfcm", data.sound_dist);
+			lcd_printf("Cur Dist of %6.2lfcm\n\nSample #%1d", data.sound_dist, i+1);
 
 			sprintf(str, "\rCurrently measuring distance of %6.2lfcm", data.sound_dist);
 			uart_sendStr(str);
 		}
 		
-		uart_sendChar('\n');
-		uart_sendChar('\r');
+        uart_sendStr("\r\n");
 
 
         for (j = 0; j < SAMP_COUNT; j++) {
@@ -197,6 +196,8 @@ void adc_calibrate() {
         timer_waitMillis(50); // Debounce
         button_event = 0;
     }
+
+    lcd_printf("DONE\n");
 
     sprintf(str, "All Data Collected. Sending Data in csv format.\r\n\r\n");
     uart_sendStr(str);
