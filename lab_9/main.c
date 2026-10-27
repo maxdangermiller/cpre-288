@@ -1,6 +1,7 @@
 #include "adc.h"
-#include "timer.h"
+#include "Timer.h"
 #include "lcd.h"
+#include "cyBot_Scan_Cal.h"
 
 int main()
 {
