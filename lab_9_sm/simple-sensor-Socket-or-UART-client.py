@@ -6,7 +6,6 @@
 # General Python tutorials (W3schools):  https://www.w3schools.com/python/
 
 # Serial library:  https://pyserial.readthedocs.io/en/latest/shortintro.html 
-import serial
 import time # Time library   
 # Socket library:  https://realpython.com/python-sockets/  
 # See: Background, Socket API Overview, and TCP Sockets  
@@ -27,8 +26,8 @@ filename = 'sensor-scan.txt' # Name of file you want to store sensor data from y
 # UART END
 
 # TCP Socket BEGIN (See Echo Client example): https://realpython.com/python-sockets/#echo-client-and-server
-HOST = "127.0.0.1"  # The server's hostname or IP address
-PORT = 65432        # The port used by the server
+HOST = "192.168.1.1"  # The server's hostname or IP address
+PORT = 288        # The port used by the server
 cybot_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # Create a socket object
 cybot_socket.connect((HOST, PORT))   # Connect to the socket  (Note: Server must first be running)
                       

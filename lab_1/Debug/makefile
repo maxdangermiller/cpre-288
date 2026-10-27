@@ -2,6 +2,10 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
+SHELL = cmd.exe
+
+CG_TOOL_ROOT := C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS
+
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
 
@@ -15,12 +19,12 @@ ORDERED_OBJS += \
 "../tm4c123gh6pm.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
--l"C:\ti\TivaWare_C_Series-2.2.0.295\driverlib\ccs\Debug\driverlib.lib" \
+-l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" \
 
 -include ../makefile.init
 
-RM := rm -rf
-RMDIR := rm -rf
+RM := DEL /F
+RMDIR := RMDIR /S/Q
 
 # All of the sources participating in the build are defined here
 -include sources.mk
@@ -65,6 +69,9 @@ endif
 ifneq ($(strip $(S64_DEPS)),)
 -include $(S64_DEPS)
 endif
+ifneq ($(strip $(INO_DEPS)),)
+-include $(INO_DEPS)
+endif
 ifneq ($(strip $(CLA_DEPS)),)
 -include $(CLA_DEPS)
 endif
@@ -79,6 +86,9 @@ ifneq ($(strip $(C62_DEPS)),)
 endif
 ifneq ($(strip $(C67_DEPS)),)
 -include $(C67_DEPS)
+endif
+ifneq ($(strip $(PDE_DEPS)),)
+-include $(PDE_DEPS)
 endif
 ifneq ($(strip $(K_DEPS)),)
 -include $(K_DEPS)
@@ -128,8 +138,9 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 
 # Tool invocations
 lab_1.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@echo 'Arm Linker - building target: "$@"'
-	"" -z -m"lab_1.map" --heap_size=1024 --stack_size=2048 -i"/lib" -i"/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_1_linkInfo.xml" --rom_model -o "lab_1.out" $(ORDERED_OBJS)
+	@echo 'Building target: "$@"'
+	@echo 'Invoking: Arm Linker'
+	"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_1.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_1_linkInfo.xml" --rom_model -o "lab_1.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
@@ -138,6 +149,7 @@ clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
 	-$(RM) "Timer.obj" "helloworld copy.obj" "helloworld.obj" "lcd.obj" "scroll.obj" "tm4c123gh6pm_startup_ccs.obj" 
 	-$(RM) "Timer.d" "helloworld copy.d" "helloworld.d" "lcd.d" "scroll.d" "tm4c123gh6pm_startup_ccs.d" 
+	-@echo 'Finished clean'
 	-@echo ' '
 
 .PHONY: all clean dependents

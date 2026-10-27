@@ -73,20 +73,20 @@ void adc_init(void) {
 	 */
 
 
-	ADC0_ACTSS_R &= ~ADC_ACTSS_ASEN0; 		//disable Sample Sequencer 0
+	ADC0_ACTSS_R &= ~ADC_ACTSS_ASEN0; 		// disable Sample Sequencer 0
 
-	// ADC0_EMUX_R &= ~ADC_EMUX_EM0_M; 		//Select software trigger
-	ADC0_EMUX_R &= ~ADC_EMUX_EM0_PROCESSOR; // Select default trigger
+	// ADC0_EMUX_R &= ~ADC_EMUX_EM0_M; 		// Select software trigger
+	ADC0_EMUX_R = ADC_EMUX_EM0_PROCESSOR;   // Select default trigger
 
-	ADC0_SSMUX0_R &= ~0x0; 					// set first sample to come from channel 0
+	ADC0_SSMUX0_R |= 0xA; 					// set first sample to come from PB4
 
-	ADC0_SSCTL0_R |= ADC_SSCTL0_END0; 		// Stop after first sample (since theres only ch0 that we're reading from)
+	ADC0_SSCTL0_R |= 0x6; 					// Stop after first sample (since theres only ch0 that we're reading from)
 
 #ifdef EN_HARDWARE_SAMPLING
 	ADC0_SAC_R = ADC_SAC_AVG_16X;			// Setup hardware averaging (See page 847)
 #endif
 
-	ADC0_ACTSS_R |= ADC_ACTSS_ASEN0; 		//enable Sample Sequencer 0 (step 7)
+	ADC0_ACTSS_R |= ADC_ACTSS_ASEN0; 		// nable Sample Sequencer 0 (step 7)
 }
 
 /**
@@ -108,7 +108,7 @@ int adc_read(void) {
 
 	int result = ADC0_SSFIFO0_R;
 
-	ADC0_ISC_R &= ADC_ISC_IN0;
+	ADC0_ISC_R |= ADC_ISC_IN0;
 
 	return result;
 }
@@ -120,12 +120,12 @@ int adc_read(void) {
  * @param ir_dist measured IR distance (0-4095)
  * @return float distance
  */
-float adc_get_dist(int ir_dist) {
-	// y = ax^b
-    // a = 3076000
-    // b = -1.588
-    // RMSE: 1.393
-    return 3076000.0 * pow(ir_dist, -1.588);
+float adc_get_dist(float ir_dist) {
+	// dist = a/ir_dist
+	if (fabs(ir_dist) <= 5.0) {
+		return -1.0;
+	}
+    return IR_DIST_COF / ir_dist;
 }
 
 
@@ -144,21 +144,15 @@ extern volatile int button_event;
  * Calibrate IR Distance
  */
 void adc_calibrate() {
-	static const int DIST_COUNT = 7;		// Distances
-	static const int SAMP_COUNT = 3;		// Samples
+    #define DIST_COUNT 7		// Distances
+    #define SAMP_COUNT 3		// Samples
 
-    cyBOT_Scan_t calibration_data[DIST_COUNT * SAMP_COUNT];
+    static cyBOT_Scan_t calibration_data[DIST_COUNT * SAMP_COUNT];
 	
     static char str[50];
     cyBOT_Scan_t data;
 
     int i,j;
-
-    sprintf(str, "\r\nStarting IR Calibration\r\n\r\n");
-    uart_sendStr(str);
-
-	// Don't enable IR, since this file handles it
-	cyBOT_init_Scan(0b011);
 
 	left_calibration_value = SERVO_LEFT_CAL;
 	right_calibration_value = SERVO_RIGHT_CAL;
@@ -166,7 +160,15 @@ void adc_calibrate() {
 	uart_init();
 	timer_init();
 	lcd_init();
+	button_init();
+	init_button_interrupts();
+	adc_init();
+	
+	// Don't enable IR, since this file handles it
+	cyBOT_init_Scan(0b011);
 
+	sprintf(str, "\r\nStarting IR Calibration\r\n\r\n");
+    uart_sendStr(str);
     // Go ahead and move the servo to 90 degrees
     cyBOT_Scan(90, &data);
 

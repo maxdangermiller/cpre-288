@@ -1,0 +1,67 @@
+#ifndef SERVO_H
+#define SERVO_H
+
+#include "cybot.h"
+
+
+#ifdef USE_CYBOT_01
+
+#define SERVO_RIGHT_CAL 232750
+#define SERVO_LEFT_CAL 1225000
+
+#elif defined(USE_CYBOT_03)
+
+#define SERVO_RIGHT_CAL 259000
+#define SERVO_LEFT_CAL 1204000
+
+#elif defined(USE_CYBOT_04)
+
+#define SERVO_RIGHT_CAL 280000
+#define SERVO_LEFT_CAL 1225000
+
+#elif defined(USE_CYBOT_09)
+
+#define SERVO_RIGHT_CAL 259000
+#define SERVO_LEFT_CAL 1246000
+
+#elif defined(USE_CYBOT_11)
+
+#define SERVO_RIGHT_CAL 295750
+#define SERVO_LEFT_CAL 1288000
+
+#elif defined(USE_CYBOT_17)
+
+#define SERVO_RIGHT_CAL 248500
+#define SERVO_LEFT_CAL 1204000
+
+#elif defined(USE_CYBOT_22)
+
+#define SERVO_RIGHT_CAL 248500
+#define SERVO_LEFT_CAL 1267000
+
+#elif defined(USE_CYBOT_24)
+
+#define SERVO_RIGHT_CAL 253750
+#define SERVO_LEFT_CAL 1235500
+
+#elif defined(USE_CYBOT_25)
+
+#define SERVO_RIGHT_CAL 285250
+#define SERVO_LEFT_CAL 1246000
+
+
+#elif defined(USE_CYBOT_26)
+
+#define SERVO_RIGHT_CAL 311500
+#define SERVO_LEFT_CAL 1309000
+
+#else
+
+#define SERVO_RIGHT_CAL 232750
+#define SERVO_LEFT_CAL 1225000
+
+#endif
+
+
+
+#endif
