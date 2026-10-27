@@ -3,7 +3,12 @@
 #include <inc/tm4c123gh6pm.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <math.h>
 
+/**
+ * @brief Initialize ADC for IR sensor
+ * 
+ */
 void adc_init(void) {
 	//  AIN10 on PB4 - using ADC0 and SS0
 
@@ -77,11 +82,18 @@ void adc_init(void) {
 
 	ADC0_SSCTL0_R |= ADC_SSCTL0_END0; 		// Stop after first sample (since theres only ch0 that we're reading from)
 
+#ifdef EN_HARDWARE_SAMPLING
 	ADC0_SAC_R = ADC_SAC_AVG_16X;			// Setup hardware averaging (See page 847)
+#endif
 
 	ADC0_ACTSS_R |= ADC_ACTSS_ASEN0; 		//enable Sample Sequencer 0 (step 7)
 }
 
+/**
+ * @brief Read IR sensor value using ADC
+ * 
+ * @return int IR sensor value in 12 bits (0-4095)
+ */
 int adc_read(void) {
 
 	/**
@@ -100,3 +112,104 @@ int adc_read(void) {
 
 	return result;
 }
+
+
+/**
+ * @brief Get Distance conversion for IR
+ * 
+ * @param ir_dist measured IR distance (0-4095)
+ * @return float distance
+ */
+float adc_get_dist(int ir_dist) {
+	// y = ax^b
+    // a = 3076000
+    // b = -1.588
+    // RMSE: 1.393
+    return 3076000.0 * pow(ir_dist, -1.588);
+}
+
+
+#ifdef EN_CALIBRATE
+
+#include "cyBot_Scan.h"
+#include "button.h"
+#include "uart.h"
+#include "lcd.h"
+#include "Timer.h"
+#include "servo.h"
+
+extern volatile int button_event;
+
+/**
+ * Calibrate IR Distance
+ */
+void adc_calibrate() {
+	static const int DIST_COUNT = 7;		// Distances
+	static const int SAMP_COUNT = 3;		// Samples
+
+    static cyBOT_Scan_t calibration_data[DIST_COUNT * SAMP_COUNT];
+	
+    static char str[50];
+    cyBOT_Scan_t data;
+
+    int i,j;
+
+    sprintf(str, "\r\nStarting IR Calibration\r\n\r\n");
+    uart_sendStr(str);
+
+	// Don't enable IR, since this file handles it
+	cyBOT_init_Scan(0b011);
+
+	left_calibration_value = SERVO_LEFT_CAL;
+	right_calibration_value = SERVO_RIGHT_CAL;
+
+	uart_init();
+	timer_init();
+	lcd_init();
+
+    // Go ahead and move the servo to 90 degrees
+    cyBOT_Scan(90, &data);
+
+    for (i = 0; i < DIST_COUNT; i++) {
+        uart_sendStr("Place IR Sensor At a new distance between 9cm and 50cm (press and button to measure)\n\r");
+
+        while (!button_event) {
+			cyBOT_Scan(90, &data);
+			lcd_printf("Cur Dist of %6.2lfcm", data.sound_dist);
+
+			sprintf(str, "\rCurrently measuring distance of %6.2lfcm", data.sound_dist);
+			uart_sendStr(str);
+		}
+		
+		uart_sendChar('\n');
+		uart_sendChar('\r');
+
+
+        for (j = 0; j < SAMP_COUNT; j++) {
+            cyBOT_Scan(90, &data);
+
+            calibration_data[SAMP_COUNT * i + j].IR_raw_val = adc_read();
+            calibration_data[SAMP_COUNT * i + j].sound_dist = data.sound_dist;
+        }
+
+        timer_waitMillis(50); // Debounce
+        button_event = 0;
+    }
+
+    sprintf(str, "All Data Collected. Sending Data in csv format.\r\n\r\n");
+    uart_sendStr(str);
+
+    sprintf(str, "sample #,ir,sound\r\n");
+    uart_sendStr(str);
+
+    for (i = 0; i < 21; i++) {
+        sprintf(str, "%2d, %4d, %6.1f\r\n", i, calibration_data[i].IR_raw_val, calibration_data[i].sound_dist);
+        uart_sendStr(str);
+    }
+
+    sprintf(str, "\r\nCalibration Finished.\r\n");
+    uart_sendStr(str);
+
+}
+
+#endif
