@@ -9,7 +9,6 @@
 
 #include "Timer.h"
 #include "lcd.h"
-#include "cyBot_Scan_Cal.h"
 
 int main() {
 	timer_init();
@@ -36,7 +35,6 @@ int main() {
 
 #include "Timer.h"
 #include "lcd.h"
-#include "cyBot_Scan.h"
 
 
 int main() {
