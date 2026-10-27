@@ -1,8 +1,8 @@
 #ifndef ADC_H
 #define ADC_H
 
-#define EN_CALIBRATE
-#define EN_HARDWARE_SAMPLING
+// #define EN_CALIBRATE
+// #define EN_HARDWARE_SAMPLING
 
 
 void adc_init(void);

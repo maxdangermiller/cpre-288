@@ -147,7 +147,7 @@ void adc_calibrate() {
 	static const int DIST_COUNT = 7;		// Distances
 	static const int SAMP_COUNT = 3;		// Samples
 
-    static cyBOT_Scan_t calibration_data[DIST_COUNT * SAMP_COUNT];
+    cyBOT_Scan_t calibration_data[DIST_COUNT * SAMP_COUNT];
 	
     static char str[50];
     cyBOT_Scan_t data;

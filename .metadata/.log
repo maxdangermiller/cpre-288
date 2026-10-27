@@ -4073,3 +4073,12 @@ java.lang.IllegalStateException: Disconnected before saving. Please post stacktr
 		at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4035)
 		at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3635)
 		... 21 more
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2026-10-27 13:38:06.102
+!MESSAGE Using unsafe http transport to retrieve http://www.blackhawk-dsp.com/updates/win64/com.bh.ccstudio.emulation.win64_9.0.0.001, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2026-10-27 13:38:06.530
+!MESSAGE Using unsafe http transport to retrieve http://software-dl.ti.com/dsps/dsps_public_sw/sdo_ccstudio/codegen/Updates/p2linux/content.xml.xz, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2026-10-27 13:38:46.067
+!MESSAGE Using unsafe http transport to retrieve http://software-dl.ti.com/dsps/dsps_public_sw/sdo_ccstudio/codegen/Updates/p2mac/content.xml.xz, see CVE-2021-41033. Consider using https instead.
