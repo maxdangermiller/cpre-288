@@ -7,7 +7,6 @@
 
 #ifdef PART_1
 
-#include "timer.h"
 #include "Timer.h"
 #include "lcd.h"
 #include "cyBot_Scan_Cal.h"
@@ -35,7 +34,7 @@ int main() {
 
 #elif defined(PART_2_B) 
 
-#include "timer.h"
+#include "Timer.h"
 #include "lcd.h"
 #include "cyBot_Scan.h"
 
