@@ -26,16 +26,17 @@ void adc_init(void) {
 	 *      register. The default configuration has Sample Sequencer 0 with the highest priority and Sample
 	 *      Sequencer 3 as the lowest priority.
 	 */
-	SYSCTL_RCGCADC_R |= 0b01;           // Enable ADC0's CLOCK
-	SYSCTL_RCGCGPIO_R |= 0b10;          // Enable GPIO Port B's Clock
+	SYSCTL_RCGCADC_R |= SYSCTL_RCGCADC_R0;           // Enable ADC0's CLOCK
+	SYSCTL_RCGCGPIO_R |= SYSCTL_RCGC2_GPIOB;          // Enable GPIO Port B's Clock
 
 	GPIO_PORTB_AFSEL_R |= 0b00010000;	// Select Alternate Function for PB4
-	GPIO_PORTB_PCTL_R &= ~0xF0000;		// Reset PCTL Register for Port B Pin 4
+	GPIO_PORTB_PCTL_R &= ~GPIO_PCTL_PB4_M;		// Reset PCTL Register for Port B Pin 4
 
 	GPIO_PORTB_DEN_R &= ~0b00010000;	// Disable digital function on Port B Pin 4
 	
 	GPIO_PORTB_AMSEL_R = 0b00010000;	// Disable all analog function on port b except for pin 4
 
+	GPIO_PORTB_ADCCTL_R = 0x0;			// Set Port B to use ADC0
 
 	/**
 	 * 
@@ -67,15 +68,18 @@ void adc_init(void) {
 	 */
 
 
-	ADC0_ACTSS_R &= ~0b1000; //disable Sample Sequencer 3
+	ADC0_ACTSS_R &= ~ADC_ACTSS_ASEN0; 		//disable Sample Sequencer 0
 
-	ADC0_EMUX_R &= ~0xF000; //Select software trigger by clearing bits 12-15
+	// ADC0_EMUX_R &= ~ADC_EMUX_EM0_M; 		//Select software trigger
+	ADC0_EMUX_R &= ~ADC_EMUX_EM0_PROCESSOR; // Select default trigger
 
-	ADC0_SSMUX3_R &= ~0xF; //set input channel 0
+	ADC0_SSMUX0_R &= ~0x0; 					// set first sample to come from channel 0
 
-	ADC0_SSCTL3_R |= 0x6; //configure sample control bits
+	ADC0_SSCTL0_R |= ADC_SSCTL0_END0; 		// Stop after first sample (since theres only ch0 that we're reading from)
 
-	ADC0_ACTSS_R |= 0b1000; //enable Sample Sequencer 3 (step 7)
+	ADC0_SAC_R = ADC_SAC_AVG_16X;			// Setup hardware averaging (See page 847)
+
+	ADC0_ACTSS_R |= ADC_ACTSS_ASEN0; 		//enable Sample Sequencer 0 (step 7)
 }
 
 int adc_read(void) {
@@ -86,16 +90,13 @@ int adc_read(void) {
 	 */
 
 	
-	ADC0_PSSI_R |= 0b1000; //trigger conversion in 3
+	ADC0_PSSI_R |= ADC_PSSI_SS0; // trigger conversion in SS0
 
-	while(!(ADC0_RIS_R & 0b1000)){
-		//do nothing
-	}
+	while((ADC0_RIS_R & ADC_PSSI_SS0) == 0);
 
-	int result = (ADC0_SSFIFO3_R & 0xFFF);
+	int result = ADC0_SSFIFO0_R;
 
-	ADC0_ISC_R &= ~0b1000;
+	ADC0_ISC_R &= ADC_ISC_IN0;
 
 	return result;
-
 }
