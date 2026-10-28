@@ -416,8 +416,8 @@ static void move_to_object() {
     // uart_sendStr(str);
 
     sprintf(str, "Moving towards object in front of cybot\r\n");
-    int buffer = 1; //adjust how much space between Cybot and object, in cm
-    move_forward((int)((dist_ahead-buffer)*10)); 
+    int buffer = 2; //adjust how much space between Cybot and object, in cm
+    move_forward((int)((dist_ahead - buffer)*10)); 
 
 
 }

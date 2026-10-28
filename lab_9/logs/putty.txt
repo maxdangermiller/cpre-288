@@ -1,196 +1,329 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.10.28 11:46:25 =~=~=~=~=~=~=~=~=~=~=~=
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.10.28 12:34:40 =~=~=~=~=~=~=~=~=~=~=~=
 
-Starting IR Calibration
+UART COMMANDS: 
+--------------------------------------------------
+T: Toggle control mode between auto and manual
+M: MAP
+C: Move within 5cm of object directly in front
+W: Forward
+A: Left
+S: Backward
+D: Right
+Q: GET CURRENT POSITION
+R: RETURN TO START POINT
+E: EXIT
 
+Starting Avoid!
+Handle Avoid - Avoid phase 0
+Handle Avoid - Avoid phase 1
+Handle Avoid - Avoid phase 2
+Handle Avoid - Avoid phase 3
+Handle Avoid - Avoid phase 4
+Switching to AUTO mode!
 
-Place IR Sensor At a new distance between 9cm and 50cm (press and button to measure)
-Currently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.57cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of   8.39cmCurrently measuring distance of   8.30cmCurrently measuring distance of   8.68cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.63cmCurrently measuring distance of  10.63cmCurrently measuring distance of  10.62cmCurrently measuring distance of  10.63cmCurrently measuring distance of  10.63cmCurrently measuring distance of  10.63cmCurrently measuring distance of  10.63cmCurrently measuring distance of  10.63cmCurrently measuring distance of  10.63cmCurrently measuring distance of  10.62cmCurrently measuring distance of  10.62cmCurrently measuring distance of  10.63cmCurrently measuring distance of  10.63cmCurrently measuring distance of  10.63cmCurrently measuring distance of  10.63cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.58cmance of  29.50cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.89cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.50cmCurrently measuring distance of  29.50cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.90cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.89cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.89cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.84cmCurrently measuring distance of  29.84cmCurrently measuring distance of  29.88cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.88cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.50cmCurrently measuring distance of  29.49cm
-Starting IR Calibration
+Press 'h' key to start scan!
+**Raw noisy sensor data**
+Angle(Degrees)	Sound Distance(cm)	IR Distance (cm)
+0		27.145210		27.478176
+2		22.969944		25.054741
+4		30.498108		39.580322
+6		309.321869		87.824898
+8		34.434727		88.813904
+10		32.920063		83.384087
+12		31.941822		78.719315
+14		31.897747		69.512131
+16		31.433350		66.106873
+18		30.981853		52.214935
+20		30.922729		64.512001
+22		30.443283		65.084106
+24		30.450809		64.088661
+26		30.053062		61.516281
+28		30.051987		58.513985
+30		30.059513		48.865295
+32		30.047688		28.756287
+34		30.051987		29.816517
+36		30.067036		30.940220
+38		30.048763		36.627068
+40		30.044460		52.116638
+42		30.051987		47.829174
+44		30.058437		56.424595
+46		30.442207		56.991905
+48		30.495960		56.312302
+50		30.497032		54.779728
+52		31.415077		52.811447
+54		31.106552		55.318745
+56		30.208935		53.522278
+58		34.416451		53.728390
+60		26.960312		53.831959
+62		26.029369		45.629257
+64		25.691822		53.935871
+66		25.062952		54.354984
+68		24.956528		53.419727
+70		24.507181		53.728390
+72		23.978285		50.031540
+74		23.939587		53.831959
+76		23.493464		53.419727
+78		23.448315		46.911694
+80		23.447239		36.250038
+82		22.969944		28.248344
+84		22.922644		26.577026
+86		22.920494		25.782991
+88		22.925869		25.025089
+90		22.929094		24.414629
+92		22.917269		23.554277
+94		22.920494		24.272648
+96		22.922644		22.211031
+98		22.917269		25.025089
+100		22.918344		26.609577
+102		22.916195		27.105366
+104		22.963493		32.848419
+106		23.455839		46.182945
+108		23.437565		57.920341
+110		23.493464		59.733391
+112		23.985811		60.741013
+114		24.027735		61.255959
+116		24.528681		56.424595
+118		24.554482		61.385880
+120		25.054352		53.012882
+122		25.691822		64.512001
+124		26.506664		63.948624
+126		61.688988		68.082687
+128		28.011654		67.772026
+130		28.440575		66.255280
+132		28.775970		68.082687
+134		27.857929		66.704018
+136		27.857929		68.238960
+138		27.845028		67.617622
+140		27.849331		66.553848
+142		27.263458		62.711922
+144		27.227985		58.996529
+146		27.224758		36.681454
+148		27.220459		29.699982
+150		27.182835		29.203243
+152		27.189285		28.212605
+154		27.168861		28.867008
+156		27.209709		29.777592
+158		27.197884		33.731709
+160		27.211861		56.763805
+162		27.262383		59.733391
+164		27.261311		65.228516
+166		27.824604		60.359718
+168		27.825680		70.000366
+170		27.823528		58.875252
+172		28.267502		69.350708
+174		28.313725		62.711922
+176		28.897446		67.617622
+178		29.328518		58.275269
+180		30.215385		69.189949
+** Cleaned data **
+Angle(Degrees)	Sound Distance(cm)	IR Distance (cm)
+0		27.145210		27.478176
+2		59.489349		25.054741
+4		59.489349		63.702610
+6		59.489349		63.702610
+8		29.929741		86.098999
+10		29.929741		86.098999
+12		29.929741		74.115723
+14		29.929741		74.115723
+16		29.929741		60.112762
+18		29.929741		60.112762
+20		29.929741		60.112762
+22		29.929741		60.112762
+24		29.929741		60.112762
+26		29.929741		60.112762
+28		29.929741		60.112762
+30		29.929741		60.112762
+32		29.929741		31.535023
+34		29.929741		31.535023
+36		29.929741		31.535023
+38		29.929741		31.535023
+40		29.929741		52.946526
+42		29.929741		52.946526
+44		29.929741		52.946526
+46		29.929741		52.946526
+48		29.929741		52.946526
+50		29.929741		52.946526
+52		29.929741		52.946526
+54		29.929741		52.946526
+56		29.929741		52.946526
+58		29.929741		52.946526
+60		29.929741		52.946526
+62		29.929741		52.946526
+64		29.929741		52.946526
+66		29.929741		52.946526
+68		29.929741		52.946526
+70		29.929741		52.946526
+72		23.978285		52.946526
+74		23.939587		52.946526
+76		23.493464		52.946526
+78		23.448315		52.946526
+80		23.447239		28.150532
+82		22.969944		28.150532
+84		22.922644		28.150532
+86		22.920494		28.150532
+88		22.925869		28.150532
+90		22.929094		28.150532
+92		22.917269		28.150532
+94		22.920494		28.150532
+96		22.922644		28.150532
+98		22.917269		28.150532
+100		22.918344		28.150532
+102		22.916195		28.150532
+104		22.963493		28.150532
+106		23.455839		28.150532
+108		23.437565		61.831581
+110		23.493464		61.831581
+112		23.985811		61.831581
+114		24.027735		61.831581
+116		24.528681		61.831581
+118		24.554482		61.831581
+120		25.054352		61.831581
+122		25.691822		61.831581
+124		26.506664		61.831581
+126		61.688988		61.831581
+128		28.011654		61.831581
+130		28.440575		61.831581
+132		28.775970		61.831581
+134		27.857929		61.831581
+136		27.857929		61.831581
+138		27.845028		61.831581
+140		27.849331		61.831581
+142		27.263458		61.831581
+144		27.227985		61.831581
+146		27.224758		61.831581
+148		27.220459		29.915354
+150		27.182835		29.915354
+152		27.189285		29.915354
+154		27.168861		29.915354
+156		27.209709		29.915354
+158		27.197884		29.915354
+160		27.211861		60.521355
+162		27.262383		60.521355
+164		27.261311		60.521355
+166		27.824604		60.521355
+168		27.825680		70.000366
+170		27.823528		58.875252
+172		28.267502		69.350708
+174		28.313725		62.711922
+176		28.897446		67.617622
+178		29.328518		58.275269
+180		30.215385		69.189949
+** Cleaned data (after trig) **
+Angle(Degrees)	Sound Distance(cm)	IR Distance (cm)
+0		27.145210		27.478176
+2		59.489349		25.054741
+4		59.489349		63.702610
+6		59.489349		63.702610
+8		29.929741		86.098999
+10		29.929741		86.098999
+12		29.929741		74.115723
+14		29.929741		74.115723
+16		29.929741		60.112762
+18		29.929741		60.112762
+20		29.929741		60.112762
+22		29.929741		60.112762
+24		29.929741		60.112762
+26		29.929741		60.112762
+28		29.929741		60.112762
+30		29.929741		60.112762
+32		29.929741		31.535023
+34		29.929741		31.535023
+36		29.929741		31.535023
+38		29.929741		31.535023
+40		29.929741		52.946526
+42		29.929741		52.946526
+44		29.929741		52.946526
+46		29.929741		52.946526
+48		29.929741		52.946526
+50		29.929741		52.946526
+52		29.929741		52.946526
+54		29.929741		52.946526
+56		29.929741		52.946526
+58		29.929741		52.946526
+60		29.929741		52.946526
+62		29.929741		52.946526
+64		29.929741		52.946526
+66		29.929741		52.946526
+68		29.929741		52.946526
+70		29.929741		52.946526
+72		23.978285		52.946526
+74		23.939587		52.946526
+76		23.493464		52.946526
+78		23.448315		52.946526
+80		23.447239		28.150532
+82		22.969944		28.150532
+84		22.922644		28.150532
+86		22.920494		28.150532
+88		22.925869		28.150532
+90		22.929094		28.150532
+92		22.917269		28.150532
+94		22.920494		28.150532
+96		22.922644		28.150532
+98		22.917269		28.150532
+100		22.918344		28.150532
+102		22.916195		28.150532
+104		22.963493		28.150532
+106		23.455839		28.150532
+108		23.437565		61.831581
+110		23.493464		61.831581
+112		23.985811		61.831581
+114		24.027735		61.831581
+116		24.528681		61.831581
+118		24.554482		61.831581
+120		25.054352		61.831581
+122		25.691822		61.831581
+124		26.506664		61.831581
+126		61.688988		61.831581
+128		28.011654		61.831581
+130		28.440575		61.831581
+132		28.775970		61.831581
+134		27.857929		61.831581
+136		27.857929		61.831581
+138		27.845028		61.831581
+140		27.849331		61.831581
+142		27.263458		61.831581
+144		27.227985		61.831581
+146		27.224758		61.831581
+148		27.220459		29.915354
+150		27.182835		29.915354
+152		27.189285		29.915354
+154		27.168861		29.915354
+156		27.209709		29.915354
+158		27.197884		29.915354
+160		27.211861		60.521355
+162		27.262383		60.521355
+164		27.261311		60.521355
+166		27.824604		60.521355
+168		27.825680		70.000366
+170		27.823528		58.875252
+172		28.267502		69.350708
+174		28.313725		62.711922
+176		28.897446		67.617622
+178		29.328518		58.275269
+180		30.215385		69.189949
 
-
-Place IR Sensor At a new distance between 9cm and 50cm (press and button to measure)
-Currently measuring distance of  29.49cmCurrently measuring distance of  29.88cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.50cmCurrently measuring distance of  29.48cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.93cmCurrently measuring distance of  29.51cmCurrently measuring distance of 315.67cmCurrently measuring distance of  29.88cmCurrently measuring distance of  29.90cmCurrently measuring distance of  29.50cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.49cmCurrently measuring distance of  29.50cmCurrently measuring distance of  29.50cmCurrently measuring distance of  28.18cmCurrently measuring distance of  18.71cmCurrently measuring distance of  13.05cmCurrently measuring distance of  10.11cmCurrently measuring distance of  10.11cmCurrently measuring distance of  10.49cmCurrently measuring distance of  10.92cmCurrently measuring distance of  10.92cmCurrently measuring distance of  10.92cmCurrently measuring distance of  10.92cmCurrently measuring distance of  10.92cmCurrently measuring distance of  10.92cmCurrently measuring distance of   9.92cmCurrently measuring distance of   9.92cmCurrently measuring distance of   8.48cmCurrently measuring distance of   8.48cmCurrently measuring distance of   8.39cmCurrently measuring distance of   8.75cmCurrently measuring distance of   8.35cmCurrently measuring distance of   8.39cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.50cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.55cmCurrently measuring distance of   9.51cmCurrently measuring distance of   9.51cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   8.98cmCurrently measuring distance of   8.98cmCurrently measuring distance of   8.99cmCurrently measuring distance of   8.98cmCurrently measuring distance of   8.98cmCurrently measuring distance of   8.98cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.04cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   8.98cm
-
-Place IR Sensor At a new distance between 9cm and 50cm (press and button to measure)
-Currently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.04cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.03cmCurrently measuring distance of   9.41cmCurrently measuring distance of   9.31cmCurrently measuring distance of   9.36cmCurrently measuring distance of   9.36cmCurrently measuring distance of   9.35cmCurrently measuring distance of   9.36cmCurrently measuring distance of   9.36cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.39cmCurrently measuring distance of  10.44cmCurrently measuring distance of  10.39cmCurrently measuring distance of  10.39cmCurrently measuring distance of  10.39cmCurrently measuring distance of  10.34cmCurrently measuring distance of   9.85cmCurrently measuring distance of   9.85cmCurrently measuring distance of   9.84cmCurrently measuring distance of   9.85cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.34cmCurrently measuring distance of   9.92cmCurrently measuring distance of   9.85cmCurrently measuring distance of   9.85cmCurrently measuring distance of   9.92cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.35cmCurrently measuring distance of  10.35cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.35cmCurrently measuring distance of  10.35cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.35cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.34cm
-
-Place IR Sensor At a new distance between 9cm and 50cm (press and button to measure)
-Currently measuring distance of  10.34cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.35cmCurrently measuring distance of  10.35cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.34cmCurrently measuring distance of  10.43cmCurrently measuring distance of  10.15cmCurrently measuring distance of  11.27cmCurrently measuring distance of  10.98cmCurrently measuring distance of  10.53cmCurrently measuring distance of  10.57cmCurrently measuring distance of  10.58cmCurrently measuring distance of  10.62cmCurrently measuring distance of  11.41cmCurrently measuring distance of  11.41cmCurrently measuring distance of  11.03cmCurrently measuring distance of  11.04cmCurrently measuring distance of  11.55cmCurrently measuring distance of  12.10cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.10cmCurrently measuring distance of  12.10cmCurrently measuring distance of  12.11cmCurrently measuring distance of  12.11cmCurrently measuring distance of  12.10cmCurrently measuring distance of  12.10cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.10cmCurrently measuring distance of  12.10cmCurrently measuring distance of  12.10cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cm
-
-Place IR Sensor At a new distance between 9cm and 50cm (press and button to measure)
-Currently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  12.15cmCurrently measuring distance of  11.83cmCurrently measuring distance of  11.99cmCurrently measuring distance of  12.38cmCurrently measuring distance of  12.38cmCurrently measuring distance of  13.05cmCurrently measuring distance of  12.81cmCurrently measuring distance of  13.40cmCurrently measuring distance of  13.50cmCurrently measuring distance of  13.17cmCurrently measuring distance of  13.27cmCurrently measuring distance of  13.88cmCurrently measuring distance of  13.64cmCurrently measuring distance of  14.22cmCurrently measuring distance of  14.22cmCurrently measuring distance of  14.34cmCurrently measuring distance of  14.43cmCurrently measuring distance of  14.43cmCurrently measuring distance of  14.22cmCurrently measuring distance of  14.52cmCurrently measuring distance of  14.57cmCurrently measuring distance of  14.62cmCurrently measuring distance of  14.67cmCurrently measuring distance of  14.72cmCurrently measuring distance of  14.81cmCurrently measuring distance of  14.80cmCurrently measuring distance of  14.85cmCurrently measuring distance of  14.81cmCurrently measuring distance of  14.81cmCurrently measuring distance of  14.90cmCurrently measuring distance of  14.96cmCurrently measuring distance of  14.95cmCurrently measuring distance of  14.95cmCurrently measuring distance of  14.95cmCurrently measuring distance of  14.95cmCurrently measuring distance of  15.00cmCurrently measuring distance of  14.99cmCurrently measuring distance of  15.00cmCurrently measuring distance of  15.00cmCurrently measuring distance of  15.05cmCurrently measuring distance of  15.04cmCurrently measuring distance of  15.05cmCurrently measuring distance of  15.04cmCurrently measuring distance of  15.05cmCurrently measuring distance of  15.04cmCurrently measuring distance of  14.99cmCurrently measuring distance of  15.00cmCurrently measuring distance of  15.04cmCurrently measuring distance of  15.05cmCurrently measuring distance of  15.04cmCurrently measuring distance of  15.04cmCurrently measuring distance of  14.99cm
-
-Place IR Sensor At a new distance between 9cm and 50cm (press and button to measure)
-Currently measuring distance of  15.04cmCurrently measuring distance of  15.04cmCurrently measuring distance of  15.04cmCurrently measuring distance of  15.04cmCurrently measuring distance of  15.04cmCurrently measuring distance of  15.05cmCurrently measuring distance of  15.04cmCurrently measuring distance of  15.04cmCurrently measuring distance of  15.46cmCurrently measuring distance of  16.48cmCurrently measuring distance of  16.76cmCurrently measuring distance of  16.94cmCurrently measuring distance of  17.22cmCurrently measuring distance of  17.04cmCurrently measuring distance of  17.82cmCurrently measuring distance of  17.96cmCurrently measuring distance of  18.29cmCurrently measuring distance of  18.29cmCurrently measuring distance of  18.64cmCurrently measuring distance of  18.80cmCurrently measuring distance of  19.03cmCurrently measuring distance of  19.14cmCurrently measuring distance of  19.28cmCurrently measuring distance of  19.32cmCurrently measuring distance of  19.33cmCurrently measuring distance of  19.37cmCurrently measuring distance of  19.37cmCurrently measuring distance of  19.46cmCurrently measuring distance of  19.46cmCurrently measuring distance of  19.50cmCurrently measuring distance of  19.50cmCurrently measuring distance of  19.65cmCurrently measuring distance of  19.66cmCurrently measuring distance of  19.66cmCurrently measuring distance of  19.70cmCurrently measuring distance of  19.70cmCurrently measuring distance of  19.77cmCurrently measuring distance of  19.77cmCurrently measuring distance of  19.77cmCurrently measuring distance of  19.82cmCurrently measuring distance of  19.82cmCurrently measuring distance of  19.82cmCurrently measuring distance of  19.82cmCurrently measuring distance of  19.91cmCurrently measuring distance of  20.10cmCurrently measuring distance of  20.10cmCurrently measuring distance of  20.10cmCurrently measuring distance of  20.10cmCurrently measuring distance of  20.10cmCurrently measuring distance of  20.10cmCurrently measuring distance of  20.09cmCurrently measuring distance of  20.09cmCurrently measuring distance of  20.10cmCurrently measuring distance of  20.10cmCurrently measuring distance of  20.10cmCurrently measuring distance of  20.10cmCurrently measuring distance of  20.19cmCurrently measuring distance of  20.24cmCurrently measuring distance of  20.24cmCurrently measuring distance of  20.25cmCurrently measuring distance of  20.10cmCurrently measuring distance of  20.33cmCurrently measuring distance of  20.29cmCurrently measuring distance of  20.29cmCurrently measuring distance of  20.34cmCurrently measuring distance of  20.29cmCurrently measuring distance of  20.29cmCurrently measuring distance of  20.29cmCurrently measuring distance of  20.29cmCurrently measuring distance of  20.29cmCurrently measuring distance of  20.29cmCurrently measuring distance of  20.28cmCurrently measuring distance of  20.29cmCurrently measuring distance of  20.29cmCurrently measuring distance of  20.29cm
-
-Place IR Sensor At a new distance between 9cm and 50cm (press and button to measure)
-Currently measuring distance of  20.29cmCurrently measuring distance of  20.30cmCurrently measuring distance of  20.29cmCurrently measuring distance of  20.29cmCurrently measuring distance of  20.29cmCurrently measuring distance of  20.29cmCurrently measuring distance of  20.29cmCurrently measuring distance of  20.29cmCurrently measuring distance of  20.29cmCurrently measuring distance of  20.72cmCurrently measuring distance of  21.35cmCurrently measuring distance of  22.47cmCurrently measuring distance of  23.27cmCurrently measuring distance of  23.64cmCurrently measuring distance of  23.78cmCurrently measuring distance of  24.02cmCurrently measuring distance of  24.15cmCurrently measuring distance of  24.25cmCurrently measuring distance of  24.30cmCurrently measuring distance of  24.40cmCurrently measuring distance of  24.44cmCurrently measuring distance of  24.43cmCurrently measuring distance of  24.43cmCurrently measuring distance of  24.53cmCurrently measuring distance of  24.53cmCurrently measuring distance of  24.52cmCurrently measuring distance of  24.57cmCurrently measuring distance of  24.58cmCurrently measuring distance of  24.62cmCurrently measuring distance of  24.71cmCurrently measuring distance of  24.76cmCurrently measuring distance of  25.09cmCurrently measuring distance of  25.31cmCurrently measuring distance of  25.31cmCurrently measuring distance of  25.31cmCurrently measuring distance of  25.30cmCurrently measuring distance of  25.26cmCurrently measuring distance of  25.25cmCurrently measuring distance of  25.20cmCurrently measuring distance of  25.22cmCurrently measuring distance of  25.21cmCurrently measuring distance of  25.21cmCurrently measuring distance of  25.21cmCurrently measuring distance of  25.20cmCurrently measuring distance of  25.20cmCurrently measuring distance of  25.21cmCurrently measuring distance of  25.20cmCurrently measuring distance of  25.21cmCurrently measuring distance of  25.20cmCurrently measuring distance of  25.19cmCurrently measuring distance of  25.20cmCurrently measuring distance of  25.19cmCurrently measuring distance of  25.20cmCurrently measuring distance of  25.20cmCurrently measuring distance of  24.06cmCurrently measuring distance of  24.90cmCurrently measuring distance of  23.68cmCurrently measuring distance of  22.70cmCurrently measuring distance of  22.47cmCurrently measuring distance of  22.56cmCurrently measuring distance of  21.90cmCurrently measuring distance of  22.28cmCurrently measuring distance of  22.14cmCurrently measuring distance of  22.08cmCurrently measuring distance of  22.09cmCurrently measuring distance of  22.09cmCurrently measuring distance of  22.08cmCurrently measuring distance of  23.12cmCurrently measuring distance of  23.49cmCurrently measuring distance of  25.25cmCurrently measuring distance of  24.80cmCurrently measuring distance of  25.30cmCurrently measuring distance of  25.26cmCurrently measuring distance of  25.25cmCurrently measuring distance of  25.25cmCurrently measuring distance of  25.25cmCurrently measuring distance of  25.25cmCurrently measuring distance of  25.25cmCurrently measuring distance of  25.25cmCurrently measuring distance of  25.26cm
-
-Place IR Sensor At a new distance between 9cm and 50cm (press and button to measure)
-Currently measuring distance of  25.29cmCurrently measuring distance of  25.30cmCurrently measuring distance of  25.29cmCurrently measuring distance of  25.30cmCurrently measuring distance of  25.30cmCurrently measuring distance of  25.28cmCurrently measuring distance of  25.29cmCurrently measuring distance of  25.28cmCurrently measuring distance of  25.29cmCurrently measuring distance of  25.29cmCurrently measuring distance of  25.53cmCurrently measuring distance of  26.98cmCurrently measuring distance of  28.26cmCurrently measuring distance of  28.41cmCurrently measuring distance of  28.67cmCurrently measuring distance of  28.66cmCurrently measuring distance of  28.66cmCurrently measuring distance of  28.66cmCurrently measuring distance of  28.67cmCurrently measuring distance of  28.65cmCurrently measuring distance of  28.83cmCurrently measuring distance of  29.52cmCurrently measuring distance of  30.09cmCurrently measuring distance of  29.66cmCurrently measuring distance of  29.66cmCurrently measuring distance of  29.66cmCurrently measuring distance of  29.67cmCurrently measuring distance of  29.51cmCurrently measuring distance of  29.50cmCurrently measuring distance of  29.51cmCurrently measuring distance of  29.96cmCurrently measuring distance of  29.72cmCurrently measuring distance of  30.13cmCurrently measuring distance of  30.14cmCurrently measuring distance of  29.72cmCurrently measuring distance of  30.15cmCurrently measuring distance of  29.72cmCurrently measuring distance of  29.72cmCurrently measuring distance of  29.71cmCurrently measuring distance of  30.14cmCurrently measuring distance of  29.76cmCurrently measuring distance of  29.71cmCurrently measuring distance of  29.71cmCurrently measuring distance of  29.71cmCurrently measuring distance of  29.71cmCurrently measuring distance of  29.71cmCurrently measuring distance of  29.71cmCurrently measuring distance of  29.71cmCurrently measuring distance of  30.13cmCurrently measuring distance of  29.70cmCurrently measuring distance of  30.18cmCurrently measuring distance of  29.75cmCurrently measuring distance of  29.75cmCurrently measuring distance of  30.18cmCurrently measuring distance of  30.17cmCurrently measuring distance of  29.76cmCurrently measuring distance of  29.77cmCurrently measuring distance of  29.76cmCurrently measuring distance of  29.75cmCurrently measuring distance of  29.75cmCurrently measuring distance of  29.76cmCurrently measuring distance of  29.99cmCurrently measuring distance of  30.00cmCurrently measuring distance of  30.00cmCurrently measuring distance of  30.00cmCurrently measuring distance of  30.51cmCurrently measuring distance of  30.01cmCurrently measuring distance of  30.52cmCurrently measuring distance of  30.53cmCurrently measuring distance of  30.53cmCurrently measuring distance of  30.53cmCurrently measuring distance of  30.53cmCurrently measuring distance of  30.53cmCurrently measuring distance of  30.54cmCurrently measuring distance of  30.52cmCurrently measuring distance of  30.52cmCurrently measuring distance of  29.99cmCurrently measuring distance of  30.01cmCurrently measuring distance of  30.00cmCurrently measuring distance of  30.53cmCurrently measuring distance of  30.01cmCurrently measuring distance of  30.00cmCurrently measuring distance of  30.53cmCurrently measuring distance of  30.53cm
-
-Place IR Sensor At a new distance between 9cm and 50cm (press and button to measure)
-Currently measuring distance of  30.52cmCurrently measuring distance of  30.52cmCurrently measuring distance of  30.52cmCurrently measuring distance of  30.01cmCurrently measuring distance of  30.00cmCurrently measuring distance of  30.38cmCurrently measuring distance of  30.37cmCurrently measuring distance of  29.97cmCurrently measuring distance of  29.95cmCurrently measuring distance of  30.34cmCurrently measuring distance of  31.80cmCurrently measuring distance of  33.54cmCurrently measuring distance of  33.84cmCurrently measuring distance of  33.35cmCurrently measuring distance of  33.82cmCurrently measuring distance of  33.83cmCurrently measuring distance of  34.14cmCurrently measuring distance of  35.06cmCurrently measuring distance of  35.06cmCurrently measuring distance of  35.06cmCurrently measuring distance of  35.05cmCurrently measuring distance of  35.05cmCurrently measuring distance of  35.05cmCurrently measuring distance of  35.04cmCurrently measuring distance of  35.10cmCurrently measuring distance of  34.65cmCurrently measuring distance of  34.71cmCurrently measuring distance of  35.10cmCurrently measuring distance of  35.10cmCurrently measuring distance of  34.69cmCurrently measuring distance of  34.68cmCurrently measuring distance of  34.69cmCurrently measuring distance of  35.09cmCurrently measuring distance of  35.09cmCurrently measuring distance of  35.11cmCurrently measuring distance of  35.09cmCurrently measuring distance of  35.09cmCurrently measuring distance of  35.10cmCurrently measuring distance of  35.09cmCurrently measuring distance of  35.09cmCurrently measuring distance of  35.10cmCurrently measuring distance of  35.10cmCurrently measuring distance of  35.10cmCurrently measuring distance of  35.10cmCurrently measuring distance of  35.11cmCurrently measuring distance of  35.10cm
-
-Place IR Sensor At a new distance between 9cm and 50cm (press and button to measure)
-Currently measuring distance of  35.10cmCurrently measuring distance of  35.10cmCurrently measuring distance of  35.11cmCurrently measuring distance of  35.11cmCurrently measuring distance of  35.11cmCurrently measuring distance of  35.10cmCurrently measuring distance of  33.84cmCurrently measuring distance of  36.13cmCurrently measuring distance of  35.31cmCurrently measuring distance of  36.90cmCurrently measuring distance of  36.08cmCurrently measuring distance of  39.10cmCurrently measuring distance of  39.29cmCurrently measuring distance of  40.40cmCurrently measuring distance of  41.05cmCurrently measuring distance of  40.82cmCurrently measuring distance of  41.52cmCurrently measuring distance of  40.42cmCurrently measuring distance of  40.67cmCurrently measuring distance of  40.67cmCurrently measuring distance of  41.09cmCurrently measuring distance of  41.15cmCurrently measuring distance of  41.51cmCurrently measuring distance of  41.10cmCurrently measuring distance of  41.06cmCurrently measuring distance of  40.62cmCurrently measuring distance of  40.42cmCurrently measuring distance of  41.11cmCurrently measuring distance of  41.53cmCurrently measuring distance of  41.09cmCurrently measuring distance of  41.17cmCurrently measuring distance of  41.18cmCurrently measuring distance of  41.19cmCurrently measuring distance of  41.13cmCurrently measuring distance of  41.18cmCurrently measuring distance of  41.19cmCurrently measuring distance of  41.18cmCurrently measuring distance of  41.17cmCurrently measuring distance of  41.18cmCurrently measuring distance of  41.18cmCurrently measuring distance of  41.19cmCurrently measuring distance of  41.19cmCurrently measuring distance of  41.18cm
-
-Place IR Sensor At a new distance between 9cm and 50cm (press and button to measure)
-Currently measuring distance of  41.17cmCurrently measuring distance of  41.18cmCurrently measuring distance of  41.18cmCurrently measuring distance of  41.18cmCurrently measuring distance of  41.18cmCurrently measuring distance of  41.22cmCurrently measuring distance of  41.19cmCurrently measuring distance of  41.18cmCurrently measuring distance of  41.16cmCurrently measuring distance of  41.17cmCurrently measuring distance of  41.99cmCurrently measuring distance of  41.15cmCurrently measuring distance of  41.17cmCurrently measuring distance of  41.49cmCurrently measuring distance of  42.92cmCurrently measuring distance of  44.21cmCurrently measuring distance of  45.01cmCurrently measuring distance of  45.72cmCurrently measuring distance of  46.07cmCurrently measuring distance of  46.93cmCurrently measuring distance of  46.59cmCurrently measuring distance of  47.56cmCurrently measuring distance of  48.30cmCurrently measuring distance of  48.48cmCurrently measuring distance of  48.44cmCurrently measuring distance of  49.16cmCurrently measuring distance of  48.82cmCurrently measuring distance of  48.87cmCurrently measuring distance of  49.16cmCurrently measuring distance of  49.55cmCurrently measuring distance of  49.26cmCurrently measuring distance of  49.41cmCurrently measuring distance of  50.06cmCurrently measuring distance of  50.09cmCurrently measuring distance of  50.05cmCurrently measuring distance of  49.23cmCurrently measuring distance of  49.29cmCurrently measuring distance of  50.11cmCurrently measuring distance of  49.28cmCurrently measuring distance of  49.73cmCurrently measuring distance of  49.69cmCurrently measuring distance of  49.58cmCurrently measuring distance of  49.20cmCurrently measuring distance of  49.20cmCurrently measuring distance of  49.60cmCurrently measuring distance of  49.59cmCurrently measuring distance of  49.59cmCurrently measuring distance of  50.02cmCurrently measuring distance of  50.00cmCurrently measuring distance of  50.55cmCurrently measuring distance of  50.57cmCurrently measuring distance of  50.55cmCurrently measuring distance of  49.67cmCurrently measuring distance of  50.26cmCurrently measuring distance of  50.26cmCurrently measuring distance of  49.73cmCurrently measuring distance of  50.25cmCurrently measuring distance of  50.25cmCurrently measuring distance of  50.25cmCurrently measuring distance of  50.27cmCurrently measuring distance of  50.27cmCurrently measuring distance of  50.27cmCurrently measuring distance of  50.26cmCurrently measuring distance of  50.26cmCurrently measuring distance of  50.26cmCurrently measuring distance of  50.28cmCurrently measuring distance of  50.28cmCurrently measuring distance of  50.27cmCurrently measuring distance of  50.27cmCurrently measuring distance of  50.26cmCurrently measuring distance of  50.26cmCurrently measuring distance of  50.25cmCurrently measuring distance of  50.26cm
-All Data Collected. Sending Data in csv format.
-
-sample #,ir,sound
- 0, 3501,    9.0
- 1, 3496,    9.0
- 2, 3523,    9.0
- 3, 3491,    9.0
- 4, 3493,    9.0
- 5, 3219,   10.3
- 6, 3219,   10.3
- 7, 3211,   10.3
- 8, 3209,   10.3
- 9, 3214,   10.3
-10, 2737,   12.1
-11, 2726,   12.1
-12, 2720,   12.1
-13, 2725,   12.2
-14, 2769,   12.2
-15, 2254,   15.0
-16, 2176,   15.0
-17, 2180,   15.0
-18, 2176,   15.0
-19, 2265,   15.0
-20, 1760,   20.3
-21, 1665,   20.3
-22, 1680,   20.3
-23, 1665,   20.3
-24, 1667,   20.3
-25, 1425,   25.3
-26, 1400,   25.3
-27, 1400,   25.2
-28, 1396,   25.3
-29, 1404,   25.3
-30, 1157,   30.5
-31, 1141,   30.5
-32, 1130,   30.5
-33, 1237,   30.5
-34, 1144,   30.5
-35,  998,   35.1
-36, 1003,   35.1
-37, 1029,   35.1
-38, 1003,   35.1
-39,  984,   35.1
-40,  879,   41.2
-41,  882,   41.2
-42,  867,   41.2
-43,  869,   41.2
-44,  877,   41.2
-45,  853,   50.3
-46,  721,   50.3
-47,  820,   49.8
-48,  733,   49.8
-49,  736,   50.3
-sound
-   9.0
-   9.0
-   9.0
-   9.0
-   9.0
-  10.3
-  10.3
-  10.3
-  10.3
-  10.3
-  12.1
-  12.1
-  12.1
-  12.2
-  12.2
-  15.0
-  15.0
-  15.0
-  15.0
-  15.0
-  20.3
-  20.3
-  20.3
-  20.3
-  20.3
-  25.3
-  25.3
-  25.2
-  25.3
-  25.3
-  30.5
-  30.5
-  30.5
-  30.5
-  30.5
-  35.1
-  35.1
-  35.1
-  35.1
-  35.1
-  41.2
-  41.2
-  41.2
-  41.2
-  41.2
-  50.3
-  50.3
-  49.8
-  49.8
-  50.3
-IR
-3501
-3496
-3523
-3491
-3493
-3219
-3219
-3211
-3209
-3214
-2737
-2726
-2720
-2725
-2769
-2254
-2176
-2180
-2176
-2265
-1760
-1665
-1680
-1665
-1667
-1425
-1400
-1400
-1396
-1404
-1157
-1141
-1130
-1237
-1144
- 998
-1003
-1029
-1003
- 984
- 879
- 882
- 867
- 869
- 877
- 853
- 721
- 820
- 733
- 736
-
-Calibration Finished.
+Object#	Angle (deg)	Sound Dist (cm)	IR Dist (cm)	Width (cm)
+1		46.1		29.93		31.54		3.13
+2		92.2		23.45		28.15		10.55
+3		139.7		27.22		29.92		4.74
+Smallest Object is #1
+Next Step: Point towards object #1.
+Press 'h' key to continue...
+Next Step: Get distance of object #1 when facing it.
+Press 'h' key to continue...
+Next Step: Move towards object #1.
+Press 'h' key to continue...
+Done. Press 'h' key to restart. 
+Moving towards object in front of cybot
+Starting Avoid!
+Handle Avoid - Avoid phase 0
+Handle Avoid - Avoid phase 1
+Handle Avoid - Avoid phase 2
+Handle Avoid - Avoid phase 3
+Handle Avoid - Avoid phase 4
+Starting Avoid!
+Handle Avoid - Avoid phase 0
+Handle Avoid - Avoid phase 1
+Handle Avoid - Avoid phase 2
+Handle Avoid - Avoid phase 3
+Handle Avoid - Avoid phase 4

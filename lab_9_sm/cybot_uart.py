@@ -216,7 +216,7 @@ def graph(frame):
 	plt.legend()
 
 	ax.grid(True)
-	ax.set_title(f"Live output from PuTTy Log File", size=14, y=1.0, pad=-24) 
+	ax.set_title(f"Live output", size=14, y=1.0, pad=-24) 
 	plt.draw()
 	plt.pause(0.01)
 	
