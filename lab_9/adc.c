@@ -76,20 +76,20 @@ void adc_init(void) {
      */
 
 
-    ADC0_ACTSS_R &= ~ADC_ACTSS_ASEN0;       // disable Sample Sequencer 0
+    ADC0_ACTSS_R &= ~ADC_ACTSS_ASEN3;       // disable Sample Sequencer 3
 
     // ADC0_EMUX_R &= ~ADC_EMUX_EM0_M;      // Select software trigger
-    ADC0_EMUX_R = ADC_EMUX_EM0_PROCESSOR;   // Select default trigger
+    ADC0_EMUX_R = ADC_EMUX_EM3_PROCESSOR;   // Select default trigger
 
-    ADC0_SSMUX0_R |= 0xA;                   // set first sample to come from PB4
+    ADC0_SSMUX3_R |= 0xA;                   // set first sample to come from PB4
 
-    ADC0_SSCTL0_R |= 0x6;                   // Stop after first sample (since theres only ch0 that we're reading from)
+    ADC0_SSCTL3_R |= 0x6;                   // Stop after first sample (since theres only ch0 that we're reading from)
 
 #ifdef EN_HARDWARE_SAMPLING
     ADC0_SAC_R = ADC_SAC_AVG_16X;           // Setup hardware averaging (See page 847)
 #endif
 
-    ADC0_ACTSS_R |= ADC_ACTSS_ASEN0;        // nable Sample Sequencer 0 (step 7)
+    ADC0_ACTSS_R |= ADC_ACTSS_ASEN3;        // nable Sample Sequencer 3 (step 7)
 }
 
 static int compare_ints(const void *a, const void *b) {
@@ -114,12 +114,12 @@ int adc_read(void) {
     t = 0;
 
     for (i = 0; i < 64; i++) {
-        ADC0_PSSI_R |= ADC_PSSI_SS0; // trigger conversion in SS0
+        ADC0_PSSI_R |= ADC_PSSI_SS3; // trigger conversion in SS3
 
-        while((ADC0_RIS_R & ADC_PSSI_SS0) == 0);
+        while((ADC0_RIS_R & ADC_PSSI_SS3) == 0);
 
         // d[i] = ADC0_SSFIFO0_R;
-        t += ADC0_SSFIFO0_R;
+        t += ADC0_SSFIFO3_R;
 
         ADC0_ISC_R |= ADC_ISC_IN0;
         // timer_waitMicros(10);
@@ -138,11 +138,11 @@ int adc_read(void) {
  * @return float distance
  */
 float adc_get_dist(float ir_dist) {
-    // dist = a*ir_dist*b
+    // dist = a*ir_dist^b
     if (fabs(ir_dist) <= 5.0) {
         return -1.0;
     }
-    return IR_DIST_A_COF / ir_dist;
+    return IR_DIST_A_COF * pow(ir_dist, IR_DIST_B_COF);
 }
 
 
@@ -160,8 +160,8 @@ extern volatile int button_event;
  * Calibrate IR Distance
  */
 void adc_calibrate() {
-    #define DIST_COUNT 7        // Distances
-    #define SAMP_COUNT 3        // Samples
+    #define DIST_COUNT 10        // Distances
+    #define SAMP_COUNT 5         // Samples
 
     static cyBOT_Scan_t calibration_data[DIST_COUNT * SAMP_COUNT];
 
@@ -221,21 +221,21 @@ void adc_calibrate() {
     sprintf(str, "sample #,ir,sound\r\n");
     uart_sendStr(str);
 
-    for (i = 0; i < 21; i++) {
+    for (i = 0; i < DIST_COUNT * SAMP_COUNT; i++) {
         sprintf(str, "%2d, %4d, %6.1f\r\n", i, calibration_data[i].IR_raw_val, calibration_data[i].sound_dist);
         uart_sendStr(str);
     }
 
     uart_sendStr("sound\r\n");
 
-    for (i = 0; i < 21; i++) {
+    for (i = 0; i < DIST_COUNT * SAMP_COUNT; i++) {
         sprintf(str, "%6.1f\r\n", calibration_data[i].sound_dist);
         uart_sendStr(str);
     }
 
     uart_sendStr("IR\r\n");
 
-    for (i = 0; i < 21; i++) {
+    for (i = 0; i < DIST_COUNT * SAMP_COUNT; i++) {
         sprintf(str, "%4d\r\n", calibration_data[i].IR_raw_val);
         uart_sendStr(str);
     }

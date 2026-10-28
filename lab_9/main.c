@@ -1,8 +1,8 @@
 #include "adc.h"
 
 // #define PART_1			// ADC Raw Test (Make sure to disable EN_HARDWARE_SAMPLING in adc.h)
-#define PART_2_A        	// IR Calibration
-// #define PART_2_B			// IR Distances
+// #define PART_2_A        	// IR Calibration
+#define PART_2_B			// IR Distances
 
 
 #ifdef PART_1
