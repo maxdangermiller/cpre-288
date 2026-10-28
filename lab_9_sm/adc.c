@@ -3,7 +3,10 @@
 #include <inc/tm4c123gh6pm.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include <math.h>
+#include "Timer.h"
 
 /**
  * @brief Initialize ADC for IR sensor
@@ -89,28 +92,42 @@ void adc_init(void) {
 	ADC0_ACTSS_R |= ADC_ACTSS_ASEN0; 		// nable Sample Sequencer 0 (step 7)
 }
 
+static int compare_ints(const void *a, const void *b) {
+    int arg1 = *(const int *)a;
+    int arg2 = *(const int *)b;
+    
+    if (arg1 < arg2) return -1;
+    if (arg1 > arg2) return 1;
+    return 0;
+}
+
 /**
  * @brief Read IR sensor value using ADC
  * 
  * @return int IR sensor value in 12 bits (0-4095)
  */
 int adc_read(void) {
+    static int i;
+    // static int d[64];
+	static int t;
 
-	/**
-	 * Sample Sequence Results found in registers 17-20, FIFO 0-3 respectively (see page 860)
-	 * Let's use 3
-	 */
-
+	t = 0;
 	
-	ADC0_PSSI_R |= ADC_PSSI_SS0; // trigger conversion in SS0
+    for (i = 0; i < 64; i++) {
+		ADC0_PSSI_R |= ADC_PSSI_SS0; // trigger conversion in SS0
+		
+        while((ADC0_RIS_R & ADC_PSSI_SS0) == 0);
+		
+        // d[i] = ADC0_SSFIFO0_R;
+		t += ADC0_SSFIFO0_R;
+		
+        ADC0_ISC_R |= ADC_ISC_IN0;
+		// timer_waitMicros(10);
+    }
+	
+	// qsort(d, 64, sizeof(int), compare_ints);
 
-	while((ADC0_RIS_R & ADC_PSSI_SS0) == 0);
-
-	int result = ADC0_SSFIFO0_R;
-
-	ADC0_ISC_R |= ADC_ISC_IN0;
-
-	return result;
+	return t / 64;
 }
 
 
@@ -121,11 +138,11 @@ int adc_read(void) {
  * @return float distance
  */
 float adc_get_dist(float ir_dist) {
-	// dist = a/ir_dist
+	// dist = a*ir_dist*b
 	if (fabs(ir_dist) <= 5.0) {
 		return -1.0;
 	}
-    return IR_DIST_COF / ir_dist;
+    return IR_DIST_A_COF / ir_dist;
 }
 
 
@@ -135,7 +152,6 @@ float adc_get_dist(float ir_dist) {
 #include "button.h"
 #include "uart.h"
 #include "lcd.h"
-#include "Timer.h"
 #include "servo.h"
 
 extern volatile int button_event;
@@ -173,18 +189,17 @@ void adc_calibrate() {
     cyBOT_Scan(90, &data);
 
     for (i = 0; i < DIST_COUNT; i++) {
-        uart_sendStr("Place IR Sensor At a new distance between 9cm and 50cm (press and button to measure)\n\r");
+        uart_sendStr("\r\nPlace IR Sensor At a new distance between 9cm and 50cm (press and button to measure)\r\n");
 
         while (!button_event) {
 			cyBOT_Scan(90, &data);
-			lcd_printf("Cur Dist of %6.2lfcm", data.sound_dist);
+			lcd_printf("Cur Dist of %6.2lfcm\n\nSample #%1d", data.sound_dist, i+1);
 
 			sprintf(str, "\rCurrently measuring distance of %6.2lfcm", data.sound_dist);
 			uart_sendStr(str);
 		}
 		
-		uart_sendChar('\n');
-		uart_sendChar('\r');
+        uart_sendStr("\r\n");
 
 
         for (j = 0; j < SAMP_COUNT; j++) {
@@ -198,6 +213,8 @@ void adc_calibrate() {
         button_event = 0;
     }
 
+    lcd_printf("DONE\n");
+
     sprintf(str, "All Data Collected. Sending Data in csv format.\r\n\r\n");
     uart_sendStr(str);
 
@@ -206,6 +223,20 @@ void adc_calibrate() {
 
     for (i = 0; i < 21; i++) {
         sprintf(str, "%2d, %4d, %6.1f\r\n", i, calibration_data[i].IR_raw_val, calibration_data[i].sound_dist);
+        uart_sendStr(str);
+    }
+
+    uart_sendStr("sound\r\n");
+
+    for (i = 0; i < 21; i++) {
+        sprintf(str, "%6.1f\r\n", calibration_data[i].sound_dist);
+        uart_sendStr(str);
+    }
+
+    uart_sendStr("IR\r\n");
+
+    for (i = 0; i < 21; i++) {
+        sprintf(str, "%4d\r\n", calibration_data[i].IR_raw_val);
         uart_sendStr(str);
     }
 

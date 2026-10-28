@@ -8,11 +8,14 @@
 
 #ifdef USE_CYBOT_17
 
-#define IR_DIST_COF 17670   // RMSE: 24.18
+// RMSE: 70.07
+#define IR_DIST_A_COF 17700
+#define IR_DIST_B_COF -0.8609
 
 #else
 
-#define IR_DIST_COF 17700 // Default value
+#define IR_DIST_A_COF 17700
+#define IR_DIST_B_COF -0.8609 // Default value
 
 #endif
 

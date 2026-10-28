@@ -7,6 +7,7 @@ PORT = 288
 
 cybot_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
 cybot_socket.connect((HOST, PORT))
+cybot_socket.settimeout(0.5)
                       
 cybot = cybot_socket.makefile("rbw", buffering=0)
 
@@ -15,7 +16,15 @@ cybot = cybot_socket.makefile("rbw", buffering=0)
 cmd = ' '
 
 while (cmd != 'e'):
-    cmd = input("Command to send to CyBot: ")
+    cybot.write("h".encode())
+
+    try:
+        rx_message = cybot.readline()
+        print("[ CYBOT ] " + rx_message.decode())
+    except OSError:
+        pass
+
+    # cmd = input("Command to send to CyBot: ")
 
     if len(cmd) == 0:
         cmd = ' '
@@ -24,10 +33,6 @@ while (cmd != 'e'):
     
     if cmd == 'm' or cmd == 'h':
         pass
-    else:                
-        print("Waiting for server reply\n")
-        rx_message = cybot.readline()
-        print("Got a message from server: " + rx_message.decode() + "\n")
 
 
 print("Client exiting, and closing file descriptor, and/or network socket\n")

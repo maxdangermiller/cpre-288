@@ -61,15 +61,16 @@ void fix_outliers(SensorData_t sensor_data[], int len) {
 		cur = sensor_data[i];
 		nxt = sensor_data[i + 1];
 		
-		pre_dt_s = cur.s_dist - pre.s_dist;
+		// pre_dt_s = cur.s_dist - pre.s_dist;
 		pre_dt_ir = cur.ir_dist - pre.ir_dist;
 
-		nxt_dt_s = cur.s_dist - nxt.s_dist;
+		// nxt_dt_s = cur.s_dist - nxt.s_dist;
 		nxt_dt_ir = cur.ir_dist - nxt.ir_dist;
 		
-		avg_s = (pre.s_dist + nxt.s_dist) / 2.0;
+		// avg_s = (pre.s_dist + nxt.s_dist) / 2.0;
 		avg_ir = (pre.ir_dist + nxt.ir_dist) / 2.0;
 
+		/*
 		if (outlier_ratio(pre_dt_s, nxt_dt_s)) {
 			if (pre_dt_s > OUTLIER_THRESHOLD && nxt_dt_s > OUTLIER_THRESHOLD) {
 				sensor_data[i].s_dist = avg_s;
@@ -78,6 +79,7 @@ void fix_outliers(SensorData_t sensor_data[], int len) {
 				sensor_data[i].s_dist = avg_s;
 			}
 		}
+		*/
 		
 		if (outlier_ratio(pre_dt_ir, nxt_dt_ir)) {
 

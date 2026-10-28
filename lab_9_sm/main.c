@@ -12,6 +12,7 @@
 #include "movement.h"
 #include "timer.h"
 #include "uart.h"
+#include "lcd.h"
 #include "servo.h"
 
 
@@ -42,6 +43,7 @@ extern volatile char uart_flag;
 static void handle_manual_mode();
 static void handle_auto_mode();
 static void handle_mode_toggle();
+static void send_scan_data();
 static int map(int point_en);
 static void move_to_object();
 static void get_pos();
@@ -51,19 +53,20 @@ static void send_help();
 int main(void) {
     timer_init();
     uart_init();
-    adc_init();
+    lcd_init();
 
     cyBot = oi_alloc();
     oi_init(cyBot);
     move_init(cyBot);
 
 
-    sprintf(str, "\r\n\r\nCprE288 Simple Mission\r\n\r\n\r\n");
-    uart_sendStr(str);
+    // sprintf(str, "\r\n\r\nCprE288 Simple Mission\r\n\r\n\r\n");
+    // uart_sendStr(str);
 
     
     // Disable IR
     cyBOT_init_Scan(0b011);
+    adc_init();
 
     left_calibration_value = SERVO_LEFT_CAL;
 	right_calibration_value = SERVO_RIGHT_CAL;
@@ -89,7 +92,7 @@ int main(void) {
     R: RETURN TO START POINT
     E: EXIT
     */
-    send_help();
+    // send_help();
 
     while (running) {
         move_update();
@@ -98,8 +101,10 @@ int main(void) {
             uart_flag = 0;
             cmd = uart_data;
     
-            sprintf(str, "User Pressed: %c\r\n\r\n", cmd);
-            uart_sendStr(str);
+            // sprintf(str, "User Pressed: %c\r\n\r\n", cmd);
+            // uart_sendStr(str);
+
+            lcd_printf("CMD: %c", cmd);
 
             if (cmd == 't') {
                 handle_mode_toggle();
@@ -177,6 +182,11 @@ static void handle_manual_mode() {
             running = false;
             break;
 
+        // TODO: Remove
+        case 'z':
+            send_scan_data();
+            break;
+
         default:
             break;
     }
@@ -249,13 +259,13 @@ static void handle_auto_mode() {
             break;
 
         case AMS_GET_DIST:      // 3) Get Distance to object
-            sprintf(str, "Scanning for distance to object in front of CyBot...\n");
-            uart_sendStr(str);
+            // sprintf(str, "Scanning for distance to object in front of CyBot...\n");
+            // uart_sendStr(str);
 
             scan_ahead(&dist_ahead, false);
 
-            sprintf(str, "\rScanning for distance to object in front of CyBot... Found %6.2fcm\r\n", dist_ahead);
-            uart_sendStr(str);
+            // sprintf(str, "\rScanning for distance to object in front of CyBot... Found %6.2fcm\r\n", dist_ahead);
+            // uart_sendStr(str);
 
             auto_mode_state = AMS_WAIT;
             next_auto_mode_state = AMS_MOVE;
@@ -305,6 +315,34 @@ static void handle_mode_toggle() {
     move_abort();
 }
 
+
+static void send_scan_data() {
+    // Send Raw Sensor Data
+    uart_sendStr("**Raw noisy sensor data**\r\n");
+    send_scan(sensor_data_ptr);
+
+    clean_data(sensor_data_ptr, SCAN_STEPS);
+
+    // Send Cleaned Sensor Data
+    uart_sendStr("** Cleaned data **\r\n");
+    send_scan(sensor_data_ptr);
+
+    // Send Cleaned Sensor Data
+    uart_sendStr("** Cleaned data (after trig) **\r\n");
+    send_scan(sensor_data_ptr);
+
+    // Determine Object count
+    int object_count = find_objects(&(sensor_data_ptr[2]), SCAN_STEPS - 2, objects);
+
+    // Send the object table to PuTTy
+    send_object_table(objects, object_count);
+
+    int smallest_index = get_smallest_obj(objects, object_count);
+    sprintf(str, "Smallest Object is #%d\r\n", objects[smallest_index].num);
+    uart_sendStr(str);
+}
+
+
 /**
  * @name Map
  * @brief Maps objects and points to the smallest one (if enabled)
@@ -351,6 +389,10 @@ static int map(int point_en) {
         timer_waitMillis(500);
     }
     
+    if (object_count == 0) {
+        return -1;
+    }
+
     if (point_en) {
         move_turn_rel((double)objects[smallest_index].mp - 90.0);
     }
@@ -388,7 +430,7 @@ static void move_to_object() {
 static void get_pos() {
     Pos_t pos = move_get_current_pos();
 
-    sprintf(str, "Current Absolute Position is (%6.2lf, %6.2lf) with a heading of %6.2lf in state %d.\r\n", pos.x, pos.y, pos.a, move_get_state());
+    sprintf(str, "(%6.2lf, %6.2lf, %6.2lf)\r\n", pos.x, pos.y, pos.a);
     uart_sendStr(str);
 }
 
