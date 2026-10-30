@@ -16,14 +16,7 @@ void ping_init(void) {
 	GPIO_PORTB_DIR_R |= PB3_BITMASK;		// Set PB3 as output
 	GPIO_PORTB_DATA_R &= ~PB3_BITMASK;		// Set PB3 to be LOW
 
-	// TEXTBOOK Page 762
-	TIMER3_CTL_R &= ~0x100;					// Disable Timer B
-	TIMER3_CFG_R = 0;						// Set to 32-
-	TIMER3_TBMR_R = 0x7;					// Capture Mode
-	TIMER3_CTL_R &= ~0xC00;					// TAEVENT is rising edge trigger
-	TIMER3_ICR_R |= 0x600;					// Enable Timer 3B
-	TIMER3_IMR_R |= 0x600;					// CHECK
-	// NVIC_PRI21_R							// Page 155 in Datasheet
+	SYSCTL_RCGCTIMER_R |= 0b1000;			// Enable Clock for Timer 3
 
 	
 	// Configure  Input Edge Time Mode on Timer 3B (Page 724 of datasheet)
