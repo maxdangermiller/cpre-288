@@ -1,4 +1,3 @@
-#include "ping.h"
 #include <inc/tm4c123gh6pm.h>
 #include <stdint.h>
 #include <stdbool.h>
@@ -15,7 +14,7 @@ volatile unsigned long time_2;
 volatile enum { PING_WAITING, PING_SENT, PING_T1_REC, PING_DONE} STATE;
 
 
-void ping_init(void) {
+void ping_init_test(void) {
 	// Ping is connected to PB3
 
 
@@ -68,7 +67,7 @@ static void send_ping(void) {
     TIMER3_CTL_R |= 0x100;                  // Enable Timer
 }
 
-int ping_read(void) {
+int ping_read_test(void) {
 	// TIMER3_CTL_R |= 0x100;                  // Enable Timer 3B
 	// TIMER3_TBILR_R = 0;						// Set next time to 0
 	// TIMER3_TBMR_R &= ~0x100;				// Tell the clock to reset the next time it can
@@ -102,7 +101,7 @@ int ping_read(void) {
 /**
  * Timer 3 Interupt handler
  */
-void timer3b_ih(void) {
+void timer3b_ih_test(void) {
 	// If this interupt isn't for ping, then disregard
 	if (!(TIMER3_MIS_R & 0x400)) {
 		return;
