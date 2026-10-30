@@ -1,0 +1,42 @@
+Lab 10 Pre Lab
+
+1)  What Timer3 registers are relevant to this lab? [2 points]
+
+GPTM Configuration Register (GPTMCFG)
+GPTM Control Register (GPTMCTL)
+GPTM Timer A Mode Register (GPTMTAMR)
+GPTM Timer A Interval Load Register (GPTMTAILR)
+GPTM Timer A Match Register (GPTMTAMATCHR)
+GPTM Timer A Prescale Register (GPTMTAPR)
+GPTM Timer A Prescale Match Register (GPTMTAPMR)
+GPTM Timer A Prescale Snapshot Register (GPTMTAPS)
+
+GPTM Interrupt Mask Register (GPTMIMR)
+GPTM Raw Interrupt Status Register (GPTMRIS)
+GPTM Masked Interrupt Status Register (GPTMMIS) 
+GPTM Interrupt Clear Register (GPTMICR) 
+GPTM Synchronize Register (GPTMSYNC)
+GPTM Peripheral Properties Register (GPTMPP)
+
+2)  Given the difference in timer counts (int delta) between the edges of a SONAR pulse 
+    (from sending a sound to receiving it back), what would you multiply delta by in order to get a 
+    distance measurement in units of cm? (Hint: The speed of sound is 34,000 cm/sec) [1 points]
+
+16MHz = 6.25 × 10⁻⁸ seconds
+
+34,000 cm/sec
+
+1/16MHz
+
+(delta * 1/16MHz * 34000cm/sec) / 2 = dist (cm)
+
+
+
+3)  What is the difference between the GPTM Raw Interrupt Status Register (GPTMRIS) 
+    and the GPTM Masked Interrupt Status Register (GPTMMIS)? Which of these registers 
+    is checked by an interrupt handler to determine the source of the interrupt trigger, 
+    if multiple interrupt sources are possible? [2 points]
+
+Masked only shows an interrupt if it was enabled
+Raw shows them all.
+Masked is checked by an interrupt handler
