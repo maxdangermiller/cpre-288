@@ -1,2 +1,4 @@
 /.metadata/
 .metadata/.plugins/org.eclipse.cdt.core/.log
+.jxbrowser.userdata/**
+.metadata/**
