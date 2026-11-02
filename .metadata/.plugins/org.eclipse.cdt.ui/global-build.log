@@ -19237,3 +19237,411 @@ Finished building target: "lab_10.out"
  
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project lab_10 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../ping.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_10" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="ping.d_raw"  "../ping.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'ping.obj' failed
+"..\ping.h", line 7: warning #1-D: last line of file ends without a newline
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 352: warning #48-D: incompatible redefinition of macro "INT_ADC0SS0" (declared at line 62 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 353: warning #48-D: incompatible redefinition of macro "INT_ADC0SS1" (declared at line 63 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 354: warning #48-D: incompatible redefinition of macro "INT_ADC0SS2" (declared at line 64 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 355: warning #48-D: incompatible redefinition of macro "INT_ADC0SS3" (declared at line 65 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 356: warning #48-D: incompatible redefinition of macro "INT_ADC1SS0" (declared at line 92 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 357: warning #48-D: incompatible redefinition of macro "INT_ADC1SS1" (declared at line 93 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 358: warning #48-D: incompatible redefinition of macro "INT_ADC1SS2" (declared at line 94 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 359: warning #48-D: incompatible redefinition of macro "INT_ADC1SS3" (declared at line 95 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 361: warning #48-D: incompatible redefinition of macro "INT_CAN0" (declared at line 85 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 362: warning #48-D: incompatible redefinition of macro "INT_CAN1" (declared at line 86 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 363: warning #48-D: incompatible redefinition of macro "INT_COMP0" (declared at line 73 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 364: warning #48-D: incompatible redefinition of macro "INT_COMP1" (declared at line 74 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 369: warning #48-D: incompatible redefinition of macro "INT_FLASH" (declared at line 76 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 370: warning #48-D: incompatible redefinition of macro "INT_GPIOA" (declared at line 48 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 371: warning #48-D: incompatible redefinition of macro "INT_GPIOB" (declared at line 49 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 372: warning #48-D: incompatible redefinition of macro "INT_GPIOC" (declared at line 50 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 373: warning #48-D: incompatible redefinition of macro "INT_GPIOD" (declared at line 51 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 374: warning #48-D: incompatible redefinition of macro "INT_GPIOE" (declared at line 52 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 375: warning #48-D: incompatible redefinition of macro "INT_GPIOF" (declared at line 78 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 402: warning #48-D: incompatible redefinition of macro "INT_HIBERNATE" (declared at line 87 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 403: warning #48-D: incompatible redefinition of macro "INT_I2C0" (declared at line 56 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 404: warning #48-D: incompatible redefinition of macro "INT_I2C1" (declared at line 83 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 405: warning #48-D: incompatible redefinition of macro "INT_I2C2" (declared at line 103 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 406: warning #48-D: incompatible redefinition of macro "INT_I2C3" (declared at line 104 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 415: warning #48-D: incompatible redefinition of macro "INT_PWM0_0" (declared at line 58 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 416: warning #48-D: incompatible redefinition of macro "INT_PWM0_1" (declared at line 59 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 417: warning #48-D: incompatible redefinition of macro "INT_PWM0_2" (declared at line 60 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 418: warning #48-D: incompatible redefinition of macro "INT_PWM0_3" (declared at line 89 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 419: warning #48-D: incompatible redefinition of macro "INT_PWM0_FAULT" (declared at line 57 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 420: warning #48-D: incompatible redefinition of macro "INT_PWM1_0" (declared at line 122 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 421: warning #48-D: incompatible redefinition of macro "INT_PWM1_1" (declared at line 123 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 422: warning #48-D: incompatible redefinition of macro "INT_PWM1_2" (declared at line 124 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 423: warning #48-D: incompatible redefinition of macro "INT_PWM1_3" (declared at line 125 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 424: warning #48-D: incompatible redefinition of macro "INT_PWM1_FAULT" (declared at line 126 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 425: warning #48-D: incompatible redefinition of macro "INT_QEI0" (declared at line 61 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 426: warning #48-D: incompatible redefinition of macro "INT_QEI1" (declared at line 84 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 428: warning #48-D: incompatible redefinition of macro "INT_SSI0" (declared at line 55 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 429: warning #48-D: incompatible redefinition of macro "INT_SSI1" (declared at line 80 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 430: warning #48-D: incompatible redefinition of macro "INT_SSI2" (declared at line 96 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 431: warning #48-D: incompatible redefinition of macro "INT_SSI3" (declared at line 97 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 432: warning #48-D: incompatible redefinition of macro "INT_SYSCTL" (declared at line 75 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 433: warning #48-D: incompatible redefinition of macro "INT_SYSEXC" (declared at line 121 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 435: warning #48-D: incompatible redefinition of macro "INT_TIMER0A" (declared at line 67 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 436: warning #48-D: incompatible redefinition of macro "INT_TIMER0B" (declared at line 68 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 437: warning #48-D: incompatible redefinition of macro "INT_TIMER1A" (declared at line 69 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 438: warning #48-D: incompatible redefinition of macro "INT_TIMER1B" (declared at line 70 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 439: warning #48-D: incompatible redefinition of macro "INT_TIMER2A" (declared at line 71 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 440: warning #48-D: incompatible redefinition of macro "INT_TIMER2B" (declared at line 72 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 441: warning #48-D: incompatible redefinition of macro "INT_TIMER3A" (declared at line 81 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 442: warning #48-D: incompatible redefinition of macro "INT_TIMER3B" (declared at line 82 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 443: warning #48-D: incompatible redefinition of macro "INT_TIMER4A" (declared at line 105 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 444: warning #48-D: incompatible redefinition of macro "INT_TIMER4B" (declared at line 106 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 445: warning #48-D: incompatible redefinition of macro "INT_TIMER5A" (declared at line 107 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 446: warning #48-D: incompatible redefinition of macro "INT_TIMER5B" (declared at line 108 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 451: warning #48-D: incompatible redefinition of macro "INT_UART0" (declared at line 53 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 452: warning #48-D: incompatible redefinition of macro "INT_UART1" (declared at line 54 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 453: warning #48-D: incompatible redefinition of macro "INT_UART2" (declared at line 79 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 454: warning #48-D: incompatible redefinition of macro "INT_UART3" (declared at line 98 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 455: warning #48-D: incompatible redefinition of macro "INT_UART4" (declared at line 99 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 456: warning #48-D: incompatible redefinition of macro "INT_UART5" (declared at line 100 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 457: warning #48-D: incompatible redefinition of macro "INT_UART6" (declared at line 101 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 458: warning #48-D: incompatible redefinition of macro "INT_UART7" (declared at line 102 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 459: warning #48-D: incompatible redefinition of macro "INT_UDMA" (declared at line 90 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 460: warning #48-D: incompatible redefinition of macro "INT_UDMAERR" (declared at line 91 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 461: warning #48-D: incompatible redefinition of macro "INT_USB0" (declared at line 88 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 462: warning #48-D: incompatible redefinition of macro "INT_WATCHDOG" (declared at line 66 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 463: warning #48-D: incompatible redefinition of macro "INT_WTIMER0A" (declared at line 109 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 464: warning #48-D: incompatible redefinition of macro "INT_WTIMER0B" (declared at line 110 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 465: warning #48-D: incompatible redefinition of macro "INT_WTIMER1A" (declared at line 111 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 466: warning #48-D: incompatible redefinition of macro "INT_WTIMER1B" (declared at line 112 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 467: warning #48-D: incompatible redefinition of macro "INT_WTIMER2A" (declared at line 113 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 468: warning #48-D: incompatible redefinition of macro "INT_WTIMER2B" (declared at line 114 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 469: warning #48-D: incompatible redefinition of macro "INT_WTIMER3A" (declared at line 115 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 470: warning #48-D: incompatible redefinition of macro "INT_WTIMER3B" (declared at line 116 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 471: warning #48-D: incompatible redefinition of macro "INT_WTIMER4A" (declared at line 117 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 472: warning #48-D: incompatible redefinition of macro "INT_WTIMER4B" (declared at line 118 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 473: warning #48-D: incompatible redefinition of macro "INT_WTIMER5A" (declared at line 119 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 474: warning #48-D: incompatible redefinition of macro "INT_WTIMER5B" (declared at line 120 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 67: error #20: identifier "bool" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 68: error #20: identifier "bool" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 69: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 70: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 71: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 72: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 73: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 74: error #20: identifier "uint8_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 75: error #20: identifier "int32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 75: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 76: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 77: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 78: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 78: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 79: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 80: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 81: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 82: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 83: error #20: identifier "uint32_t" is undefined
+19 errors detected in the compilation of "../ping.c".
+gmake: *** [ping.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project lab_10 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 clean -O 
+ 
+DEL /F  "lab_10.out" 
+DEL /F "Timer.obj" "lcd.obj" "main.obj" "ping.obj" "tm4c123gh6pm_startup_ccs.obj" 
+DEL /F "Timer.d" "lcd.d" "main.d" "ping.d" "tm4c123gh6pm_startup_ccs.d" 
+Could Not Find U:\CprE288\lab_10\Debug\lab_10.out
+Finished clean
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_10 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../ping.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_10" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="ping.d_raw"  "../ping.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'ping.obj' failed
+"..\ping.h", line 7: warning #1-D: last line of file ends without a newline
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 352: warning #48-D: incompatible redefinition of macro "INT_ADC0SS0" (declared at line 62 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 353: warning #48-D: incompatible redefinition of macro "INT_ADC0SS1" (declared at line 63 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 354: warning #48-D: incompatible redefinition of macro "INT_ADC0SS2" (declared at line 64 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 355: warning #48-D: incompatible redefinition of macro "INT_ADC0SS3" (declared at line 65 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 356: warning #48-D: incompatible redefinition of macro "INT_ADC1SS0" (declared at line 92 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 357: warning #48-D: incompatible redefinition of macro "INT_ADC1SS1" (declared at line 93 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 358: warning #48-D: incompatible redefinition of macro "INT_ADC1SS2" (declared at line 94 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 359: warning #48-D: incompatible redefinition of macro "INT_ADC1SS3" (declared at line 95 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 361: warning #48-D: incompatible redefinition of macro "INT_CAN0" (declared at line 85 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 362: warning #48-D: incompatible redefinition of macro "INT_CAN1" (declared at line 86 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 363: warning #48-D: incompatible redefinition of macro "INT_COMP0" (declared at line 73 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 364: warning #48-D: incompatible redefinition of macro "INT_COMP1" (declared at line 74 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 369: warning #48-D: incompatible redefinition of macro "INT_FLASH" (declared at line 76 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 370: warning #48-D: incompatible redefinition of macro "INT_GPIOA" (declared at line 48 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 371: warning #48-D: incompatible redefinition of macro "INT_GPIOB" (declared at line 49 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 372: warning #48-D: incompatible redefinition of macro "INT_GPIOC" (declared at line 50 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 373: warning #48-D: incompatible redefinition of macro "INT_GPIOD" (declared at line 51 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 374: warning #48-D: incompatible redefinition of macro "INT_GPIOE" (declared at line 52 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 375: warning #48-D: incompatible redefinition of macro "INT_GPIOF" (declared at line 78 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 402: warning #48-D: incompatible redefinition of macro "INT_HIBERNATE" (declared at line 87 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 403: warning #48-D: incompatible redefinition of macro "INT_I2C0" (declared at line 56 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 404: warning #48-D: incompatible redefinition of macro "INT_I2C1" (declared at line 83 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 405: warning #48-D: incompatible redefinition of macro "INT_I2C2" (declared at line 103 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 406: warning #48-D: incompatible redefinition of macro "INT_I2C3" (declared at line 104 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 415: warning #48-D: incompatible redefinition of macro "INT_PWM0_0" (declared at line 58 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 416: warning #48-D: incompatible redefinition of macro "INT_PWM0_1" (declared at line 59 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 417: warning #48-D: incompatible redefinition of macro "INT_PWM0_2" (declared at line 60 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 418: warning #48-D: incompatible redefinition of macro "INT_PWM0_3" (declared at line 89 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 419: warning #48-D: incompatible redefinition of macro "INT_PWM0_FAULT" (declared at line 57 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 420: warning #48-D: incompatible redefinition of macro "INT_PWM1_0" (declared at line 122 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 421: warning #48-D: incompatible redefinition of macro "INT_PWM1_1" (declared at line 123 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 422: warning #48-D: incompatible redefinition of macro "INT_PWM1_2" (declared at line 124 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 423: warning #48-D: incompatible redefinition of macro "INT_PWM1_3" (declared at line 125 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 424: warning #48-D: incompatible redefinition of macro "INT_PWM1_FAULT" (declared at line 126 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 425: warning #48-D: incompatible redefinition of macro "INT_QEI0" (declared at line 61 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 426: warning #48-D: incompatible redefinition of macro "INT_QEI1" (declared at line 84 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 428: warning #48-D: incompatible redefinition of macro "INT_SSI0" (declared at line 55 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 429: warning #48-D: incompatible redefinition of macro "INT_SSI1" (declared at line 80 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 430: warning #48-D: incompatible redefinition of macro "INT_SSI2" (declared at line 96 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 431: warning #48-D: incompatible redefinition of macro "INT_SSI3" (declared at line 97 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 432: warning #48-D: incompatible redefinition of macro "INT_SYSCTL" (declared at line 75 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 433: warning #48-D: incompatible redefinition of macro "INT_SYSEXC" (declared at line 121 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 435: warning #48-D: incompatible redefinition of macro "INT_TIMER0A" (declared at line 67 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 436: warning #48-D: incompatible redefinition of macro "INT_TIMER0B" (declared at line 68 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 437: warning #48-D: incompatible redefinition of macro "INT_TIMER1A" (declared at line 69 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 438: warning #48-D: incompatible redefinition of macro "INT_TIMER1B" (declared at line 70 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 439: warning #48-D: incompatible redefinition of macro "INT_TIMER2A" (declared at line 71 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 440: warning #48-D: incompatible redefinition of macro "INT_TIMER2B" (declared at line 72 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 441: warning #48-D: incompatible redefinition of macro "INT_TIMER3A" (declared at line 81 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 442: warning #48-D: incompatible redefinition of macro "INT_TIMER3B" (declared at line 82 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 443: warning #48-D: incompatible redefinition of macro "INT_TIMER4A" (declared at line 105 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 444: warning #48-D: incompatible redefinition of macro "INT_TIMER4B" (declared at line 106 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 445: warning #48-D: incompatible redefinition of macro "INT_TIMER5A" (declared at line 107 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 446: warning #48-D: incompatible redefinition of macro "INT_TIMER5B" (declared at line 108 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 451: warning #48-D: incompatible redefinition of macro "INT_UART0" (declared at line 53 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 452: warning #48-D: incompatible redefinition of macro "INT_UART1" (declared at line 54 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 453: warning #48-D: incompatible redefinition of macro "INT_UART2" (declared at line 79 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 454: warning #48-D: incompatible redefinition of macro "INT_UART3" (declared at line 98 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 455: warning #48-D: incompatible redefinition of macro "INT_UART4" (declared at line 99 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 456: warning #48-D: incompatible redefinition of macro "INT_UART5" (declared at line 100 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 457: warning #48-D: incompatible redefinition of macro "INT_UART6" (declared at line 101 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 458: warning #48-D: incompatible redefinition of macro "INT_UART7" (declared at line 102 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 459: warning #48-D: incompatible redefinition of macro "INT_UDMA" (declared at line 90 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 460: warning #48-D: incompatible redefinition of macro "INT_UDMAERR" (declared at line 91 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 461: warning #48-D: incompatible redefinition of macro "INT_USB0" (declared at line 88 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 462: warning #48-D: incompatible redefinition of macro "INT_WATCHDOG" (declared at line 66 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 463: warning #48-D: incompatible redefinition of macro "INT_WTIMER0A" (declared at line 109 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 464: warning #48-D: incompatible redefinition of macro "INT_WTIMER0B" (declared at line 110 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 465: warning #48-D: incompatible redefinition of macro "INT_WTIMER1A" (declared at line 111 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 466: warning #48-D: incompatible redefinition of macro "INT_WTIMER1B" (declared at line 112 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 467: warning #48-D: incompatible redefinition of macro "INT_WTIMER2A" (declared at line 113 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 468: warning #48-D: incompatible redefinition of macro "INT_WTIMER2B" (declared at line 114 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 469: warning #48-D: incompatible redefinition of macro "INT_WTIMER3A" (declared at line 115 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 470: warning #48-D: incompatible redefinition of macro "INT_WTIMER3B" (declared at line 116 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 471: warning #48-D: incompatible redefinition of macro "INT_WTIMER4A" (declared at line 117 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 472: warning #48-D: incompatible redefinition of macro "INT_WTIMER4B" (declared at line 118 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 473: warning #48-D: incompatible redefinition of macro "INT_WTIMER5A" (declared at line 119 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_ints.h", line 474: warning #48-D: incompatible redefinition of macro "INT_WTIMER5B" (declared at line 120 of "C:/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c123gh6pm.h")
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 67: error #20: identifier "bool" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 68: error #20: identifier "bool" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 69: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 70: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 71: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 72: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 73: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 74: error #20: identifier "uint8_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 75: error #20: identifier "int32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 75: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 76: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 77: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 78: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 78: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 79: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 80: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 81: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 82: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 83: error #20: identifier "uint32_t" is undefined
+19 errors detected in the compilation of "../ping.c".
+gmake: *** [ping.obj] Error 1
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_10" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+Building file: "../Timer.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_10" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Timer.d_raw"  "../Timer.c"
+Finished building: "../Timer.c"
+ 
+Building file: "../lcd.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_10" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="lcd.d_raw"  "../lcd.c"
+Finished building: "../lcd.c"
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_10" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"..\ping.h", line 7: warning #1-D: last line of file ends without a newline
+"../main.c", line 28: warning #112-D: statement is unreachable
+Finished building: "../main.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_10 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../ping.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_10" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="ping.d_raw"  "../ping.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'ping.obj' failed
+"..\ping.h", line 7: warning #1-D: last line of file ends without a newline
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 67: error #20: identifier "bool" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 68: error #20: identifier "bool" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 69: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 70: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 71: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 72: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 73: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 74: error #20: identifier "uint8_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 75: error #20: identifier "int32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 75: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 76: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 77: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 78: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 78: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 79: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 80: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 81: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 82: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 83: error #20: identifier "uint32_t" is undefined
+19 errors detected in the compilation of "../ping.c".
+gmake: *** [ping.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_10 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../ping.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_10" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="ping.d_raw"  "../ping.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'ping.obj' failed
+"..\ping.h", line 7: warning #1-D: last line of file ends without a newline
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 67: error #20: identifier "bool" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 68: error #20: identifier "bool" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 69: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 70: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 71: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 72: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 73: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 74: error #20: identifier "uint8_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 75: error #20: identifier "int32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 75: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 76: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 77: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 78: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 78: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 79: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 80: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 81: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 82: error #20: identifier "uint32_t" is undefined
+"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h", line 83: error #20: identifier "uint32_t" is undefined
+19 errors detected in the compilation of "../ping.c".
+gmake: *** [ping.obj] Error 1
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_10" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"..\ping.h", line 7: warning #1-D: last line of file ends without a newline
+"../main.c", line 28: warning #112-D: statement is unreachable
+Finished building: "../main.c"
+ 
+Building file: "../Timer.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_10" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Timer.d_raw"  "../Timer.c"
+Finished building: "../Timer.c"
+ 
+Building file: "../lcd.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_10" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="lcd.d_raw"  "../lcd.c"
+Finished building: "../lcd.c"
+ 
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_10" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_10 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../ping.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_10" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="ping.d_raw"  "../ping.c"
+"..\ping.h", line 7: warning #1-D: last line of file ends without a newline
+Finished building: "../ping.c"
+ 
+Building target: "lab_10.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_10.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_10_linkInfo.xml" --rom_model -o "lab_10.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./ping.obj" "./tm4c123gh6pm_startup_ccs.obj" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_10.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_10 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_10" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 28: warning #112-D: statement is unreachable
+Finished building: "../main.c"
+ 
+Building file: "../ping.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="U:/CprE288/lab_10" --include_path="C:/ti/TivaWare_C_Series-2.2.0.295" --include_path="C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="ping.d_raw"  "../ping.c"
+Finished building: "../ping.c"
+ 
+Building target: "lab_10.out"
+Invoking: Arm Linker
+"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"lab_10.map" --heap_size=1024 --stack_size=2048 -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab_10_linkInfo.xml" --rom_model -o "lab_10.out" "./Timer.obj" "./lcd.obj" "./main.obj" "./ping.obj" "./tm4c123gh6pm_startup_ccs.obj" "../tm4c123gh6pm.cmd"  -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
+<Linking>
+Finished building target: "lab_10.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project lab_9 ****
+
+"C:\\ti\\ccs1271\\ccs\\utils\\bin\\gmake" -k -j 20 all -O 
+ 
+gmake[1]: 'lab_9.out' is up to date.
+
+**** Build Finished ****
