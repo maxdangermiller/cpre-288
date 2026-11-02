@@ -12,17 +12,15 @@ int main() {
 	lcd_init();
 	ping_init();
 
-	int ping_val;
+	int cycles;
 
 	while (1) {
-        timer_waitMillis(2000);
+        timer_waitMillis(300);					// Take a reading every 300 ms
 
-        lcd_printf("Sending Ping!\n");
-        // ping_read();
+        cycles = ping_read();
 
-        ping_val = ping_read();
-
-        lcd_printf("%06d\n", ping_val);
+        lcd_printf("Cycles: %d\nTime: %.3f ms\nDist: %.1f cm\nOverflows: %d",
+                   cycles, ping_cycles_to_ms(cycles), ping_cycles_to_cm(cycles), ping_get_overflows());
 	}
 
 	return 0;
