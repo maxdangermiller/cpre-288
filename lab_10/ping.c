@@ -10,12 +10,15 @@
 #define PB3_BITMASK 0b1000
 #define TIMER3B_CAPTURE_EVENT 0x400		// CBERIS / CBECINT bit in RIS, MIS, IMR, and ICR
 #define TIMER_24BIT_MASK 0xFFFFFF		// 16-bit timer + 8-bit prescaler
+#define SYSTEM_CLOCK_HZ 16000000.0f		// Timer 3 runs off the 16 MHz system clock
+#define SPEED_OF_SOUND_CM_S 34000.0f	// 340 m/s, per the lab manual
 
 static void send_trigger(void);
 static void timer3b_handler(void);
 
 static volatile unsigned long rising_time;
 static volatile unsigned long falling_time;
+static int overflow_count = 0;
 
 static volatile enum { PING_IDLE, PING_WAIT_RISING, PING_WAIT_FALLING, PING_DONE } state = PING_IDLE;
 
@@ -75,7 +78,8 @@ int ping_read(void) {
 	GPIO_PORTB_DIR_R &= ~PB3_BITMASK;		// Set PB3 as input
 	GPIO_PORTB_AFSEL_R |= PB3_BITMASK;		// Give PB3 to Timer 3B (T3CCP1)
 
-	TIMER3_ICR_R = 0x400;					// Unmask the interrupt
+	TIMER3_ICR_R = 0x400;					// Clear the interrupt
+	TIMER3_IMR_R |= 0x400;					// Unmask the interrupt
 	TIMER3_CTL_R |= 0x100;					// Enable Timer 3B (TBEN)
 	state = PING_WAIT_RISING;				// Set state to ping waiting on rising edge
 
@@ -83,9 +87,37 @@ int ping_read(void) {
 
 	TIMER3_IMR_R &= ~0x400;					// Mask the interrupt again
 
+	// Timer counts down, so the rising edge normally has the bigger value.
+	// If it doesn't, the timer wrapped past 0 during the pulse.
+	if (falling_time > rising_time) {
+		overflow_count++;
+	}
+
 	// Timer counts down, so the rising edge has the bigger value.
 	// Masking to 24 bits handles the timer wrapping during the pulse.
 	return (rising_time - falling_time) & TIMER_24BIT_MASK;
+}
+
+/**
+ * Returns how many times the timer has wrapped during an echo pulse.
+ */
+int ping_get_overflows(void) {
+	return overflow_count;
+}
+
+/**
+ * Converts a pulse width in clock cycles (16 MHz) to milliseconds.
+ */
+float ping_cycles_to_ms(int cycles) {
+	return cycles / (SYSTEM_CLOCK_HZ / 1000.0f);
+}
+
+/**
+ * Converts a pulse width in clock cycles (16 MHz) to distance in cm.
+ * The sound travels to the object and back, so the round trip is halved.
+ */
+float ping_cycles_to_cm(int cycles) {
+	return cycles * (SPEED_OF_SOUND_CM_S / SYSTEM_CLOCK_HZ) / 2.0f;
 }
 
 /**
@@ -94,7 +126,7 @@ int ping_read(void) {
 static void send_trigger(void) {
 	// Send Pulse
 	GPIO_PORTB_DATA_R &= ~PB3_BITMASK;		// LOW
-	timer_waitMicros(5);					// Wait 5 micros
+	timer_waitMicros(20);					// Wait 20 micros
 	GPIO_PORTB_DATA_R |= PB3_BITMASK;		// HIGH
 	timer_waitMicros(5);					// Wait 5 micros
 	GPIO_PORTB_DATA_R &= ~PB3_BITMASK;		// LOW

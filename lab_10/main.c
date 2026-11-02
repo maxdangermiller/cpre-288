@@ -15,14 +15,11 @@ int main() {
 	int ping_val;
 
 	while (1) {
-        timer_waitMillis(2000);
-
-        lcd_printf("Sending Ping!\n");
-        // ping_read();
+        timer_waitMillis(300);
 
         ping_val = ping_read();
-
-        lcd_printf("%06d\n", ping_val);
+		
+        lcd_printf("Cycles: %d\nTime: %.3f ms\nDist: %.1f cm\nOverflows: %d", ping_val, ping_cycles_to_ms(ping_val), ping_cycles_to_cm(ping_val), ping_get_overflows());
 	}
 
 	return 0;

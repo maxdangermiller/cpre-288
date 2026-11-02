@@ -2468,3 +2468,6 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.ti.ccstud
 !MESSAGE Problems occurred refreshing resources
 !SUBENTRY 1 org.eclipse.core.resources 4 1 2026-11-02 09:51:47.872
 !MESSAGE Problem finding next change, code: 995
+
+!ENTRY org.eclipse.core.resources 4 566 2026-11-02 10:56:17.732
+!MESSAGE Workspace was not properly initialized or has already shutdown.
