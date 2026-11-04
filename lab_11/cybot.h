@@ -5,6 +5,7 @@
 // #define USE_CYBOT_09
 // #define USE_CYBOT_11
 // #define USE_CYBOT_17
+#define USE_CYBOT_20
 // #define USE_CYBOT_22
 // #define USE_CYBOT_24
 // #define USE_CYBOT_25

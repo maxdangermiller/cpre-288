@@ -36,6 +36,11 @@ int servo_move(float degrees);
 #define PWM_PULSE_MIN 248500
 #define PWM_PULSE_MAX 1204000
 
+#elif defined(USE_CYBOT_20)
+
+#define PWM_PULSE_MIN 441666
+#define PWM_PULSE_MAX 2208333
+
 #elif defined(USE_CYBOT_22)
 
 #define PWM_PULSE_MIN 248500
@@ -59,8 +64,8 @@ int servo_move(float degrees);
 
 #else
 
-// #define PWM_PULSE_MIN 750000	// 750μs
-// #define PWM_PULSE_MAX 2250000	// 2250μs
+#define PWM_PULSE_MIN 750000	// 750μs
+#define PWM_PULSE_MAX 2250000	// 2250μs
 
 #endif
 

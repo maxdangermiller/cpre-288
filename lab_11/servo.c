@@ -2,17 +2,15 @@
 #include <inc/tm4c123gh6pm.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include "lcd.h"
 
 #define PB5_BITMASK 1 << 5
 #define PWM_PERIOD 10000000 	// 10ms per period in ns
 #define CLOCK_TICK_TIME 62.5	// 62.5ns per tick
-// #define PWM_PULSE_MIN 1000000	// 750μs in ns
-// #define PWM_PULSE_MAX 2000000	// 2250μs in ns
-#define PWM_PULSE_MIN 200000	// 750μs in ns
-#define PWM_PULSE_MAX 2250000	// 2250μs in ns
 
 const static int CLOCK_PERIOD = (int)(PWM_PERIOD / CLOCK_TICK_TIME);
+
+static int servo_pulse_min = PWM_PULSE_MIN;
+static int servo_pulse_max = PWM_PULSE_MAX;
 
 
 void servo_init(void) {
@@ -46,18 +44,15 @@ void servo_init(void) {
 }
 
 int servo_move(float degrees) {
-	if 		(degrees < 0.0) 	{ degrees = 0.0; 	}
-	else if (degrees > 180.0) 	{ degrees = 180.0; 	}
+	// if 		(degrees < 0.0) 	{ degrees = 0.0; 	}
+	// else if (degrees > 180.0) 	{ degrees = 180.0; 	}
 
-	int pulse_length = (degrees / 180.0) * (PWM_PULSE_MAX - PWM_PULSE_MIN) + PWM_PULSE_MIN;
+	int pulse_length = (degrees / 180.0) * (servo_pulse_max - servo_pulse_min) + servo_pulse_min;
 	int low = (PWM_PERIOD - pulse_length) / CLOCK_TICK_TIME;
-	
-	lcd_printf("%d", pulse_length);
-
 
 	// Textbook page 766
 	TIMER1_TBMATCHR_R = low; 	// Length of Low Pulse
 	TIMER1_TBPMR_R = low >> 16;
 
-	return 1;
+	return pulse_length;
 }
