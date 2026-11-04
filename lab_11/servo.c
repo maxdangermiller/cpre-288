@@ -1,0 +1,48 @@
+#include "servo.h"
+#include <inc/tm4c123gh6pm.h>
+#include <stdint.h>
+#include <stdbool.h>
+
+#define PB5_BITMASK 1 << 5
+#define PWM_PERIOD 20000000 	// 20ms per period
+#define CLOCK_TICK_TIME 62.5	// 62.5ns per tick
+#define PWM_PULSE_MIN 750000	// 750μs
+#define PWM_PULSE_MAX 2250000	// 2250μs
+
+
+void servo_init(void) {
+	SYSCTL_RCGCGPIO_R |= 0b10;				// Enable GPIO Port B's Clock
+	while ((SYSCTL_PRGPIO_R & 0b10) == 0);	// Wait for Port B's clock to start
+
+	GPIO_PORTB_DEN_R |= PB5_BITMASK;		// Enable PB5
+	GPIO_PORTB_PCTL_R &= ~0xF00000;			// Reset PCTL for PB5
+	GPIO_PORTB_PCTL_R |= 0x700000;			// Connect PB5 to T1CCP1
+
+	SYSCTL_RCGCTIMER_R |= 0b10;			    // Enable Clock for Timer 1
+	while ((SYSCTL_PRTIMER_R & 0b10) == 0);	// Wait for Timer 1's clock to start
+
+	// Datasheet page 725 and 744 in textbook
+	TIMER1_CTL_R &= 0x100;					// Turn off Timer 1B
+	TIMER1_CFG_R = 0x4;						// Use 16 bit timers
+	TIMER1_TBMR_R = 0b1010;					// Periodic Timer mode, PWM mode is enabled.
+	TIMER1_CTL_R &= 1 << 14;				// PWM not inverted
+
+	// Load default position
+	servo_move(90.0);
+
+	TIMER1_CTL_R |= 0x100;					// Turn on Timer 1B
+	
+}
+
+int servo_move(float degrees) {
+	if 		(degrees < 0.0) 	{ degrees = 0.0; 	}
+	else if (degrees > 180.0) 	{ degrees = 180.0; 	}
+
+	int pulse_length = (degrees / 180.0) * (PWM_PULSE_MAX - PWM_PULSE_MIN) + PWM_PULSE_MIN;
+
+	// Textbook page 766
+	TIMER1_TBILR_R = PWM_PERIOD / CLOCK_TICK_TIME;						// Period
+	TIMER1_TBMATCHR_R = (PWM_PERIOD - pulse_length) / CLOCK_TICK_TIME; 	// Length of Low Pulse
+
+	return 1;
+}

@@ -1,0 +1,64 @@
+-   Skim documents to understand the operation of the servo motor, 
+	including the servo datasheet and other resources as needed given in the Reference Documents listed below.
+
+-   Review the readings assigned in preparation for this Lab, including textbook, 
+	section 9.2(9.2.3.7, 9.2.6.5, 9.2.8.3), and the Tiva TM4C123GH6PM datasheet 
+	related to the timer and PWM mode. Don’t read everything, 
+	look for basic concepts and overviews first,ignore things that seem outside the scope of the lab,
+	browse steps given for initialization, configuration, etc. Figures 9.5 and 9.15 in the textbook may be helpful.
+
+-   Keep in mind the following:
+	-   You are using the “PWM Mode”of the timer(General-Purpose Timer Module, GPTM)
+		–   textbook sections 9.2.3.7, 9.2.8.3. 
+
+	-   You are not using the “PWM Generator Block,” which is an entirely separate module of the microcontroller. 
+
+	-   A timer can be configured to generate PWM output signals in PWM mode.
+
+	-   You are not using interrupts for PWM in this lab. This lab does not involve any new use of interupts.
+
+-   Draft the code. It might help to sketch your system. 
+	It might help to create an outlineand/or flow chart of the code. 
+	The code should be complete, but you don't have to compile or execute it before coming to the lab. 
+
+Attempt to draft some code to show your TA.
+
+Questions: 
+
+1.  How does the servo motor work? 
+		For example, what are the pulse widths necessary for full clockwise, center, 
+		and full counter-clockwise positions? (1pt)
+
+The servo uses pulse width modulation (PWM), with these pulses being between 750 to 2250 μs long. 
+
+0 deg: 		750μs 	= 750000ns
+90 deg: 	1500μs 	= 1500000ns
+180 deg: 	2250μs	= 2250000ns
+
+
+2.  What Timer1 registers are relevant to this lab? (2pts)
+
+Timer 1B Registers since the servo is connected to PB5
+
+- GPTMTBILR: 	Timer B Interval Load 	(16 bit)
+- GPTMTBPR:		Timer B Prescale 		(8 bit)
+
+- GPTMTBMATCHR:	Timer B Match 			(16 bit)
+- GPTMTBPMR:	Timer B Prescale Match 	(8 bit)
+
+- GPTMTBMR:		Timer B Mode
+- GPTMCTL:		GPTM Control
+
+
+3.  With a Timer running at the 16 MHz system clock, how many timer ticks are there in 20ms duration? (1pt)
+
+T = 1/f = 1/16MHz = 62.5ns
+
+*32000 ticks in 20ms*
+
+
+
+4.  Describe timer programming for the PWM signal in terms of the high pulse and the low pulse. 
+	When is the output pin set? When is the output pin cleared? (1pt)
+
+**It's set to be high when the match register is zero but before a reset. **
