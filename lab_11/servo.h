@@ -59,8 +59,8 @@ int servo_move(float degrees);
 
 #else
 
-#define PWM_PULSE_MIN 750000	// 750μs
-#define PWM_PULSE_MAX 2250000	// 2250μs
+// #define PWM_PULSE_MIN 750000	// 750μs
+// #define PWM_PULSE_MAX 2250000	// 2250μs
 
 #endif
 
