@@ -23,8 +23,8 @@ void clean_data(SensorData_t sensor_data[], int len) {
 		if (sensor_data[i].s_dist > 125.0) {
 			sensor_data[i].s_dist = 125.0;
 		}
-		if (sensor_data[i].ir_dist > 125.0) {
-			sensor_data[i].ir_dist = 125.0;
+		if (sensor_data[i].ir_dist > 200.0) {
+			sensor_data[i].ir_dist = 200.0;
 		}
 	}
 
@@ -145,7 +145,6 @@ static void smooth_ir(SensorData_t sensor_data[], int len, int threshold) {
 	int i, j;
 
 	float delta;
-	float last_delta = 0;
 	float tot, avg;
 
 
@@ -153,7 +152,7 @@ static void smooth_ir(SensorData_t sensor_data[], int len, int threshold) {
 
 		delta = fabsf(sensor_data[i].ir_dist - sensor_data[start].ir_dist);
 		
-		if (delta > threshold || i == DATA_END_POS - 1) {
+		if ((delta > threshold && i - start > 1) || i == DATA_END_POS - 1) {
 			tot = 0.0;
 			for (j = start; j < i; j++) {
 				tot += sensor_data[j].ir_dist;
@@ -170,30 +169,54 @@ static void smooth_ir(SensorData_t sensor_data[], int len, int threshold) {
 		i++;
 	}
 
+	/*
 	start = DATA_START_POS;
-
+	
+	int had_last_delta = 0;
+	float last_delta = 0;
+	
+	float min;
+	int min_start, min_end;
+	
 	// This time make sure each section is not going the same direction
-	for (i = start + 1; i < DATA_END_POS && i < len; i++) {
-
-		delta = fabsf(sensor_data[i].ir_dist - sensor_data[start].ir_dist);
+	for (i = start; i < DATA_END_POS && i < len; i++) {
 		
-		if ((delta * last_delta) < 0.0f || i == DATA_END_POS - 1) {
-			tot = 0.0;
+		delta = sensor_data[i].ir_dist - sensor_data[i - 1].ir_dist;
+		
+		if (fabs(delta) < 0.5) {
+			// do nothing
+		}
+		
+		else if (!had_last_delta) {
+			had_last_delta = 1;
+			last_delta = delta;
+			start = i;
+		}
+		
+		else if ((delta * last_delta) < 0) {
+			min = 200.0;
+			min_start = -1;
+			min_end = -1;
+			
 			for (j = start; j < i; j++) {
-				tot += sensor_data[j].ir_dist;
-			}
-				
-			avg = tot / (float)(i - start);
-				
-			for (j = start; j < i; j++) {
-				sensor_data[j].ir_dist = avg;
+				if (sensor_data[j].ir_dist < min) {
+					min_start = j;
+					min = sensor_data[j].ir_dist;
+				}
+				else if (fabs(sensor_data[j].ir_dist - min) < 0.1) {
+					min_end = j;
+				}
 			}
 			
+			for (j = start; j < i; j++) {
+				sensor_data[j].ir_dist = min;
+			}
 			start = i;
 			last_delta = delta;
 		}
-		i++;
 	}
+	*/
+	
 }
 	
 /**

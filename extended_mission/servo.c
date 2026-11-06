@@ -57,8 +57,6 @@ int servo_move(float degrees) {
 	// if 		(degrees < 0.0) 	{ degrees = 0.0; 	}
 	// else if (degrees > 180.0) 	{ degrees = 180.0; 	}
 
-	int pos_delta = (int)(fabs(servo_last_pos - degrees) * 8.0);
-	servo_last_pos = degrees;
 
 	int pulse_length = (degrees / 180.0) * (servo_pulse_max - servo_pulse_min) + servo_pulse_min;
 	int low = (PWM_PERIOD - pulse_length) / CLOCK_TICK_TIME;
@@ -67,7 +65,10 @@ int servo_move(float degrees) {
 	TIMER1_TBMATCHR_R = low; 	// Length of Low Pulse
 	TIMER1_TBPMR_R = low >> 16;
 
-	timer_waitMillis(pos_delta);
+	int pos_delta = (int)(fabs(servo_last_pos - degrees) * 8.0);
+	servo_last_pos = degrees;
+
+	timer_waitMillis(pos_delta + 50);
 
 	return pulse_length;
 }
