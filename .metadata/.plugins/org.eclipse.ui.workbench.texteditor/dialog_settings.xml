@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="cyBot_init_Scan_cust"/>
+		<item key="selection" value="str"/>
 		<list key="findhistory">
+			<item value="str"/>
 			<item value="cyBot_IR_Calibrate"/>
 			<item value="Kp"/>
 			<item value="ROT_KP"/>
