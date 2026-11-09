@@ -175,7 +175,6 @@ void adc_calibrate() {
     timer_init();
     lcd_init();
     button_init();
-    init_button_interrupts();
     adc_init();
     servo_init();
     ping_init();

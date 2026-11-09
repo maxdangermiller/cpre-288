@@ -3,8 +3,25 @@
 
 #include "cybot.h"
 
+/**
+ * Servo Initilize
+ * @brief Sets up registers to make the PWM for the servo work
+ * @details Configures PB5 to be controlled by Timer 1B in PWM mode
+ */
 void servo_init(void);
+
+/**
+ * Servo Move
+ * @brief Sets the servo position to an angle in degrees
+ * @param degrees any float; in range for 0.0 - 180.0 degrees.
+ */
 int servo_move(float degrees);
+
+/**
+ * Servo Calibrate
+ * @brief Easy setup method to allow a user to calibrate the position of the servo
+ */
+void servo_cal(void);
 
 #ifdef USE_CYBOT_01
 

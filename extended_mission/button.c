@@ -52,6 +52,8 @@ void button_init() {
     // See: https://class.ece.iastate.edu/cpre288/resources/docs/Tiva_TM4C123GH6PM_datasheet.pdf#page=682
     GPIO_PORTE_DEN_R |= (0b1111);
 
+    init_button_interrupts();
+
     initialized = 1;
 }
 

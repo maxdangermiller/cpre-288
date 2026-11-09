@@ -19,9 +19,6 @@
 //initialize the push buttons
 void button_init();
 
-// Initialize GPIO interrupts for buttons
-void init_button_interrupts();
-
 // handler for gpio event when button is pressed
 void gpioe_handler();
 

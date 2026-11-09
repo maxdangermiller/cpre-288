@@ -5,7 +5,6 @@
  */
 
 #include "handle_data.h"
-#include "sensor-data.h"
 #include "handle_scan.h"
 #include "open_interface.h"
 #include "movement.h"
@@ -34,9 +33,6 @@ static int smallest_object_index;
 
 
 // Interrupt Vars
-extern volatile int button_event;
-extern volatile int button_num;
-
 extern volatile char uart_data;
 extern volatile char uart_flag;
 
@@ -59,6 +55,8 @@ int main(void) {
     ping_init();
     servo_init();
     move_init(&cyBot);
+
+    // servo_cal();
     
     running = true;
     ctrl_mode = MODE_MAN;

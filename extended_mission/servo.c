@@ -4,6 +4,7 @@
 #include "Timer.h"
 #include "math.h"
 #include "lcd.h"
+#include "button.h"
 
 #define PB5_BITMASK 1 << 5
 #define PWM_PERIOD 10000000 	// 10ms per period in ns
@@ -15,6 +16,10 @@ static int servo_pulse_min = PWM_PULSE_MIN;
 static int servo_pulse_max = PWM_PULSE_MAX;
 
 static float servo_last_pos = 720.0; // Large out of bound number so we promote waiting the appropriate amount of time
+
+// Button Interrupt Vars
+extern volatile int button_event;
+extern volatile int button_num;
 
 
 void servo_init(void) {
@@ -71,4 +76,55 @@ int servo_move(float degrees) {
 	timer_waitMillis(pos_delta + 50);
 
 	return pulse_length;
+}
+
+
+/**
+ * Servo Calibration
+ */
+void servo_cal(void) {
+	static char dir_str[4];
+
+	timer_init();
+	lcd_init();
+	servo_init();
+	button_init();
+
+	int dir = 1;
+	float angle = 90.0;
+
+
+	int pulse = servo_move(angle);
+
+	while (1) {
+		if (dir > 0) 	{ strcpy(dir_str, "CCW");	}
+		else 			{ strcpy(dir_str, "CW");	}
+
+        lcd_printf("Direction: %s\nMatch: %d", dir_str, pulse);
+
+		if (button_event) {
+			button_event = 0;
+			
+			switch (button_num) {
+				case 1:
+					angle += dir * 1.0;
+					break;
+				case 2:
+					angle += dir * 5.0;
+					break;
+				case 3:
+					dir = -dir;
+					break;
+				case 4:
+					if (dir == 1) {
+						angle = 180.0;
+					}
+					else {
+						angle = 0.0;
+					}
+				break;
+			}
+			pulse = servo_move(angle);
+		}
+	}
 }
