@@ -89,7 +89,7 @@ void adc_init(void) {
     ADC0_SAC_R = ADC_SAC_AVG_16X;           // Setup hardware averaging (See page 847)
 #endif
 
-    ADC0_ACTSS_R |= ADC_ACTSS_ASEN3;        // nable Sample Sequencer 3 (step 7)
+    ADC0_ACTSS_R |= ADC_ACTSS_ASEN3;        // enable Sample Sequencer 3 (step 7)
 }
 
 static int compare_ints(const void *a, const void *b) {
@@ -121,7 +121,7 @@ int adc_read(void) {
         // d[i] = ADC0_SSFIFO0_R;
         t += ADC0_SSFIFO3_R;
 
-        ADC0_ISC_R |= ADC_ISC_IN0;
+        ADC0_ISC_R |= ADC_ISC_IN3;
         // timer_waitMicros(10);
     }
 

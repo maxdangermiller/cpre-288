@@ -31,7 +31,7 @@ void servo_init(void) {
 	TIMER1_CFG_R = 0x4;						// Use 16 bit timers
 	TIMER1_TBMR_R |= 0b1010;				// Periodic Timer mode, PWM mode is enabled.
 	TIMER1_TBMR_R &= ~0b1;					// Periodic Timer mode, PWM mode is enabled.
-	TIMER1_CTL_R &= 1 << 14;				// PWM not inverted
+	TIMER1_CTL_R &= ~(1 << 14);				// PWM not inverted
 
 	// TIMER1_TBILR_R = CLOCK_PERIOD;	// Period
 	TIMER1_TBILR_R = CLOCK_PERIOD;		// Period
